@@ -1,3 +1,4 @@
+import MuiThemeProvider from "@/theme-provider";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -36,7 +37,9 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body dir="rtl">{children}</body>
+      <body dir="rtl">
+        <MuiThemeProvider>{children}</MuiThemeProvider>
+      </body>
     </html>
   );
 }
