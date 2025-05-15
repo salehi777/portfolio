@@ -3,6 +3,7 @@
 import MuiGlobalStyles from "./global-styles";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import "keen-slider/keen-slider.min.css";
 
 const theme = createTheme({
   direction: "rtl",
@@ -17,7 +18,11 @@ const theme = createTheme({
   },
 });
 
-export default function MuiThemeProvider({ children }) {
+export default function MuiThemeProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <AppRouterCacheProvider>
       <ThemeProvider theme={theme}>
