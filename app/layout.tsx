@@ -18,6 +18,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio</title>
 
+        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico"/>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -36,6 +37,12 @@ export default function RootLayout({
           href="/favicon/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+
+        <link
+          href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@33.003/Vazirmatn-Variable-font-face.css"
+          rel="stylesheet"
+          type="text/css"
+        />
       </head>
       <body dir="rtl">
         <MuiThemeProvider>{children}</MuiThemeProvider>

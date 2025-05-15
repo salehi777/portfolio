@@ -16,6 +16,47 @@ const theme = createTheme({
       main: "#ffc4ba",
     },
   },
+
+  typography: {
+    fontFamily: "Vazirmatn, sans-serif",
+
+    h1: {
+      fontWeight: 600,
+      fontSize: 90,
+    },
+    h2: {
+      fontWeight: 600,
+      fontSize: 60,
+    },
+    h3: {
+      fontWeight: 600,
+      fontSize: 38,
+    },
+    h4: {
+      fontWeight: 600,
+      fontSize: 24,
+    },
+    h5: {
+      fontWeight: 500,
+      fontSize: 20,
+    },
+    h6: {
+      fontWeight: 500,
+      fontSize: 18,
+    },
+    body1: {
+      fontSize: 16,
+    },
+    body2: {
+      fontSize: 14,
+    },
+    caption: {
+      fontSize: 12,
+    },
+    button: {
+      fontWeight: 400,
+    },
+  },
 });
 
 export default function MuiThemeProvider({
