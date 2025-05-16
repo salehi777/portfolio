@@ -5,15 +5,34 @@ export const StyledWrapper = styled("div")(({ theme }) => ({
   display: "flex",
 
   ">div:last-of-type": {
-    background: "#4a4dff",
     flex: 2,
   },
 }));
 
 export const StyledContent = styled("div")(({ theme }) => ({
   flex: 3,
-  padding: "120px 100px 100px 100px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
+  padding: "160px 140px 100px 100px",
+  
+  "[data-lined]": {
+    div: {
+      display: "flex",
+      alignItems: "center",
+      fontSize: 20,
+      margin: "8px 58px 8px 0",
+
+      "&:before": {
+        content: '""',
+        height: 2,
+        width: 22,
+        marginLeft: 14,
+        display: "block",
+        background: theme.palette.text.primary,
+      },
+    },
+  },
+
+  "[data-desc]": {
+    marginTop: 30,
+    fontSize: 20,
+  },
 }));

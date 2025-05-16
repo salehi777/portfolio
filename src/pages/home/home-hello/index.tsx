@@ -1,7 +1,7 @@
 import SmallTitle from "@/components/small-title";
 import { StyledContent, StyledScroll, StyledWrapper } from "./styles";
 import { Typography } from "@mui/material";
-import { SvgColor } from "@/components/svg-color";
+import SvgColor from "@/components/svg-color";
 
 export default function HomeHello() {
   return (

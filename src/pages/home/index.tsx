@@ -11,7 +11,15 @@ import HomeEducation from "./home-education";
 import HomeSkills from "./home-skills";
 import HomeLinks from "./home-links";
 
-const sections = ["سلام", "تماس", "سابقه", "تحصیل", "مهارت", "لینک"];
+const sections = [
+  "سلام",
+  "معرفی",
+  "تماس",
+  "سابقه",
+  // "تحصیل",
+  "مهارت",
+  "لینک",
+];
 
 export default function HomePage() {
   const { sliderRef, instanceRef, currentSlide, loaded } = useSlider();
@@ -25,24 +33,24 @@ export default function HomePage() {
         <div className="keen-slider__slide">
           <HomeIntroduction />
         </div>
-        {/* <div className="keen-slider__slide">
+        <div className="keen-slider__slide">
           <HomeContacts />
         </div>
         <div className="keen-slider__slide">
           <HomeExperience />
         </div>
-        <div className="keen-slider__slide">
+        {/* <div className="keen-slider__slide">
           <HomeEducation />
-        </div>
+        </div> */}
         <div className="keen-slider__slide">
           <HomeSkills />
         </div>
         <div className="keen-slider__slide">
           <HomeLinks />
-        </div> */}
+        </div>
       </StyledSlider>
 
-      {/* {loaded && instanceRef.current && (
+      {loaded && instanceRef.current && (
         <StyledDots>
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
@@ -57,7 +65,7 @@ export default function HomePage() {
             </div>
           ))}
         </StyledDots>
-      )} */}
+      )}
     </div>
   );
 }

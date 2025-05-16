@@ -5,7 +5,7 @@ interface SvgColorProps extends BoxProps {
   src: string;
 }
 
-export function SvgColor({ src, component = "span", ...props }: SvgColorProps) {
+export default function SvgColor({ src, component = "span", ...props }: SvgColorProps) {
   return (
     <StyledSvgColor
       component={component}

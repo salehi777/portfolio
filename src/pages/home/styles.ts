@@ -8,7 +8,7 @@ export const StyledDots = styled("div")(({ theme }) => ({
   position: "fixed",
   top: "50%",
   transform: "translateY(-50%)",
-  right: 50,
+  right: 20,
 
   ">div": {
     display: "flex",
@@ -29,6 +29,7 @@ export const StyledDots = styled("div")(({ theme }) => ({
     ">div": {
       transition: theme.transitions.create("color"),
       color: theme.palette.grey[400],
+      fontSize:14,
     },
 
     "&[data-active=true]": {

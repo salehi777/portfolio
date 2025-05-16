@@ -12,7 +12,7 @@ export const StyledWrapper = styled("div")(({ theme }) => ({
 
 export const StyledContent = styled("div")(({ theme }) => ({
   flex: 3,
-  padding: "120px 100px 100px 100px",
+  padding: "120px 140px 100px 100px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
