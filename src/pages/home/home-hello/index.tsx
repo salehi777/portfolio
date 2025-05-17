@@ -1,11 +1,38 @@
 import SmallTitle from "@/components/small-title";
-import { StyledContent, StyledScroll, StyledWrapper } from "./styles";
+import { StyledContent, StyledShapes } from "./styles";
 import { Typography } from "@mui/material";
 import SvgColor from "@/components/svg-color";
+import Cuboid from "@/components/shapes/cuboid";
+import { cuboids } from "./shapes-info";
 
-export default function HomeHello() {
+export default function HomeHello({ isInView }) {
   return (
-    <StyledWrapper>
+    <>
+      <StyledShapes>
+        <div data-shapes-1>
+          <div />
+          <div>
+            <div />
+          </div>
+        </div>
+
+        <div data-shapes-2>
+          {cuboids.map(({ id, animateInfo, ...cuboid }) => (
+            <Cuboid
+              key={id}
+              data-id={id}
+              {...cuboid}
+              {...(animateInfo
+                ? {
+                    transition: { duration: 2, type: "linear" },
+                    animate: isInView ? animateInfo : null,
+                  }
+                : {})}
+            />
+          ))}
+        </div>
+      </StyledShapes>
+
       <StyledContent>
         <SmallTitle title="سلام" />
 
@@ -14,15 +41,13 @@ export default function HomeHello() {
           میکنم.
         </Typography>
 
-        <StyledScroll>
+        <div>
           <div>
             <SvgColor src="/icons/arrows-down.svg" />
           </div>
           <span>اسکرول کنید</span>
-        </StyledScroll>
+        </div>
       </StyledContent>
-
-      <div />
-    </StyledWrapper>
+    </>
   );
 }

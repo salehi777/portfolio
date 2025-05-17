@@ -1,3 +1,3 @@
 export default function HomeContacts() {
-  return <div>HomeContacts</div>;
+  return <div style={{ margin: 300 }}></div>;
 }

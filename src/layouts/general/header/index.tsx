@@ -6,7 +6,7 @@ import SvgColor from "@/components/svg-color";
 import { useState } from "react";
 
 export default function Header() {
-  const [open, setOpen] = useState();
+  const [open, setOpen] = useState(false);
 
   return (
     <>

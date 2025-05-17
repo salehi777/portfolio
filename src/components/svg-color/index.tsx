@@ -1,14 +1,10 @@
 import { BoxProps } from "@mui/material";
 import { StyledSvgColor } from "./styles";
 
-interface SvgColorProps extends BoxProps {
-  src: string;
-}
-
-export default function SvgColor({ src, component = "span", ...props }: SvgColorProps) {
+export default function SvgColor({ src, component, ...props }: any) {
   return (
     <StyledSvgColor
-      component={component}
+      component={component || "span"}
       className="svg-color"
       style={{
         mask: `url(${src}) no-repeat center / contain`,

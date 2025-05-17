@@ -28,7 +28,7 @@ export default function HomePage() {
     <div>
       <StyledSlider ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide">
-          <HomeHello />
+          <HomeHello isInView={currentSlide === 0} />
         </div>
         <div className="keen-slider__slide">
           <HomeIntroduction />
@@ -39,9 +39,6 @@ export default function HomePage() {
         <div className="keen-slider__slide">
           <HomeExperience />
         </div>
-        {/* <div className="keen-slider__slide">
-          <HomeEducation />
-        </div> */}
         <div className="keen-slider__slide">
           <HomeSkills />
         </div>
