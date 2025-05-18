@@ -74,7 +74,9 @@ export const StyledShapes = styled("div")(({ theme }) => ({
     position: "absolute",
     left: 0,
     bottom: 0,
+  },
 
+  "[data-cuboids]": {
     '[data-id="1"]': {
       top: -309,
       left: 375,
@@ -92,32 +94,47 @@ export const StyledShapes = styled("div")(({ theme }) => ({
       left: 444,
     },
     '[data-id="5"]': {
-      top: -601,
-      left: 389,
+      top: -591,
+      left: 387,
     },
     '[data-id="6"]': {
-      top: -575,
-      left: 450,
+      top: -566,
+      left: 443,
     },
     '[data-id="7"]': {
-      top: -575,
-      left: 328,
+      top: -566,
+      left: 330,
     },
     '[data-id="8"]': {
-      top: -677,
-      left: 389,
+      top: -613,
+      left: 387,
     },
     '[data-id="9"]': {
       top: -178,
       left: 621,
     },
     '[data-id="10"]': {
-      top: -252,
-      left: 742,
+      top: -255,
+      left: 704,
     },
     '[data-id="11"]': {
-      top: -517,
-      left: 681,
+      top: -520,
+      left: 602,
+    },
+  },
+
+  "[data-spheres]": {
+    '[data-id="1"]': {
+      top: -375,
+      left: 357,
+    },
+    '[data-id="2"]': {
+      top: -371,
+      left: 482,
+    },
+    '[data-id="3"]': {
+      top: -210,
+      left: 158,
     },
   },
 

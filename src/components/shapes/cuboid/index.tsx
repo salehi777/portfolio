@@ -4,17 +4,15 @@ interface CuboidProps {
   width: number;
   height: number;
   length: number;
-  front: string;
-  left: string;
-  top: string;
+  color: string;
 }
 
-export default function Cuboid({ front, left, top, ...props }: CuboidProps) {
+export default function Cuboid(props: CuboidProps) {
   return (
     <StyledCuboid {...props}>
-      <div data-front style={{ background: front }} />
-      <div data-left style={{ background: left }} />
-      <div data-top style={{ background: top }} />
+      <div data-front />
+      <div data-left />
+      <div data-top />
     </StyledCuboid>
   );
 }

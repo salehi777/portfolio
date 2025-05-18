@@ -3,7 +3,8 @@ import { StyledContent, StyledShapes } from "./styles";
 import { Typography } from "@mui/material";
 import SvgColor from "@/components/svg-color";
 import Cuboid from "@/components/shapes/cuboid";
-import { cuboids } from "./shapes-info";
+import { cuboids, spheres } from "./shapes-info";
+import Sphere from "@/components/shapes/sphere";
 
 export default function HomeHello({ isInView }) {
   return (
@@ -17,19 +18,36 @@ export default function HomeHello({ isInView }) {
         </div>
 
         <div data-shapes-2>
-          {cuboids.map(({ id, animateInfo, ...cuboid }) => (
-            <Cuboid
-              key={id}
-              data-id={id}
-              {...cuboid}
-              {...(animateInfo
-                ? {
-                    transition: { duration: 2, type: "linear" },
-                    animate: isInView ? animateInfo : null,
-                  }
-                : {})}
-            />
-          ))}
+          <div data-cuboids>
+            {cuboids.map(({ id, animateInfo, ...cuboid }) => (
+              <Cuboid
+                key={id}
+                data-id={id}
+                {...cuboid}
+                {...(animateInfo
+                  ? {
+                      transition: { duration: 1 },
+                      animate: isInView ? animateInfo : null,
+                    }
+                  : {})}
+              />
+            ))}
+          </div>
+          <div data-spheres>
+            {spheres.map(({ id, animateInfo, ...sphere }) => (
+              <Sphere
+                key={id}
+                data-id={id}
+                {...sphere}
+                {...(animateInfo
+                  ? {
+                      transition: { duration: 1 },
+                      animate: isInView ? animateInfo : null,
+                    }
+                  : {})}
+              />
+            ))}
+          </div>
         </div>
       </StyledShapes>
 
