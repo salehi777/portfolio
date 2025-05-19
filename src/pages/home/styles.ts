@@ -6,37 +6,60 @@ export const StyledSlider = styled("div")(({ theme }) => ({
 
 export const StyledDots = styled("div")(({ theme }) => ({
   position: "fixed",
-  top: "50%",
-  transform: "translateY(-50%)",
-  right: 20,
+  bottom: 5,
+  right: 5,
 
   ">div": {
-    display: "flex",
-    alignItems: "center",
-    padding: "10px 0",
+    position: "absolute",
+    top: -100,
+    transformOrigin: "0 100px",
     cursor: "pointer",
+    padding: "10px 5px",
 
-    ">span": {
+    "&:nth-of-type(1)": {
+      transform: "rotate(-0deg)",
+    },
+    "&:nth-of-type(2)": {
+      transform: "rotate(-18deg)",
+    },
+    "&:nth-of-type(3)": {
+      transform: "rotate(-36deg)",
+    },
+    "&:nth-of-type(4)": {
+      transform: "rotate(-54deg)",
+    },
+    "&:nth-of-type(5)": {
+      transform: "rotate(-72deg)",
+    },
+    "&:nth-of-type(6)": {
+      transform: "rotate(-90deg)",
+    },
+
+    span: {
       width: 16,
       height: 16,
       borderRadius: "100%",
       display: "block",
       background: theme.palette.grey[400],
       transition: theme.transitions.create("background"),
-      marginLeft: 10,
     },
 
-    ">div": {
+    div: {
+      position: "absolute",
       transition: theme.transitions.create("color"),
       color: theme.palette.grey[400],
-      fontSize:14,
+      whiteSpace: "nowrap",
+      transform: "rotate(90deg)",
+      transformOrigin: "100% 0%",
+      top: 0,
+      right: "calc(50% - 12px)",
     },
 
     "&[data-active=true]": {
-      ">span": {
+      span: {
         background: theme.palette.primary.main,
       },
-      ">div": {
+      div: {
         color: theme.palette.primary.main,
       },
     },

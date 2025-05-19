@@ -2,23 +2,24 @@
 
 import { StyledDots, StyledSlider } from "./styles";
 import useSlider from "./useSlider";
+import Loading from "@/components/loading";
+import { Box } from "@mui/material";
 
 import HomeHello from "./home-hello";
 import HomeIntroduction from "./home-introduction";
 import HomeContacts from "./home-contacts";
 import HomeExperience from "./home-experience";
-import HomeEducation from "./home-education";
 import HomeSkills from "./home-skills";
 import HomeLinks from "./home-links";
 
-const sections = [
+const titles = [
   "سلام",
   "معرفی",
-  "تماس",
   "سابقه",
-  // "تحصیل",
   "مهارت",
   "لینک",
+  "دیگر",
+  //
 ];
 
 export default function HomePage() {
@@ -26,7 +27,11 @@ export default function HomePage() {
 
   return (
     <div>
-      <StyledSlider ref={sliderRef} className="keen-slider">
+      <StyledSlider
+        ref={sliderRef}
+        className="keen-slider"
+        style={{ visibility: loaded ? undefined : "hidden" }}
+      >
         <div className="keen-slider__slide">
           <HomeHello isInView={currentSlide === 0} />
         </div>
@@ -47,18 +52,30 @@ export default function HomePage() {
         </div>
       </StyledSlider>
 
+      {/* {!loaded && (
+        <Box
+          sx={{
+            position: "fixed",
+            top: "50%",
+            right: "50%",
+            transform: "translate(50%,-50%)",
+            color:'red',
+          }}
+        >
+          <Loading size={180} />
+        </Box>
+      )} */}
+
       {loaded && instanceRef.current && (
         <StyledDots>
-          {[
-            ...Array(instanceRef.current.track.details.slides.length).keys(),
-          ].map((idx) => (
+          {titles.map((title, idx) => (
             <div
               key={idx}
               onClick={() => instanceRef.current?.moveToIdx(idx)}
               data-active={currentSlide === idx}
             >
               <span />
-              <div>{sections[idx]}</div>
+              <div>{title}</div>
             </div>
           ))}
         </StyledDots>
