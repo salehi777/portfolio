@@ -1,6 +1,7 @@
+import { BoxProps } from "@mui/material";
 import { StyledSphere } from "./styles";
 
-interface SphereProps {
+export interface SphereProps extends BoxProps {
   radius: number;
   color: string;
 }

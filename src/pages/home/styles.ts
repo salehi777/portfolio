@@ -1,4 +1,4 @@
-import { styled } from "@mui/material/styles";
+import { keyframes, styled } from "@mui/material/styles";
 
 export const StyledSlider = styled("div")(({ theme }) => ({
   height: "100vh",
@@ -16,23 +16,20 @@ export const StyledDots = styled("div")(({ theme }) => ({
     cursor: "pointer",
     padding: "10px 5px",
 
-    "&:nth-of-type(1)": {
-      transform: "rotate(-0deg)",
-    },
     "&:nth-of-type(2)": {
-      transform: "rotate(-18deg)",
+      animation: `${rotate(-18)} 1s ease forwards`,
     },
     "&:nth-of-type(3)": {
-      transform: "rotate(-36deg)",
+      animation: `${rotate(-36)} 1s ease forwards`,
     },
     "&:nth-of-type(4)": {
-      transform: "rotate(-54deg)",
+      animation: `${rotate(-54)} 1s ease forwards`,
     },
     "&:nth-of-type(5)": {
-      transform: "rotate(-72deg)",
+      animation: `${rotate(-72)} 1s ease forwards`,
     },
     "&:nth-of-type(6)": {
-      transform: "rotate(-90deg)",
+      animation: `${rotate(-90)} 1s ease forwards`,
     },
 
     span: {
@@ -40,14 +37,14 @@ export const StyledDots = styled("div")(({ theme }) => ({
       height: 16,
       borderRadius: "100%",
       display: "block",
-      background: theme.palette.grey[400],
+      background: '#b0b0b0',
       transition: theme.transitions.create("background"),
     },
 
     div: {
       position: "absolute",
       transition: theme.transitions.create("color"),
-      color: theme.palette.grey[400],
+      color: '#b0b0b0',
       whiteSpace: "nowrap",
       transform: "rotate(90deg)",
       transformOrigin: "100% 0%",
@@ -65,3 +62,12 @@ export const StyledDots = styled("div")(({ theme }) => ({
     },
   },
 }));
+
+const rotate = (angle) => keyframes`
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(${angle}deg);
+  }
+`;

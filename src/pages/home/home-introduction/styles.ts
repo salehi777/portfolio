@@ -12,7 +12,7 @@ export const StyledWrapper = styled("div")(({ theme }) => ({
 export const StyledContent = styled("div")(({ theme }) => ({
   flex: 3,
   padding: "160px 140px 100px 100px",
-  
+
   "[data-lined]": {
     div: {
       display: "flex",
@@ -32,7 +32,27 @@ export const StyledContent = styled("div")(({ theme }) => ({
   },
 
   "[data-desc]": {
-    marginTop: 30,
+    margin: "30px 0 40px",
     fontSize: 20,
+  },
+
+  "[data-contacts]": {
+    fontSize: 20,
+
+    a: {
+      display: "flex",
+      alignItems: "center",
+
+      '.svg-color':{width:30,height:30},
+
+      'div':{
+        marginRight:8,
+        direction:'ltr'
+      },
+
+      '&:first-of-type':{
+        marginBottom:12
+      }
+    },
   },
 }));

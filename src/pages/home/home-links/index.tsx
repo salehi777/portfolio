@@ -1,3 +1,3 @@
-export default function HomeLinks() {
+export default function HomeLinks({ isInView }) {
   return <div>HomeLinks</div>;
 }

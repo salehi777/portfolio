@@ -1,9 +1,10 @@
+import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { motion } from "motion/react";
+import { SphereProps } from ".";
 
-export const StyledSphere = styled(({ radius, color, ...props }: any) => (
-  <motion.div {...props} />
-))(({ theme, radius, color }) => ({
+export const StyledSphere = styled(
+  ({ radius, color, ...props }: SphereProps) => <Box {...props} />
+)(({ theme, radius, color }) => ({
   position: "absolute",
   width: radius,
   height: radius,

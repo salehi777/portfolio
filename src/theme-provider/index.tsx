@@ -57,6 +57,23 @@ const theme = createTheme({
       fontWeight: 400,
     },
   },
+
+  components: {
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          h1: "div",
+          h2: "div",
+          h3: "div",
+          h4: "div",
+          h5: "div",
+          h6: "div",
+          body1: "div",
+          body2: "div",
+        },
+      },
+    },
+  },
 });
 
 export default function MuiThemeProvider({

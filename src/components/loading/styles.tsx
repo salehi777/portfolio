@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 
-export const StyledLoading = styled("div")(({ theme, size }) => ({
+export const StyledLoading = styled("div")(({ theme, size }: any) => ({
   position: "relative",
 
   ">div": {

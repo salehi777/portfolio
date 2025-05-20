@@ -1,19 +1,13 @@
+import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { motion } from "motion/react";
+import { CuboidProps } from ".";
 
 export const StyledCuboid = styled(
-  ({ width, height, length, color, ...props }: any) => (
-    <motion.div
-      transformTemplate={(_, generated) =>
-        `rotateX(-26deg) rotateY(45deg) ${generated}`
-      }
-      {...props}
-    />
-  )
+  ({ width, height, length, color, ...props }: CuboidProps) => <Box {...props} />
 )(({ theme, width, height, length, color }) => ({
   position: "absolute",
   transformStyle: "preserve-3d",
-  // transform: "rotateX(-26deg) rotateY(45deg)"
+  transform: "rotateX(-26deg) rotateY(45deg)",
 
   ">div": {
     position: "absolute",

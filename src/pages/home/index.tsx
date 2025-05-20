@@ -2,21 +2,19 @@
 
 import { StyledDots, StyledSlider } from "./styles";
 import useSlider from "./useSlider";
-import Loading from "@/components/loading";
-import { Box } from "@mui/material";
 
 import HomeHello from "./home-hello";
 import HomeIntroduction from "./home-introduction";
-import HomeContacts from "./home-contacts";
 import HomeExperience from "./home-experience";
 import HomeSkills from "./home-skills";
 import HomeLinks from "./home-links";
+import HomeOther from "./home-other";
 
 const titles = [
   "سلام",
   "معرفی",
-  "سابقه",
   "مهارت",
+  "سابقه",
   "لینک",
   "دیگر",
   //
@@ -36,35 +34,21 @@ export default function HomePage() {
           <HomeHello isInView={currentSlide === 0} />
         </div>
         <div className="keen-slider__slide">
-          <HomeIntroduction />
+          <HomeIntroduction isInView={currentSlide === 1} />
         </div>
         <div className="keen-slider__slide">
-          <HomeContacts />
+          <HomeSkills isInView={currentSlide === 2} />
         </div>
         <div className="keen-slider__slide">
-          <HomeExperience />
+          <HomeExperience isInView={currentSlide === 3} />
         </div>
         <div className="keen-slider__slide">
-          <HomeSkills />
+          <HomeLinks isInView={currentSlide === 4} />
         </div>
         <div className="keen-slider__slide">
-          <HomeLinks />
+          <HomeOther isInView={currentSlide === 5} />
         </div>
       </StyledSlider>
-
-      {/* {!loaded && (
-        <Box
-          sx={{
-            position: "fixed",
-            top: "50%",
-            right: "50%",
-            transform: "translate(50%,-50%)",
-            color:'red',
-          }}
-        >
-          <Loading size={180} />
-        </Box>
-      )} */}
 
       {loaded && instanceRef.current && (
         <StyledDots>

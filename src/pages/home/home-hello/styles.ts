@@ -1,3 +1,4 @@
+import { TAN } from "@/constants";
 import { styled } from "@mui/material/styles";
 
 export const StyledContent = styled("div")(({ theme }) => ({
@@ -9,7 +10,7 @@ export const StyledContent = styled("div")(({ theme }) => ({
   justifyContent: "center",
   position: "relative",
 
-  ">div:last-of-type": {
+  "[data-scroll]": {
     marginTop: 140,
     display: "flex",
     alignItems: "center",
@@ -28,7 +29,6 @@ export const StyledContent = styled("div")(({ theme }) => ({
   },
 }));
 
-const tan = Math.tan(((180 - 113.7) * Math.PI) / 180);
 
 export const StyledShapes = styled("div")(({ theme }) => ({
   position: "absolute",
@@ -53,7 +53,7 @@ export const StyledShapes = styled("div")(({ theme }) => ({
     },
     ">div:last-of-type": {
       position: "absolute",
-      height: 750 / tan,
+      height: 750 / TAN,
       width: 750,
       bottom: 0,
       left: 0,
@@ -76,66 +76,61 @@ export const StyledShapes = styled("div")(({ theme }) => ({
     bottom: 0,
   },
 
-  "[data-cuboids]": {
-    '[data-id="1"]': {
-      top: -309,
-      left: 375,
-    },
-    '[data-id="2"]': {
-      top: -395,
-      left: 218,
-    },
-    '[data-id="3"]': {
-      top: -395,
-      left: 533,
-    },
-    '[data-id="4"]': {
-      top: -385,
-      left: 444,
-    },
-    '[data-id="5"]': {
-      top: -591,
-      left: 387,
-    },
-    '[data-id="6"]': {
-      top: -566,
-      left: 443,
-    },
-    '[data-id="7"]': {
-      top: -566,
-      left: 330,
-    },
-    '[data-id="8"]': {
-      top: -613,
-      left: 387,
-    },
-    '[data-id="9"]': {
-      top: -178,
-      left: 621,
-    },
-    '[data-id="10"]': {
-      top: -255,
-      left: 704,
-    },
-    '[data-id="11"]': {
-      top: -520,
-      left: 602,
-    },
+  '[data-id="c_1"]': {
+    top: -309,
+    left: 375,
   },
-
-  "[data-spheres]": {
-    '[data-id="1"]': {
-      top: -375,
-      left: 357,
-    },
-    '[data-id="2"]': {
-      top: -371,
-      left: 482,
-    },
-    '[data-id="3"]': {
-      top: -210,
-      left: 158,
-    },
+  '[data-id="c_2"]': {
+    top: -395,
+    left: 218,
+  },
+  '[data-id="c_3"]': {
+    top: -395,
+    left: 533,
+  },
+  '[data-id="c_4"]': {
+    top: -385,
+    left: 444,
+  },
+  '[data-id="c_5"]': {
+    top: -591,
+    left: 387,
+  },
+  '[data-id="c_6"]': {
+    top: -566,
+    left: 443,
+  },
+  '[data-id="c_7"]': {
+    top: -566,
+    left: 330,
+  },
+  '[data-id="c_8"]': {
+    top: -613,
+    left: 387,
+  },
+  '[data-id="c_9"]': {
+    top: -178,
+    left: 621,
+  },
+  '[data-id="c_10"]': {
+    top: -255,
+    left: 704,
+  },
+  '[data-id="c_11"]': {
+    top: -520,
+    left: 602,
+  },
+  '[data-id="s_1"]': {
+    top: -375,
+    left: 357,
+  },
+  '[data-id="s_2"]': {
+    top: -371,
+    left: 482,
+  },
+  '[data-id="s_3"]': {
+    top: -210,
+    left: 158,
   },
 
   [theme.breakpoints.up("xl")]: {
