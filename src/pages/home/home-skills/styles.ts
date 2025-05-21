@@ -8,28 +8,37 @@ export const StyledContent = styled("div")(({ theme }) => ({
 
 export const StyledRow = styled("div")(({ theme }) => ({
   display: "flex",
-  alignItems: "center",
-  marginTop: 20,
+  position: "relative",
 
-  ">div:first-of-type": {
+  "[data-star]": {
     position: "relative",
     color: "#ed6c02",
-    width: 64,
-    height: 64,
-
     ">div": {
       position: "absolute",
-      left: 0,
-      top: 32 - 12,
+      left: -32,
+      top: -12,
       transformOrigin: "32px center",
       display: "flex",
     },
   },
-
-  ">div:last-of-type": {
-    display: "flex",
-    marginRight: 14,
-    color: theme.palette.primary.main,
+  "[data-items]": {
+    position: "relative",
+    color: "#0000ff",
+    transform: "rotate(90deg)",
+    ">div": {
+      position: "absolute",
+      left: 0,
+      top: -12,
+      transformOrigin: "0px center",
+      display: "flex",
+      span: {
+        display: "flex",
+        fontSize: 20,
+        fontWeight: 700,
+        transform: "translateX(-50px)",
+        whiteSpace: "nowrap",
+      },
+    },
   },
 }));
 

@@ -1,6 +1,6 @@
 import SmallTitle from "@/components/small-title";
 import { StyledContent, StyledRow, StyledShapes } from "./styles";
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import SvgColor from "@/components/svg-color";
 import Cuboid from "@/components/shapes/cuboid";
 import { cuboids, skills } from "./data";
@@ -36,22 +36,15 @@ export default function HomeSkills({ isInView }) {
       </StyledShapes>
 
       <StyledContent>
-        <SmallTitle title="مهارت‌ها" />
+        {/* <SmallTitle title="مهارت‌ها" /> */}
 
-        {skills.map(({ star, items }) => (
-          <StyledRow key={star}>
-            <div>
+        {skills.map(({ star, items }, idx) => (
+          <StyledRow key={star} style={{ top: (idx + 1) * 140 }}>
+            <div data-star>
               {[...new Array(star)].map((_, i) => (
                 <motion.div
                   key={i}
-                  animate={
-                    isInView
-                      ? {
-                          rotate: [0, i * (360 / star)],
-                          ...(star === 1 ? { x: [0, 20] } : {}),
-                        }
-                      : {}
-                  }
+                  animate={isInView ? { rotate: [0, i * (360 / star)] } : {}}
                   transition={{ duration: 1 }}
                 >
                   <SvgColor
@@ -61,11 +54,29 @@ export default function HomeSkills({ isInView }) {
                 </motion.div>
               ))}
             </div>
-            <div>
+
+            <div data-items>
               {items.map((title, i) => (
-                <Typography key={title} variant="h5">
-                  {i !== 0 && "،"} {title}
-                </Typography>
+                <motion.div
+                  key={i}
+                  initial={{ x: "-100%", rotate: 0 }}
+                  transformTemplate={({ y, x, rotate }) =>
+                    `rotate(${rotate}) translateX(${x})`
+                  }
+                  animate={
+                    isInView
+                      ? {
+                          rotate: [
+                            0,
+                            -i * 24 - (180 - 24 * (items.length - 1)) / 2,
+                          ],
+                        }
+                      : {}
+                  }
+                  transition={{ duration: 1 }}
+                >
+                  <span>{title}</span>
+                </motion.div>
               ))}
             </div>
           </StyledRow>

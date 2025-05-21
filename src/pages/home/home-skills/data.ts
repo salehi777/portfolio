@@ -56,6 +56,6 @@ export const skills = [
   },
   {
     star: 1,
-    items: ["Extension", "PWA"],
+    items: ["Extension", "PWA", "Framer Motion"],
   },
 ];
