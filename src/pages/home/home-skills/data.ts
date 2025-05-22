@@ -35,27 +35,73 @@ export const cuboids = [
 
 export const skills = [
   {
-    star: 4,
-    items: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Redux/Zustand",
-      "MaterialUI",
-      "Responsive",
-    ],
+    title: "HTML",
+    percent: 95,
   },
   {
-    star: 3,
-    items: ["Next", "ANTD", "Git", "SASS"],
+    title: "CSS",
+    percent: 95,
   },
   {
-    star: 2,
-    items: ["TypeScript", "Agile", "Socket/Realtime", "Tailwind", "Electron"],
+    title: "JavaScript",
+    percent: 90,
   },
   {
-    star: 1,
-    items: ["Extension", "PWA", "Framer Motion"],
+    title: "React",
+    percent: 90,
   },
-];
+  {
+    title: "Responsive",
+    percent: 90,
+  },
+  {
+    title: "Next",
+    percent: 80,
+  },
+  {
+    title: "Git",
+    percent: 80,
+  },
+  {
+    title: "Sass",
+    percent: 80,
+  },
+  {
+    title: "TypeScript",
+    percent: 60,
+  },
+  {
+    title: "Antd",
+    percent: 60,
+  },
+  {
+    title: "Agile",
+    percent: 60,
+  },
+  {
+    title: "Socket/Realtime",
+    percent: 50,
+  },
+  {
+    title: "Tailwind",
+    percent: 50,
+  },
+  {
+    title: "Electron",
+    percent: 40,
+  },
+  {
+    title: "Framer Motion",
+    percent: 40,
+  },
+  {
+    title: "Extension",
+    percent: 30,
+  },
+  {
+    title: "PWA",
+    percent: 30,
+  },
+].sort((a, b) =>
+  a.percent < b.percent ? 1 : a.percent === b.percent ? 0 : -1
+);

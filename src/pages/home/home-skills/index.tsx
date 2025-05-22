@@ -1,7 +1,6 @@
 import SmallTitle from "@/components/small-title";
-import { StyledContent, StyledRow, StyledShapes } from "./styles";
-import { Grid, Typography } from "@mui/material";
-import SvgColor from "@/components/svg-color";
+import { StyledContent, StyledShapes, StyledSkill } from "./styles";
+import { Grid } from "@mui/material";
 import Cuboid from "@/components/shapes/cuboid";
 import { cuboids, skills } from "./data";
 import MotionUp from "@/components/motion-up";
@@ -36,51 +35,46 @@ export default function HomeSkills({ isInView }) {
       </StyledShapes>
 
       <StyledContent>
-        {/* <SmallTitle title="مهارت‌ها" /> */}
+        <MotionUp isActive={isInView}>
+          <SmallTitle title="مهارت‌ها" />
+        </MotionUp>
 
-        {skills.map(({ star, items }, idx) => (
-          <StyledRow key={star} style={{ top: (idx + 1) * 140 }}>
-            <div data-star>
-              {[...new Array(star)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  animate={isInView ? { rotate: [0, i * (360 / star)] } : {}}
-                  transition={{ duration: 1 }}
-                >
-                  <SvgColor
-                    src="/icons/star.svg"
-                    sx={{ transform: `rotate(-${i * (360 / star)}deg)` }}
-                  />
-                </motion.div>
-              ))}
-            </div>
+        <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
+          <Grid container rowSpacing={3} columnSpacing={3} mt={4}>
+            {skills.map(({ title, percent }) => (
+              <Grid key={title}>
+                <StyledSkill>
+                  <svg viewBox="0 0 36 36" fill="none">
+                    <motion.path
+                      d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                      animate={{
+                        strokeDasharray: isInView
+                          ? ["0 100", `${percent} 100`]
+                          : {},
+                      }}
+                      transition={{ duration: 1 }}
+                    />
+                  </svg>
 
-            <div data-items>
-              {items.map((title, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ x: "-100%", rotate: 0 }}
-                  transformTemplate={({ y, x, rotate }) =>
-                    `rotate(${rotate}) translateX(${x})`
-                  }
-                  animate={
-                    isInView
-                      ? {
-                          rotate: [
-                            0,
-                            -i * 24 - (180 - 24 * (items.length - 1)) / 2,
-                          ],
-                        }
-                      : {}
-                  }
-                  transition={{ duration: 1 }}
-                >
-                  <span>{title}</span>
-                </motion.div>
-              ))}
-            </div>
-          </StyledRow>
-        ))}
+                  <div>{title}</div>
+                  <motion.span
+                    animate={{
+                      rotate: isInView ? [0, (percent * 360) / 100] : {},
+                    }}
+                    transformTemplate={(_, generated) =>
+                      `translateY(-50%) translateX(50%) ${generated}`
+                    }
+                    transition={{ duration: 1 }}
+                  >
+                    {percent}%
+                  </motion.span>
+                </StyledSkill>
+              </Grid>
+            ))}
+          </Grid>
+        </MotionUp>
       </StyledContent>
     </>
   );

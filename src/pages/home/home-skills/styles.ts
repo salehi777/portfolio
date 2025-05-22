@@ -1,44 +1,59 @@
 import { TAN } from "@/constants";
-import { keyframes, styled } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
 export const StyledContent = styled("div")(({ theme }) => ({
-  padding: "140px 140px 100px 100px",
+  padding: "140px 80px 100px 80px",
   position: "relative",
 }));
 
-export const StyledRow = styled("div")(({ theme }) => ({
-  display: "flex",
+export const StyledSkill = styled("div")(({ theme }) => ({
   position: "relative",
+  display: "flex",
 
-  "[data-star]": {
-    position: "relative",
-    color: "#ed6c02",
-    ">div": {
-      position: "absolute",
-      left: -32,
-      top: -12,
-      transformOrigin: "32px center",
-      display: "flex",
+  svg: {
+    width: 120,
+    height: 120,
+
+    path: {
+      // strokeDasharray: "30 100",
+      stroke: theme.palette.primary.main,
+      strokeLinecap: "round",
+      strokeWidth: 1,
     },
   },
-  "[data-items]": {
-    position: "relative",
-    color: "#0000ff",
-    transform: "rotate(90deg)",
-    ">div": {
-      position: "absolute",
-      left: 0,
-      top: -12,
-      transformOrigin: "0px center",
-      display: "flex",
-      span: {
-        display: "flex",
-        fontSize: 20,
-        fontWeight: 700,
-        transform: "translateX(-50px)",
-        whiteSpace: "nowrap",
-      },
-    },
+
+  div: {
+    position: "absolute",
+    width: "80%",
+    height: "80%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    top: "10%",
+    left: "10%",
+    overflowWrap: "break-word",
+    wordBreak: "break-word",
+    textAlign: "center",
+    margin: "0 auto",
+    fontSize: 20,
+    lineHeight: 1,
+  },
+
+  span: {
+    position: "absolute",
+    fontSize: 10,
+    color: theme.palette.primary.main,
+    // backgroundColor: "white",
+    // boxShadow: "#b5b5b5 0px 3px 8px",
+    // borderRadius: "100%",
+    // display: "flex",
+    // alignItems: "center",
+    // justifyContent: "center",
+    height: 15,
+    // width: 15,
+    right: "50%",
+    top: 0,
+    transformOrigin: `center ${120 / 2 + 15 / 2}px`,
   },
 }));
 
@@ -84,19 +99,19 @@ export const StyledShapes = styled("div")(({ theme }) => ({
   },
 
   '[data-id="c_1"]': {
-    top: -309,
-    left: 260,
+    top: -259,
+    left: 147,
   },
   '[data-id="c_2"]': {
-    top: -336,
-    left: 529,
+    top: -259,
+    left: 372,
   },
   '[data-id="c_3"]': {
-    top: -156,
-    left: 608,
+    top: -107,
+    left: 486,
   },
   '[data-id="c_4"]': {
-    top: -128,
-    left: 241,
+    top: -98,
+    left: 113,
   },
 }));

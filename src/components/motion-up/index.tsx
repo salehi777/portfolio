@@ -6,9 +6,10 @@ interface MotionUpProps {
   t?: Transition;
 }
 
-export default function MotionUp({ children, isActive, t }:MotionUpProps) {
+export default function MotionUp({ children, isActive, t }: MotionUpProps) {
   return (
     <motion.div
+      initial={{ y: 100 }}
       animate={isActive ? { y: [100, 0] } : {}}
       transition={{ duration: 1, ...t }}
     >
