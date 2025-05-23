@@ -31,11 +31,6 @@ export const StyledContent = styled("div")(({ theme }) => ({
     },
   },
 
-  "[data-desc]": {
-    margin: "30px 0 40px",
-    fontSize: 20,
-  },
-
   "[data-contacts]": {
     fontSize: 20,
 
@@ -43,16 +38,16 @@ export const StyledContent = styled("div")(({ theme }) => ({
       display: "flex",
       alignItems: "center",
 
-      '.svg-color':{width:30,height:30},
+      ".svg-color": { width: 30, height: 30 },
 
-      'div':{
-        marginRight:8,
-        direction:'ltr'
+      div: {
+        marginRight: 8,
+        direction: "ltr",
       },
 
-      '&:first-of-type':{
-        marginBottom:12
-      }
+      "&:first-of-type": {
+        marginBottom: 12,
+      },
     },
   },
 }));

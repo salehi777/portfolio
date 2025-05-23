@@ -49,20 +49,20 @@ export default function HomeSkills({ isInView }) {
                       d="M18 2.0845
                     a 15.9155 15.9155 0 0 1 0 31.831
                     a 15.9155 15.9155 0 0 1 0 -31.831"
-                      animate={{
-                        strokeDasharray: isInView
-                          ? ["0 100", `${percent} 100`]
-                          : {},
-                      }}
+                      animate={
+                        isInView
+                          ? { strokeDasharray: ["0 100", `${percent} 100`] }
+                          : {}
+                      }
                       transition={{ duration: 1 }}
                     />
                   </svg>
 
                   <div>{title}</div>
                   <motion.span
-                    animate={{
-                      rotate: isInView ? [0, (percent * 360) / 100] : {},
-                    }}
+                    animate={
+                      isInView ? { rotate: [0, (percent * 360) / 100] } : {}
+                    }
                     transformTemplate={(_, generated) =>
                       `translateY(-50%) translateX(50%) ${generated}`
                     }

@@ -2,6 +2,7 @@ import SmallTitle from "@/components/small-title";
 import { StyledContent, StyledWrapper } from "./styles";
 import MotionUp from "@/components/motion-up";
 import SvgColor from "@/components/svg-color";
+import { Typography } from "@mui/material";
 
 export default function HomeIntroduction({ isInView }) {
   return (
@@ -18,7 +19,7 @@ export default function HomeIntroduction({ isInView }) {
               "توسعه‌دهنده React",
               "متولد ۱۳۷۵",
               "ساکن نجف‌آباد",
-              "لیسانس کامپیوتر(دانشگاه صنعتی اصفهان)",
+              "لیسانس کامپیوتر",
             ].map((text) => (
               <div key={text}>{text}</div>
             ))}
@@ -26,11 +27,11 @@ export default function HomeIntroduction({ isInView }) {
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
-          <div data-desc>
+          <Typography variant="h5" mt={"30px"} mb={"40px"}>
             حدود ۹ ساله یادگیری برنامه‌نویسی رو شروع کردم و از ۶ سال پیش به صورت
             متمرکز روی JavaScript و React کار میکردم.&nbsp;به صورت حضوری و بیشتر
             به صورت دورکاری سابقه کار دارم.
-          </div>
+          </Typography>
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.3 }}>

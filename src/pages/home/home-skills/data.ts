@@ -88,7 +88,7 @@ export const skills = [
   },
   {
     title: "Electron",
-    percent: 40,
+    percent: 30,
   },
   {
     title: "Framer Motion",
