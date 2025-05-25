@@ -15,6 +15,7 @@ const theme = createTheme({
     secondary: {
       main: "#ffc4ba",
     },
+    divider: "#b4b4b4",
   },
 
   typography: {

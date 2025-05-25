@@ -1,12 +1,36 @@
 import SmallTitle from "@/components/small-title";
-import { StyledContent, StyledWrapper } from "./styles";
-import MotionUp from "@/components/motion-up";
-import SvgColor from "@/components/svg-color";
+import { StyledContent, StyledShapes } from "./styles";
 import { Typography } from "@mui/material";
+import SvgColor from "@/components/svg-color";
+import Cuboid from "@/components/shapes/cuboid";
+import { cuboids } from "./data";
+import MotionUp from "@/components/motion-up";
+import { motion } from "motion/react";
 
 export default function HomeIntroduction({ isInView }) {
   return (
-    <StyledWrapper>
+    <>
+      <StyledShapes>
+        <div data-shapes>
+          {cuboids.map(({ id, animateInfo, ...cuboid }) => (
+            <Cuboid
+              key={id}
+              data-id={id}
+              {...cuboid}
+              {...(animateInfo
+                ? {
+                    component: motion.div,
+                    transformTemplate: (_, generated) =>
+                      `rotateX(-26deg) rotateY(45deg) ${generated}`,
+                    transition: { duration: 1 },
+                    animate: isInView ? animateInfo : {},
+                  }
+                : {})}
+            />
+          ))}
+        </div>
+      </StyledShapes>
+
       <StyledContent>
         <MotionUp isActive={isInView}>
           <SmallTitle title="معرفی" />
@@ -47,8 +71,6 @@ export default function HomeIntroduction({ isInView }) {
           </div>
         </MotionUp>
       </StyledContent>
-
-      <div />
-    </StyledWrapper>
+    </>
   );
 }

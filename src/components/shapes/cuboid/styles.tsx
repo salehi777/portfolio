@@ -20,7 +20,7 @@ export const StyledCuboid = styled(
     transform: `translateY(${-height / 2}px) translateX(${
       width / 2
     }px) translateZ(${length / 2}px)`,
-    boxShadow: "inset 0 0 0 1000px rgb(0 0 0 / 25%)",
+    boxShadow: "inset 0 0 0 1000px rgb(0 0 0 / 20%)",
   },
   "[data-left]": {
     width: length,

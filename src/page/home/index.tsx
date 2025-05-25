@@ -28,7 +28,10 @@ export default function HomePage() {
       <StyledSlider
         ref={sliderRef}
         className="keen-slider"
-        style={{ visibility: loaded ? undefined : "hidden" }}
+        style={{
+          visibility: loaded ? undefined : "hidden",
+          userSelect: "unset",
+        }}
       >
         <div className="keen-slider__slide">
           <HomeHello isInView={currentSlide === 0} />

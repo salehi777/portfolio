@@ -1,17 +1,9 @@
 import { styled } from "@mui/material/styles";
 
-export const StyledWrapper = styled("div")(({ theme }) => ({
-  height: "100%",
-  display: "flex",
-
-  ">div:last-of-type": {
-    flex: 2,
-  },
-}));
-
 export const StyledContent = styled("div")(({ theme }) => ({
-  flex: 3,
+  width: "calc(100vw - 350px)",
   padding: "160px 140px 100px 100px",
+  position: "relative",
 
   "[data-lined]": {
     div: {
@@ -49,5 +41,32 @@ export const StyledContent = styled("div")(({ theme }) => ({
         marginBottom: 12,
       },
     },
+  },
+}));
+
+export const StyledShapes = styled("div")(({ theme }) => ({
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  top: 0,
+  right: 0,
+
+  "[data-shapes]": {
+    position: "absolute",
+    left: 0,
+    top: 0, // in home-hello it's bottom:0 because shapes designed from bottom
+  },
+
+  '[data-id="c_1"]': {
+    top: 303,
+    left: 0,
+  },
+  '[data-id="c_2"]': {
+    top: 638,
+    left: 340,
+  },
+  '[data-id="c_3"]': {
+    top: 341,
+    left: 341,
   },
 }));
