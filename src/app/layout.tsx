@@ -1,21 +1,21 @@
 import RegisterPWA from "@/components/register-pwa";
 import MuiThemeProvider from "@/theme-provider";
-import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "Portfolio",
+  description: 'Portfolio',
   appleWebApp: {
     capable: true,
-    statusBarStyle: "default",
-    title: "Portfolio",
+    statusBarStyle: 'default',
+    title: 'Portfolio',
   },
-  applicationName: "Portfolio",
-  manifest: "/manifest.json",
+  applicationName: 'Portfolio',
+  manifest: '/manifest.json',
 };
 
 export const viewport: Viewport = {
-  themeColor: "black",
+  themeColor: 'black',
 };
 
 export default function RootLayout({

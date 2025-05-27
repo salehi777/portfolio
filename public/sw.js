@@ -1,21 +1,21 @@
-const CACHE_VERSION = "v1.0.3"; // Increment for each change to service worker logic
+const CACHE_VERSION = 'v1.0.3'; // Increment for each change to service worker logic
 const CACHE_NAME = `portfolio-cache-${CACHE_VERSION}`;
 
 // Assets to precache (focus on essential app shell and icons)
 const precacheAssets = [
   // '/' is crucial to be precached for initial load, but for offline, we'll try network first
-  "/favicon/favicon.ico",
-  "/favicon/android-chrome-192x192.png",
-  "/favicon/android-chrome-512x512.png",
-  "/manifest.json",
+  '/favicon/favicon.ico',
+  '/favicon/android-chrome-192x192.png',
+  '/favicon/android-chrome-512x512.png',
+  '/manifest.json',
   // "/icons/maskable_icon.png",
-  "/offline.html", // CRUCIAL: precache your dedicated offline page
+  '/offline.html', // CRUCIAL: precache your dedicated offline page
   // Add any other truly static, non-hashed assets from your public directory
   // e.g., '/images/logo.png', '/styles/my-global.css' (if not bundled by Next.js)
 ];
 
 // Install event: precache assets
-self.addEventListener("install", (event) => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
       .open(CACHE_NAME)
@@ -38,7 +38,7 @@ self.addEventListener("install", (event) => {
 });
 
 // Activate event: clean up old caches
-self.addEventListener("activate", (event) => {
+self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
@@ -58,22 +58,22 @@ self.addEventListener("activate", (event) => {
 });
 
 // Fetch event: Implement caching strategies
-self.addEventListener("fetch", (event) => {
+self.addEventListener('fetch', (event) => {
   // Only handle GET requests and exclude Chrome extensions
   if (
-    event.request.method !== "GET" ||
-    event.request.url.startsWith("chrome-extension://")
+    event.request.method !== 'GET' ||
+    event.request.url.startsWith('chrome-extension://')
   ) {
     return;
   }
 
   const requestUrl = new URL(event.request.url);
   const isDocument =
-    event.request.mode === "navigate" ||
-    event.request.destination === "document";
+    event.request.mode === 'navigate' ||
+    event.request.destination === 'document';
   const isNextAsset =
-    requestUrl.pathname.includes("/_next/static/") ||
-    requestUrl.pathname.includes("/_next/image");
+    requestUrl.pathname.includes('/_next/static/') ||
+    requestUrl.pathname.includes('/_next/image');
 
   // Strategy for Navigation (HTML pages) and Next.js assets:
   // For navigation requests: Network-First with Offline Fallback
@@ -103,7 +103,7 @@ self.addEventListener("fetch", (event) => {
             } else {
               // If not in cache either, serve the offline page
 
-              return caches.match("/offline.html");
+              return caches.match('/offline.html');
             }
           });
         })
@@ -138,7 +138,7 @@ self.addEventListener("fetch", (event) => {
             // Don't return offline.html for assets, just let them fail if not cached
             return new Response(null, {
               status: 503,
-              statusText: "Service Unavailable (Offline)",
+              statusText: 'Service Unavailable (Offline)',
             });
           });
       })
@@ -155,15 +155,15 @@ self.addEventListener("fetch", (event) => {
       // e.g., return a cached placeholder for a specific API.
       return new Response(null, {
         status: 503,
-        statusText: "Service Unavailable (Offline)",
+        statusText: 'Service Unavailable (Offline)',
       });
     })
   );
 });
 
 // Optional: Listen for 'message' events from the page to update the service worker
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });

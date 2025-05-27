@@ -1,5 +1,5 @@
-import { useKeenSlider } from "keen-slider/react";
-import { useState } from "react";
+import { useKeenSlider } from 'keen-slider/react';
+import { useState } from 'react';
 
 const WheelControls = (slider) => {
   let touchTimeout;
@@ -24,15 +24,15 @@ const WheelControls = (slider) => {
       x: e.pageX,
       y: e.pageY,
     };
-    dispatch(e, "ksDragStart");
+    dispatch(e, 'ksDragStart');
   }
 
   function wheel(e) {
-    dispatch(e, "ksDrag");
+    dispatch(e, 'ksDrag');
   }
 
   function wheelEnd(e) {
-    dispatch(e, "ksDragEnd");
+    dispatch(e, 'ksDragEnd');
   }
 
   function eventWheel(e) {
@@ -49,8 +49,8 @@ const WheelControls = (slider) => {
     }, 50);
   }
 
-  slider.on("created", () => {
-    slider.container.addEventListener("wheel", eventWheel, {
+  slider.on('created', () => {
+    slider.container.addEventListener('wheel', eventWheel, {
       passive: false,
     });
   });

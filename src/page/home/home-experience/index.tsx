@@ -1,9 +1,9 @@
-import SmallTitle from "@/components/small-title";
-import { StyledContent, StyledJob } from "./styles";
-import { Grid, Typography } from "@mui/material";
-import { jobs } from "./data";
-import SvgColor from "@/components/svg-color";
-import MotionUp from "@/components/motion-up";
+import SmallTitle from '@/components/small-title';
+import { StyledContent, StyledJob } from './styles';
+import { Grid, Typography } from '@mui/material';
+import { jobs } from './data';
+import SvgColor from '@/components/svg-color';
+import MotionUp from '@/components/motion-up';
 
 export default function HomeExperience({ isInView }) {
   return (

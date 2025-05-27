@@ -1,7 +1,7 @@
-import { StyledContent, StyledRow } from "./styles";
-import SvgColor from "@/components/svg-color";
-import { skills } from "./data";
-import { motion } from "motion/react";
+import { StyledContent, StyledRow } from './styles';
+import SvgColor from '@/components/svg-color';
+import { skills } from './data';
+import { motion } from 'motion/react';
 
 export default function HomeSkills({ isInView }) {
   return (
@@ -28,7 +28,7 @@ export default function HomeSkills({ isInView }) {
               {items.map((title, i) => (
                 <motion.div
                   key={i}
-                  initial={{ x: "-100%", rotate: 0 }}
+                  initial={{ x: '-100%', rotate: 0 }}
                   transformTemplate={({ y, x, rotate }) =>
                     `rotate(${rotate}) translateX(${x})`
                   }

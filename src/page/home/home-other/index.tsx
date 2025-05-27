@@ -1,13 +1,13 @@
-import SmallTitle from "@/components/small-title";
-import { StyledContent, StyledLinks, StyledList, StyledShapes } from "./styles";
-import { Divider, Typography } from "@mui/material";
-import SvgColor from "@/components/svg-color";
-import Cuboid from "@/components/shapes/cuboid";
-import { cuboids, spheres } from "./data";
-import Sphere from "@/components/shapes/sphere";
-import MotionUp from "@/components/motion-up";
-import { motion } from "motion/react";
-import Image from "next/image";
+import SmallTitle from '@/components/small-title';
+import { StyledContent, StyledLinks, StyledList, StyledShapes } from './styles';
+import { Divider, Typography } from '@mui/material';
+import SvgColor from '@/components/svg-color';
+import Cuboid from '@/components/shapes/cuboid';
+import { cuboids, spheres } from './data';
+import Sphere from '@/components/shapes/sphere';
+import MotionUp from '@/components/motion-up';
+import { motion } from 'motion/react';
+import Image from 'next/image';
 
 export default function HomeOther({ isInView }) {
   return (
@@ -67,9 +67,7 @@ export default function HomeOther({ isInView }) {
 
             <div>
               <SvgColor src="/icons/info.svg" />
-              <Typography variant="h5">
-                با ReactNative آشنایی دارم
-              </Typography>
+              <Typography variant="h5">با ReactNative آشنایی دارم</Typography>
             </div>
 
             <div>
@@ -90,7 +88,7 @@ export default function HomeOther({ isInView }) {
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
-          <Divider sx={{ my: 4 }}/>
+          <Divider sx={{ my: 4 }} />
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.3 }}>

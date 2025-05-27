@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { StyledDots, StyledSlider } from "./styles";
-import useSlider from "./useSlider";
+import { StyledDots, StyledSlider } from './styles';
+import useSlider from './useSlider';
 
-import HomeHello from "./home-hello";
-import HomeIntroduction from "./home-introduction";
-import HomeExperience from "./home-experience";
-import HomeSkills from "./home-skills";
-import HomeLinks from "./home-links";
-import HomeOther from "./home-other";
+import HomeHello from './home-hello';
+import HomeIntroduction from './home-introduction';
+import HomeExperience from './home-experience';
+import HomeSkills from './home-skills';
+import HomeLinks from './home-links';
+import HomeOther from './home-other';
 
 const titles = [
-  "سلام",
-  "معرفی",
-  "مهارت",
-  "سابقه",
-  "لینک",
-  "دیگر",
+  'سلام',
+  'معرفی',
+  'مهارت',
+  'سابقه',
+  'لینک',
+  'دیگر',
   //
 ];
 
@@ -29,8 +29,8 @@ export default function HomePage() {
         ref={sliderRef}
         className="keen-slider"
         style={{
-          visibility: loaded ? undefined : "hidden",
-          userSelect: "unset",
+          visibility: loaded ? undefined : 'hidden',
+          userSelect: 'unset',
         }}
       >
         <div className="keen-slider__slide">

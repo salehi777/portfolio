@@ -1,9 +1,9 @@
-import SmallTitle from "@/components/small-title";
-import { StyledContent, StyledProject } from "./styles";
-import { Grid, Typography } from "@mui/material";
-import { projects } from "./data";
-import MotionUp from "@/components/motion-up";
-import Image from "next/image";
+import SmallTitle from '@/components/small-title';
+import { StyledContent, StyledProject } from './styles';
+import { Grid, Typography } from '@mui/material';
+import { projects } from './data';
+import MotionUp from '@/components/motion-up';
+import Image from 'next/image';
 
 export default function HomeLinks({ isInView }) {
   return (

@@ -1,5 +1,5 @@
-import { BoxProps } from "@mui/material";
-import { StyledCuboid } from "./styles";
+import { BoxProps } from '@mui/material';
+import { StyledCuboid } from './styles';
 
 export interface CuboidProps extends BoxProps {
   width: number;

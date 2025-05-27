@@ -1,92 +1,92 @@
-import { TAN } from "@/constants";
-import { styled } from "@mui/material/styles";
+import { TAN } from '@/constants';
+import { styled } from '@mui/material/styles';
 
-export const StyledContent = styled("div")(({ theme }) => ({
-  width: "calc(100vw - 750px)",
-  height: "100%",
-  padding: "120px 140px 100px 100px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  position: "relative",
+export const StyledContent = styled('div')(({ theme }) => ({
+  width: 'calc(100vw - 750px)',
+  height: '100%',
+  padding: '120px 140px 100px 100px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  position: 'relative',
 
-  "[data-scroll]": {
+  '[data-scroll]': {
     marginTop: 140,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
 
-    ">div": {
+    '>div': {
       width: 55,
       height: 55,
-      borderRadius: "100%",
+      borderRadius: '100%',
       marginLeft: 14,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      boxShadow: "#b5b5b5 0px 3px 8px",
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: '#b5b5b5 0px 3px 8px',
     },
   },
 
-  [theme.breakpoints.down("xl")]: {
-    width: "calc(100vw - 600px)",
-    padding: "120px 65px 100px 70px",
+  [theme.breakpoints.down('xl')]: {
+    width: 'calc(100vw - 600px)',
+    padding: '120px 65px 100px 70px',
   },
-  [theme.breakpoints.down("lg")]: {
-    width: "calc(100vw - 430px)",
+  [theme.breakpoints.down('lg')]: {
+    width: 'calc(100vw - 430px)',
   },
-  [theme.breakpoints.down("md")]: {
-    width: "100%",  
-    padding: "120px 50px 100px 50px",
-    "[data-scroll]": {
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+    padding: '120px 50px 100px 50px',
+    '[data-scroll]': {
       marginTop: 60,
     },
   },
 }));
 
-export const StyledShapes = styled("div")(({ theme }) => ({
-  position: "absolute",
-  width: "100%",
-  height: "100%",
+export const StyledShapes = styled('div')(({ theme }) => ({
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
   top: 0,
   right: 0,
 
-  "[data-shapes-1]": {
-    position: "absolute",
+  '[data-shapes-1]': {
+    position: 'absolute',
     left: 0,
     bottom: 0,
     top: 0,
-    transformOrigin: "left bottom",
+    transformOrigin: 'left bottom',
 
-    ">div:first-of-type": {
-      position: "absolute",
-      height: "100%",
+    '>div:first-of-type': {
+      position: 'absolute',
+      height: '100%',
       width: 500,
       bottom: 0,
       left: 0,
-      background: "#5b46cc",
+      background: '#5b46cc',
     },
-    ">div:last-of-type": {
-      position: "absolute",
+    '>div:last-of-type': {
+      position: 'absolute',
       height: 750 / TAN,
       width: 750,
       bottom: 0,
       left: 0,
-      background: "#b1b8f9",
-      clipPath: "polygon(0 0, 0% 100%, 100% 100%)",
+      background: '#b1b8f9',
+      clipPath: 'polygon(0 0, 0% 100%, 100% 100%)',
       div: {
-        position: "absolute",
-        height: "50%",
-        width: "33.33%",
+        position: 'absolute',
+        height: '50%',
+        width: '33.33%',
         bottom: 0,
         right: 0,
-        background: "#474bfe",
+        background: '#474bfe',
       },
     },
   },
 
-  "[data-shapes-2]": {
-    position: "absolute",
+  '[data-shapes-2]': {
+    position: 'absolute',
     left: 0,
     bottom: 0,
 
@@ -148,28 +148,28 @@ export const StyledShapes = styled("div")(({ theme }) => ({
     },
   },
 
-  [theme.breakpoints.up("xl")]: {
-    "[data-shapes-1]": {
-      transform: "scale(1.2)",
+  [theme.breakpoints.up('xl')]: {
+    '[data-shapes-1]': {
+      transform: 'scale(1.2)',
     },
-    "[data-shapes-2]": {
-      transform: "scale(1.1)",
+    '[data-shapes-2]': {
+      transform: 'scale(1.1)',
       left: 50,
       bottom: 12,
     },
   },
-  [theme.breakpoints.down("lg")]: {
-    "[data-shapes-1]": {
-      transform: "scale(.8)",
-      ">div:first-of-type": {
-        height: "125%",
+  [theme.breakpoints.down('lg')]: {
+    '[data-shapes-1]': {
+      transform: 'scale(.8)',
+      '>div:first-of-type': {
+        height: '125%',
       },
     },
-    "[data-shapes-2]": {
-      transform: "scale(.8)",
+    '[data-shapes-2]': {
+      transform: 'scale(.8)',
     },
   },
-  [theme.breakpoints.down("md")]: {
-    display: "none",
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
   },
 }));

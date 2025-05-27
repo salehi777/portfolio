@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Header from "./header";
-import { StyledLayout } from "./styles";
+import Header from './header';
+import { StyledLayout } from './styles';
 
 export default function GeneralLayout({
   children,

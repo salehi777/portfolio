@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { StyledHeader } from "./styles";
+import Image from 'next/image';
+import { StyledHeader } from './styles';
 
 export default function Header() {
   return (

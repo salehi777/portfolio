@@ -1,11 +1,11 @@
-import SmallTitle from "@/components/small-title";
-import { StyledContent, StyledShapes } from "./styles";
-import { Typography } from "@mui/material";
-import SvgColor from "@/components/svg-color";
-import Cuboid from "@/components/shapes/cuboid";
-import { cuboids } from "./data";
-import MotionUp from "@/components/motion-up";
-import { motion } from "motion/react";
+import SmallTitle from '@/components/small-title';
+import { StyledContent, StyledShapes } from './styles';
+import { Typography } from '@mui/material';
+import SvgColor from '@/components/svg-color';
+import Cuboid from '@/components/shapes/cuboid';
+import { cuboids } from './data';
+import MotionUp from '@/components/motion-up';
+import { motion } from 'motion/react';
 
 export default function HomeIntroduction({ isInView }) {
   return (
@@ -39,11 +39,11 @@ export default function HomeIntroduction({ isInView }) {
         <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
           <div data-lined>
             {[
-              "محمد صالحی",
-              "توسعه‌دهنده React",
-              "متولد ۱۳۷۵",
-              "ساکن نجف‌آباد",
-              "لیسانس کامپیوتر",
+              'محمد صالحی',
+              'توسعه‌دهنده React',
+              'متولد ۱۳۷۵',
+              'ساکن نجف‌آباد',
+              'لیسانس کامپیوتر',
             ].map((text) => (
               <div key={text}>{text}</div>
             ))}
@@ -51,7 +51,7 @@ export default function HomeIntroduction({ isInView }) {
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
-          <Typography variant="h5" mt={"30px"} mb={"40px"}>
+          <Typography variant="h5" mt={'30px'} mb={'40px'}>
             حدود ۹ ساله یادگیری برنامه‌نویسی رو شروع کردم و از ۶ سال پیش به صورت
             متمرکز روی JavaScript و React کار میکردم.&nbsp;به صورت حضوری و بیشتر
             به صورت دورکاری سابقه کار دارم.

@@ -1,10 +1,10 @@
-import SmallTitle from "@/components/small-title";
-import { StyledContent, StyledShapes, StyledSkill } from "./styles";
-import { Grid } from "@mui/material";
-import Cuboid from "@/components/shapes/cuboid";
-import { cuboids, skills } from "./data";
-import MotionUp from "@/components/motion-up";
-import { motion } from "motion/react";
+import SmallTitle from '@/components/small-title';
+import { StyledContent, StyledShapes, StyledSkill } from './styles';
+import { Grid } from '@mui/material';
+import Cuboid from '@/components/shapes/cuboid';
+import { cuboids, skills } from './data';
+import MotionUp from '@/components/motion-up';
+import { motion } from 'motion/react';
 
 export default function HomeSkills({ isInView }) {
   return (
@@ -56,7 +56,7 @@ export default function HomeSkills({ isInView }) {
                     a 15.9155 15.9155 0 0 1 0 -31.831"
                       animate={
                         isInView
-                          ? { strokeDasharray: ["0 100", `${percent} 100`] }
+                          ? { strokeDasharray: ['0 100', `${percent} 100`] }
                           : {}
                       }
                       transition={{ duration: 1 }}

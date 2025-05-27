@@ -1,6 +1,6 @@
 //Note Not getting used anywhere
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export default function InstallButton() {
   const [deferredPrompt, setDeferredPrompt] = useState<Event | null>(null);
@@ -13,11 +13,11 @@ export default function InstallButton() {
       setIsInstallable(true);
     };
 
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 
     return () => {
       window.removeEventListener(
-        "beforeinstallprompt",
+        'beforeinstallprompt',
         handleBeforeInstallPrompt
       );
     };

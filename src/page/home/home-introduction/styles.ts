@@ -1,69 +1,69 @@
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
-export const StyledContent = styled("div")(({ theme }) => ({
-  width: "calc(100vw - 350px)",
-  padding: "160px 140px 100px 100px",
-  position: "relative",
+export const StyledContent = styled('div')(({ theme }) => ({
+  width: 'calc(100vw - 350px)',
+  padding: '160px 140px 100px 100px',
+  position: 'relative',
 
-  "[data-lined]": {
+  '[data-lined]': {
     div: {
-      display: "flex",
-      alignItems: "center",
+      display: 'flex',
+      alignItems: 'center',
       fontSize: 20,
-      margin: "8px 58px 8px 0",
+      margin: '8px 58px 8px 0',
 
-      "&:before": {
+      '&:before': {
         content: '""',
         height: 2,
         width: 22,
         marginLeft: 14,
-        display: "block",
+        display: 'block',
         background: theme.palette.text.primary,
       },
     },
   },
 
-  "[data-contacts]": {
+  '[data-contacts]': {
     fontSize: 20,
 
     a: {
-      display: "flex",
-      alignItems: "center",
+      display: 'flex',
+      alignItems: 'center',
 
-      ".svg-color": { width: 30, height: 30 },
+      '.svg-color': { width: 30, height: 30 },
 
       div: {
         marginRight: 8,
-        direction: "ltr",
+        direction: 'ltr',
       },
 
-      "&:first-of-type": {
+      '&:first-of-type': {
         marginBottom: 12,
       },
     },
   },
 
-  [theme.breakpoints.down("lg")]: {
-    width: "calc(100vw - 275px)",
-    padding: "140px 75px 100px 75px",
+  [theme.breakpoints.down('lg')]: {
+    width: 'calc(100vw - 275px)',
+    padding: '140px 75px 100px 75px',
   },
-  [theme.breakpoints.down("md")]: {
-    width: "100%",
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
   },
-  [theme.breakpoints.down("sm")]: {
-    padding: "100px 30px 100px 30px",
+  [theme.breakpoints.down('sm')]: {
+    padding: '100px 30px 100px 30px',
   },
 }));
 
-export const StyledShapes = styled("div")(({ theme }) => ({
-  position: "absolute",
-  width: "100%",
-  height: "100%",
+export const StyledShapes = styled('div')(({ theme }) => ({
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
   top: 0,
   right: 0,
 
-  "[data-shapes]": {
-    position: "absolute",
+  '[data-shapes]': {
+    position: 'absolute',
     left: 0,
     top: 0, // in home-hello it's bottom:0 because shapes designed from bottom
     '[data-id="c_1"]': {
@@ -80,13 +80,13 @@ export const StyledShapes = styled("div")(({ theme }) => ({
     },
   },
 
-  [theme.breakpoints.down("lg")]: {
-    "[data-shapes]": {
+  [theme.breakpoints.down('lg')]: {
+    '[data-shapes]': {
       top: 50,
-      transform: "scale(.8)",
+      transform: 'scale(.8)',
     },
   },
-  [theme.breakpoints.down("md")]: {
-    display: "none",
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
   },
 }));

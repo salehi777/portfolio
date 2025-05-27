@@ -1,113 +1,113 @@
 export const cuboids = [
   {
-    id: "c_1",
+    id: 'c_1',
     width: 80,
     height: 80,
     length: 160,
-    color: "#d3d0ff",
+    color: '#d3d0ff',
     animateInfo: { x: [-50, 0] },
   },
   {
-    id: "c_2",
+    id: 'c_2',
     width: 80,
     height: 80,
     length: 80,
-    color: "#d3d0ff",
+    color: '#d3d0ff',
     animateInfo: { x: [-100, 0] },
   },
   {
-    id: "c_3",
+    id: 'c_3',
     width: 80,
     height: 80,
     length: 80,
-    color: "#d3d0ff",
+    color: '#d3d0ff',
     animateInfo: { x: [-50, 0] },
   },
   {
-    id: "c_4",
+    id: 'c_4',
     width: 80,
     height: 80,
     length: 80,
-    color: "#ffe0f2",
+    color: '#ffe0f2',
     animateInfo: { x: [-50, 0] },
   },
 ];
 
 export const skills = [
   {
-    title: "HTML",
+    title: 'HTML',
     percent: 95,
   },
   {
-    title: "CSS",
+    title: 'CSS',
     percent: 95,
   },
   {
-    title: "JavaScript",
+    title: 'JavaScript',
     percent: 90,
   },
   {
-    title: "React",
+    title: 'React',
     percent: 90,
   },
   {
-    title: "Responsive",
+    title: 'Responsive',
     percent: 90,
   },
   {
-    title: "Next",
+    title: 'Next',
     percent: 80,
   },
   {
-    title: "Git",
+    title: 'Git',
     percent: 80,
   },
   {
-    title: "Sass",
+    title: 'Sass',
     percent: 80,
   },
   {
-    title: "Redux/Zustand",
+    title: 'Redux/Zustand',
     percent: 70,
   },
   {
-    title: "TypeScript",
+    title: 'TypeScript',
     percent: 60,
   },
   {
-    title: "Antd",
+    title: 'Antd',
     percent: 60,
   },
   {
-    title: "Agile",
+    title: 'Agile',
     percent: 60,
   },
   {
-    title: "Socket/Realtime",
+    title: 'Socket/Realtime',
     percent: 50,
   },
   {
-    title: "Tailwind",
+    title: 'Tailwind',
     percent: 50,
   },
   {
-    title: "Electron",
+    title: 'Electron',
     percent: 30,
   },
   {
-    title: "Framer Motion",
+    title: 'Framer Motion',
     percent: 40,
   },
   {
-    title: "Extension",
+    title: 'Extension',
     percent: 30,
   },
   {
-    title: "PWA",
+    title: 'PWA',
     percent: 30,
   },
   {
-    title: "Monorepo",
+    title: 'Monorepo',
     percent: 20,
   },
 ].sort((a, b) =>

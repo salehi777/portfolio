@@ -1,4 +1,4 @@
-import { motion, Transition } from "motion/react";
+import { motion, Transition } from 'motion/react';
 
 interface MotionUpProps {
   children: React.ReactNode;

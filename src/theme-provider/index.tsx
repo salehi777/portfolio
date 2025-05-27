@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import MuiGlobalStyles from "./global-styles";
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import "keen-slider/keen-slider.min.css";
+import MuiGlobalStyles from './global-styles';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import 'keen-slider/keen-slider.min.css';
 
 const theme = createTheme({
-  direction: "rtl",
+  direction: 'rtl',
 
   palette: {
     primary: {
-      main: "#4a4dff",
+      main: '#4a4dff',
     },
     secondary: {
-      main: "#ffc4ba",
+      main: '#ffc4ba',
     },
-    divider: "#b4b4b4",
+    divider: '#b4b4b4',
   },
 
   typography: {
-    fontFamily: "Vazirmatn, sans-serif",
+    fontFamily: 'Vazirmatn, sans-serif',
 
     h1: {
       fontWeight: 600,
@@ -63,14 +63,14 @@ const theme = createTheme({
     MuiTypography: {
       defaultProps: {
         variantMapping: {
-          h1: "div",
-          h2: "div",
-          h3: "div",
-          h4: "div",
-          h5: "div",
-          h6: "div",
-          body1: "div",
-          body2: "div",
+          h1: 'div',
+          h2: 'div',
+          h3: 'div',
+          h4: 'div',
+          h5: 'div',
+          h6: 'div',
+          body1: 'div',
+          body2: 'div',
         },
       },
     },

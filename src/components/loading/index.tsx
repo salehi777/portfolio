@@ -1,4 +1,4 @@
-import { StyledLoading } from "./styles";
+import { StyledLoading } from './styles';
 
 interface LoadingProps {
   size: number;
