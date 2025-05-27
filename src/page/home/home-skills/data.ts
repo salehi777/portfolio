@@ -67,6 +67,10 @@ export const skills = [
     percent: 80,
   },
   {
+    title: "Redux/Zustand",
+    percent: 70,
+  },
+  {
     title: "TypeScript",
     percent: 60,
   },
@@ -101,6 +105,10 @@ export const skills = [
   {
     title: "PWA",
     percent: 30,
+  },
+  {
+    title: "Monorepo",
+    percent: 20,
   },
 ].sort((a, b) =>
   a.percent < b.percent ? 1 : a.percent === b.percent ? 0 : -1

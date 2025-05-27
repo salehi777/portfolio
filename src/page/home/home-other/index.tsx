@@ -90,7 +90,7 @@ export default function HomeOther({ isInView }) {
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
-          <Divider sx={{ my: 4 }} height={2} />
+          <Divider sx={{ my: 4 }}/>
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.3 }}>

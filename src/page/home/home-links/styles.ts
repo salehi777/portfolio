@@ -1,7 +1,11 @@
 import { styled } from "@mui/material/styles";
 
 export const StyledContent = styled("div")(({ theme }) => ({
-  padding: "160px 140px 100px 100px",
+  padding: "120px 120px 100px 120px",
+
+  [theme.breakpoints.down("lg")]: {
+    padding: "120px 90px 100px 90px",
+  },
 }));
 
 export const StyledProject = styled("a")(({ theme }) => ({
@@ -25,11 +29,11 @@ export const StyledProject = styled("a")(({ theme }) => ({
     padding: "24px 16px 8px",
     background: "#e9e9e9",
     flex: 1,
-    // ">div": {
-    //   display: "flex",
-    //   alignItems: "center",
-    //   color: theme.palette.grey[600],
-    //   ".svg-color": { marginLeft: 8, width: 20, height: 20 },
-    // },
+  },
+
+  [theme.breakpoints.down("lg")]: {
+    ">span": {
+      minHeight: 200,
+    },
   },
 }));

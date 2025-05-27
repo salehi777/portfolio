@@ -40,7 +40,12 @@ export default function HomeSkills({ isInView }) {
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-          <Grid container rowSpacing={3} columnSpacing={3} mt={4}>
+          <Grid
+            container
+            rowSpacing={{ xs: 1.5, lg: 3 }}
+            columnSpacing={{ xs: 1.5, lg: 3 }}
+            mt={{ xs: 2, lg: 4 }}
+          >
             {skills.map(({ title, percent }) => (
               <Grid key={title}>
                 <StyledSkill>

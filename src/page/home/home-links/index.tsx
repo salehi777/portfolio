@@ -15,7 +15,7 @@ export default function HomeLinks({ isInView }) {
       <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
         <Grid container columnSpacing={3} rowSpacing={4} mt={4}>
           {projects.map(({ title, link, image, note }) => (
-            <Grid key={title} size={4}>
+            <Grid key={title} size={{ xs: 6, lg: 4 }}>
               <StyledProject href={link} target="_blank">
                 <span style={{ backgroundImage: `url(${image})` }} />
                 <div>

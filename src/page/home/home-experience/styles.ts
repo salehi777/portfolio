@@ -1,9 +1,13 @@
 import { styled } from "@mui/material/styles";
 
 export const StyledContent = styled("div")(({ theme }) => ({
-  padding: "160px 140px 100px 100px",
+  padding: "160px 120px 100px 120px",
   maxWidth: 1400,
   margin: "0 auto",
+
+  [theme.breakpoints.down("lg")]: {
+    padding: "160px 90px 100px 90px",
+  },
 }));
 
 export const StyledJob = styled("div")(({ theme }) => ({
