@@ -1,13 +1,32 @@
-https://github.com/minimal-ui-kit/material-kit-react/blob/69e780a40c455d664b2e13c525faf1d492a072a7/src/components/svg-color/svg-color.tsx
+# Portfolio
 
-https://codepen.io/sergiopedercini/pen/jmKdbj
+This repository is source code for my Portfolio. It's created to be representation of my skills, projects and accomplishments.
 
-https://dribbble.com/shots/422424-Skills-Dark
+### [🌐 View Site](https://portfolio-rho-brown-18.vercel.app/)
 
-https://github.com/motiondivision/motion/issues/914#issuecomment-2888550362
+---
 
-readme
+### 🙏 Inspirations
 
-theme
+[Design](https://dribbble.com/shots/14013010-Folio-Designer-Portfolio-Kit-Animation)
+&nbsp;&nbsp;&nbsp;&nbsp;
+[Design](https://dribbble.com/shots/422424-Skills-Dark)
+&nbsp;&nbsp;&nbsp;&nbsp;
+[Code](https://codepen.io/sergiopedercini/pen/jmKdbj)
+&nbsp;&nbsp;&nbsp;&nbsp;
+[Code](https://dev.to/joeattardi/let-s-make-a-css-cube-1fed)
 
-language
+---
+
+### ✅ To-Do
+
+- [x] README
+- [ ] Theme
+- [ ] Language
+
+---
+
+### ✉️ Contact
+
+- **Mobile**:+98 913 727 6118
+- **Email**: msalehy77@gmail.com
