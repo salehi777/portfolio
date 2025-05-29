@@ -59,31 +59,31 @@ export const StyledShapes = styled('div')(({ theme }) => ({
     bottom: 0,
 
     '[data-id="c_1"]': {
-      top: -414,
+      top: -464,
       left: 341,
     },
     '[data-id="c_2"]': {
-      top: -562,
+      top: -632,
       left: 220,
     },
     '[data-id="c_3"]': {
-      top: -348,
+      top: -398,
       left: 98,
     },
     '[data-id="c_4"]': {
-      top: -275,
+      top: -255,
       left: 220,
     },
     '[data-id="s_1"]': {
-      top: -439,
+      top: -459,
       left: 200,
     },
     '[data-id="s_2"]': {
-      top: -571,
+      top: -621,
       left: 326,
     },
     '[data-id="s_3"]': {
-      top: -490,
+      top: -540,
       left: 86,
     },
   },

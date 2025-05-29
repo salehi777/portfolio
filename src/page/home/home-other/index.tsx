@@ -13,73 +13,6 @@ import Slider from '@/components/slider';
 export default function HomeOther({ loaded, isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
-  const content1 = [
-    'در سمت بک اند کمی با Express.JS و کمی بیشتر با DJango کار کردم',
-    'با ReactNative آشنایی دارم',
-    'ساختار داده‌ها، الگوریتم و دیزاین پترن‌ها را در حد دروس دانشگاه یاد گرفته بودم(البته تقریبا ۷ سالی گذشته)',
-    'با ابزارهای کمکی AI آشنایی دارم',
-  ].map((title) => (
-    <div key={title} data-list-item>
-      <SvgColor src="/icons/info.svg" />
-      <Typography variant="h5">{title}</Typography>
-    </div>
-  ));
-
-  const content2 = (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        height: '100%',
-      }}
-    >
-      <Divider sx={{ mt: 1, mb: 4, display: { xs: 'none', sm: 'block' } }} />
-      <div data-link-item>
-        <Typography variant="h6">کد این سایت:</Typography>
-        <a
-          href="https://github.com/salehi777/portfolio"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/icons/github.svg"
-            width={40}
-            height={40}
-            alt="github logo"
-          />
-        </a>
-      </div>
-      <div data-link-item>
-        <Typography variant="h6">ایده‌های طراحی:</Typography>
-        <a
-          href="https://dribbble.com/shots/14013010-Folio-Designer-Portfolio-Kit-Animation"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/icons/dribbble.svg"
-            width={40}
-            height={40}
-            alt="dribbble logo"
-          />
-        </a>
-        <a
-          href="https://dribbble.com/shots/422424-Skills-Dark"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/icons/dribbble.svg"
-            width={40}
-            height={40}
-            alt="dribbble logo"
-          />
-        </a>
-      </div>
-    </Box>
-  );
-
   return (
     <>
       <StyledShapes>
@@ -126,17 +59,17 @@ export default function HomeOther({ loaded, isInView }) {
           (!isMobile ? (
             <>
               <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-                {content1}
+                {Content1()}
               </MotionUp>
               <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
-                {content2}
+                <Content2 />
               </MotionUp>
             </>
           ) : (
             <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
               <Slider>
-                {content1}
-                {content2}
+                {Content1()}
+                <Content2 />
               </Slider>
             </MotionUp>
           ))}
@@ -144,3 +77,71 @@ export default function HomeOther({ loaded, isInView }) {
     </>
   );
 }
+
+const Content1 = () =>
+  [
+    'در سمت بک اند کمی با Express.JS و کمی بیشتر با DJango کار کردم',
+    'با ReactNative آشنایی دارم',
+    'ساختار داده‌ها، الگوریتم و دیزاین پترن‌ها را در حد دروس دانشگاه یاد گرفته بودم(البته تقریبا ۷ سالی گذشته)',
+    'با ابزارهای کمکی AI آشنایی دارم',
+  ].map((title) => (
+    <div key={title} data-list-item>
+      <SvgColor src="/icons/info.svg" />
+      <Typography variant="h5">{title}</Typography>
+    </div>
+  ));
+
+const Content2 = () => (
+  <Box
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      height: '100%',
+    }}
+  >
+    <Divider sx={{ mt: 1, mb: 4, display: { xs: 'none', sm: 'block' } }} />
+    <div data-link-item>
+      <Typography variant="h6">کد این سایت:</Typography>
+      <a
+        href="https://github.com/salehi777/portfolio"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          src="/icons/github.svg"
+          width={40}
+          height={40}
+          alt="github logo"
+        />
+      </a>
+    </div>
+    <div data-link-item>
+      <Typography variant="h6">ایده‌های طراحی:</Typography>
+      <a
+        href="https://dribbble.com/shots/14013010-Folio-Designer-Portfolio-Kit-Animation"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          src="/icons/dribbble.svg"
+          width={40}
+          height={40}
+          alt="dribbble logo"
+        />
+      </a>
+      <a
+        href="https://dribbble.com/shots/422424-Skills-Dark"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          src="/icons/dribbble.svg"
+          width={40}
+          height={40}
+          alt="dribbble logo"
+        />
+      </a>
+    </div>
+  </Box>
+);

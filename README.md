@@ -5,3 +5,9 @@ https://codepen.io/sergiopedercini/pen/jmKdbj
 https://dribbble.com/shots/422424-Skills-Dark
 
 https://github.com/motiondivision/motion/issues/914#issuecomment-2888550362
+
+readme
+
+theme
+
+language

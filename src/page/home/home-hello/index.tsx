@@ -71,6 +71,7 @@ export default function HomeHello({ isInView }) {
               <SvgColor src="/icons/arrows-down.svg" />
             </div>
             <span>اسکرول کنید</span>
+            <span>صفحه را به بالا بکشید</span>
           </div>
         </MotionUp>
       </StyledContent>

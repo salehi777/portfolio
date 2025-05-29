@@ -6,7 +6,7 @@ import MotionUp from '@/components/motion-up';
 import Image from 'next/image';
 import Slider from '@/components/slider';
 
-export default function HomeLinks({ loaded, isInView }) {
+export default function HomeProjects({ loaded, isInView }) {
   return (
     <StyledContent>
       <MotionUp isActive={isInView}>
@@ -23,7 +23,7 @@ export default function HomeLinks({ loaded, isInView }) {
           >
             {projects.map(({ title, link, image, note }) => (
               <StyledProject key={title}>
-                <a href={link} target="_blank">
+                <a href={link} target="_blank" rel="noopener noreferrer">
                   <span style={{ backgroundImage: `url(${image})` }} />
                   <div>
                     {note && (

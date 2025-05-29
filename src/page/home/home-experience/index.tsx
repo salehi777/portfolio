@@ -43,14 +43,14 @@ export default function HomeExperience({ loaded, isInView }) {
   );
 }
 
-const Job = ({ company, start_date, end_date, note, link }) => {
+const Job = ({ company, start_date, end_date, note, link }: any) => {
   return (
     <StyledJob>
       <div>
         <SvgColor src="/icons/building.svg" />
         <Typography variant="h6">{company}</Typography>
         {link && (
-          <a href={link} target="_blank">
+          <a href={link} target="_blank" rel="noopener noreferrer">
             <SvgColor src="/icons/link.svg" />
           </a>
         )}

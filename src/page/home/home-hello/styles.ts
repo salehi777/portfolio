@@ -26,6 +26,23 @@ export const StyledContent = styled('div')(({ theme }) => ({
       justifyContent: 'center',
       boxShadow: '#b5b5b5 0px 3px 8px',
     },
+
+    '>span:last-of-type': {
+      display: 'none',
+    },
+    [theme.breakpoints.down('md')]: {
+      '>div': {
+        '.svg-color': {
+          transform: 'rotate(180deg)',
+        },
+      },
+      '>span:first-of-type': {
+        display: 'none',
+      },
+      '>span:last-of-type': {
+        display: 'block',
+      },
+    },
   },
 
   [theme.breakpoints.down('xl')]: {

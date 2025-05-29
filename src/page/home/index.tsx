@@ -7,7 +7,7 @@ import HomeHello from './home-hello';
 import HomeIntroduction from './home-introduction';
 import HomeExperience from './home-experience';
 import HomeSkills from './home-skills';
-import HomeLinks from './home-links';
+import HomeProjects from './home-projects';
 import HomeOther from './home-other';
 
 const titles = [
@@ -46,7 +46,7 @@ export default function HomePage() {
           <HomeExperience loaded={loaded} isInView={currentSlide === 3} />
         </div>
         <div className="keen-slider__slide">
-          <HomeLinks loaded={loaded} isInView={currentSlide === 4} />
+          <HomeProjects loaded={loaded} isInView={currentSlide === 4} />
         </div>
         <div className="keen-slider__slide">
           <HomeOther loaded={loaded} isInView={currentSlide === 5} />

@@ -38,8 +38,8 @@ export default function HomeSkills({ loaded, isInView }) {
       </StyledShapes>
 
       <StyledContent>
-        <MotionUp isActive={isInView} mb={{ xs: 14, sm: 18, md: 3, lg: 6 }}>
-          <SmallTitle title="مهارت‌ها" />
+        <MotionUp isActive={isInView}>
+          <SmallTitle title="مهارت‌ها" mb={{ xs: 14, sm: 18, md: 3, lg: 6 }} />
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.1 }}>

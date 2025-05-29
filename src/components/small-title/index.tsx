@@ -1,7 +1,7 @@
 import { BoxProps, Typography } from '@mui/material';
 import { StyledSmallTitle } from './styles';
 
-interface SmallTitleProps extends BoxProps {
+interface SmallTitleProps extends Omit<BoxProps, 'title'> {
   title: React.ReactNode;
 }
 

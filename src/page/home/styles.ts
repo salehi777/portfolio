@@ -6,15 +6,14 @@ export const StyledSlider = styled('div')(({ theme }) => ({
 
 export const StyledDots = styled('div')(({ theme }) => ({
   position: 'fixed',
-  bottom: 5,
-  right: 5,
+  bottom: 8,
+  right: 8,
 
   '>div': {
     position: 'absolute',
     top: -100,
     transformOrigin: '0 100px',
     cursor: 'pointer',
-    padding: '10px 5px',
 
     '&:nth-of-type(2)': {
       animation: `${rotate(-18)} 1s ease forwards`,
@@ -50,7 +49,9 @@ export const StyledDots = styled('div')(({ theme }) => ({
       transformOrigin: '100% 0%',
       top: 0,
       right: 'calc(50% - 12px)',
+      padding: '0px 12px',
       userSelect: 'none',
+      outline: 'none',
     },
 
     '&[data-active=true]': {
