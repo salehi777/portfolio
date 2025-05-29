@@ -1,34 +1,42 @@
 import SmallTitle from '@/components/small-title';
 import { StyledContent, StyledProject } from './styles';
-import { Grid, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { projects } from './data';
 import MotionUp from '@/components/motion-up';
 import Image from 'next/image';
+import Slider from '@/components/slider';
 
-export default function HomeLinks({ isInView }) {
+export default function HomeLinks({ loaded, isInView }) {
   return (
     <StyledContent>
       <MotionUp isActive={isInView}>
-        <SmallTitle title="نمونه کار" />
+        <SmallTitle title="نمونه کار" mb={{ xs: 2, md: 4 }} />
       </MotionUp>
 
       <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-        <Grid container columnSpacing={3} rowSpacing={4} mt={4}>
-          {projects.map(({ title, link, image, note }) => (
-            <Grid key={title} size={{ xs: 6, lg: 4 }}>
-              <StyledProject href={link} target="_blank">
-                <span style={{ backgroundImage: `url(${image})` }} />
-                <div>
-                  {note && (
-                    <div>
-                      <Typography>{note}</Typography>
-                    </div>
-                  )}
-                </div>
+        {loaded && (
+          <Slider
+            perViews={[
+              { breakpoint: 'xs', perView: 1 },
+              { breakpoint: 'lg', perView: 3 },
+            ]}
+          >
+            {projects.map(({ title, link, image, note }) => (
+              <StyledProject key={title}>
+                <a href={link} target="_blank">
+                  <span style={{ backgroundImage: `url(${image})` }} />
+                  <div>
+                    {note && (
+                      <div>
+                        <Typography>{note}</Typography>
+                      </div>
+                    )}
+                  </div>
+                </a>
               </StyledProject>
-            </Grid>
-          ))}
-        </Grid>
+            ))}
+          </Slider>
+        )}
       </MotionUp>
     </StyledContent>
   );

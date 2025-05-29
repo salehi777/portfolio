@@ -3,20 +3,28 @@ import { styled } from '@mui/material/styles';
 
 export const StyledContent = styled('div')(({ theme }) => ({
   padding: '140px 80px 100px 80px',
+  display: 'flex',
+  flexDirection: 'column',
   position: 'relative',
 
   [theme.breakpoints.down('lg')]: {
     padding: '110px 60px 100px 60px',
+  },
+  [theme.breakpoints.down('md')]: {
+    padding: '150px 30px 100px 30px',
   },
 }));
 
 export const StyledSkill = styled('div')(({ theme }) => ({
   position: 'relative',
   display: 'flex',
+  justifyContent: 'center',
+  width: 120,
+  height: 120,
 
   svg: {
-    width: 120,
-    height: 120,
+    width: '100%',
+    height: '100%',
 
     path: {
       stroke: theme.palette.primary.main,
@@ -50,6 +58,17 @@ export const StyledSkill = styled('div')(({ theme }) => ({
     right: '50%',
     top: 0,
     transformOrigin: `center ${120 / 2 + 15 / 2}px`,
+  },
+
+  [theme.breakpoints.down('md')]: {
+    width: 110,
+    height: 110,
+    div: {
+      fontSize: 16,
+    },
+    span: {
+      transformOrigin: `center ${110 / 2 + 15 / 2}px`,
+    },
   },
 }));
 
@@ -119,5 +138,9 @@ export const StyledShapes = styled('div')(({ theme }) => ({
     '[data-shapes-2]': {
       transform: 'scale(.85)',
     },
+  },
+
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
   },
 }));

@@ -40,6 +40,7 @@ const theme = createTheme({
     h5: {
       fontWeight: 500,
       fontSize: 20,
+      lineHeight:'inherit'
     },
     h6: {
       fontWeight: 500,

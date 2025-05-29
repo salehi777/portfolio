@@ -1,6 +1,6 @@
 import SmallTitle from '@/components/small-title';
-import { StyledContent, StyledLinks, StyledList, StyledShapes } from './styles';
-import { Divider, Typography } from '@mui/material';
+import { StyledContent, StyledShapes } from './styles';
+import { Box, Divider, Typography, useMediaQuery } from '@mui/material';
 import SvgColor from '@/components/svg-color';
 import Cuboid from '@/components/shapes/cuboid';
 import { cuboids, spheres } from './data';
@@ -8,16 +8,82 @@ import Sphere from '@/components/shapes/sphere';
 import MotionUp from '@/components/motion-up';
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import Slider from '@/components/slider';
 
-export default function HomeOther({ isInView }) {
+export default function HomeOther({ loaded, isInView }) {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+
+  const content1 = [
+    'در سمت بک اند کمی با Express.JS و کمی بیشتر با DJango کار کردم',
+    'با ReactNative آشنایی دارم',
+    'ساختار داده‌ها، الگوریتم و دیزاین پترن‌ها را در حد دروس دانشگاه یاد گرفته بودم(البته تقریبا ۷ سالی گذشته)',
+    'با ابزارهای کمکی AI آشنایی دارم',
+  ].map((title) => (
+    <div key={title} data-list-item>
+      <SvgColor src="/icons/info.svg" />
+      <Typography variant="h5">{title}</Typography>
+    </div>
+  ));
+
+  const content2 = (
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        height: '100%',
+      }}
+    >
+      <Divider sx={{ mt: 1, mb: 4, display: { xs: 'none', sm: 'block' } }} />
+      <div data-link-item>
+        <Typography variant="h6">کد این سایت:</Typography>
+        <a
+          href="https://github.com/salehi777/portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/icons/github.svg"
+            width={40}
+            height={40}
+            alt="github logo"
+          />
+        </a>
+      </div>
+      <div data-link-item>
+        <Typography variant="h6">ایده‌های طراحی:</Typography>
+        <a
+          href="https://dribbble.com/shots/14013010-Folio-Designer-Portfolio-Kit-Animation"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/icons/dribbble.svg"
+            width={40}
+            height={40}
+            alt="dribbble logo"
+          />
+        </a>
+        <a
+          href="https://dribbble.com/shots/422424-Skills-Dark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/icons/dribbble.svg"
+            width={40}
+            height={40}
+            alt="dribbble logo"
+          />
+        </a>
+      </div>
+    </Box>
+  );
+
   return (
     <>
       <StyledShapes>
-        <div data-shapes-1>
-          <div />
-        </div>
-
-        <div data-shapes-2>
+        <div data-shapes>
           {cuboids.map(({ id, animateInfo, ...cuboid }) => (
             <Cuboid
               key={id}
@@ -53,91 +119,27 @@ export default function HomeOther({ isInView }) {
 
       <StyledContent>
         <MotionUp isActive={isInView}>
-          <SmallTitle title="دیگر" />
+          <SmallTitle title="دیگر" mb={{ xs: 2, lg: 4 }} />
         </MotionUp>
 
-        <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-          <StyledList>
-            <div>
-              <SvgColor src="/icons/info.svg" />
-              <Typography variant="h5">
-                در سمت بک اند کمی با Express.JS و کمی بیشتر با DJango کار کردم
-              </Typography>
-            </div>
-
-            <div>
-              <SvgColor src="/icons/info.svg" />
-              <Typography variant="h5">با ReactNative آشنایی دارم</Typography>
-            </div>
-
-            <div>
-              <SvgColor src="/icons/info.svg" />
-              <Typography variant="h5">
-                ساختار داده‌ها، الگوریتم و دیزاین پترن‌ها را در حد دروس دانشگاه
-                یاد گرفته بودم(البته تقریبا ۷ سالی گذشته)
-              </Typography>
-            </div>
-
-            <div>
-              <SvgColor src="/icons/info.svg" />
-              <Typography variant="h5">
-                با ابزارهای کمکی AI آشنایی دارم
-              </Typography>
-            </div>
-          </StyledList>
-        </MotionUp>
-
-        <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
-          <Divider sx={{ my: 4 }} />
-        </MotionUp>
-
-        <MotionUp isActive={isInView} t={{ delay: 0.3 }}>
-          <StyledLinks>
-            <div>
-              <Typography variant="h6">کد این سایت:</Typography>
-              <a
-                href="https://github.com/salehi777/portfolio"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/icons/github.svg"
-                  width={40}
-                  height={40}
-                  alt="github logo"
-                />
-              </a>
-            </div>
-
-            <div>
-              <Typography variant="h6">ایده‌های طراحی:</Typography>
-              <a
-                href="https://dribbble.com/shots/14013010-Folio-Designer-Portfolio-Kit-Animation"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/icons/dribbble.svg"
-                  width={40}
-                  height={40}
-                  alt="dribbble logo"
-                />
-              </a>
-              <a
-                href="https://dribbble.com/shots/422424-Skills-Dark"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/icons/dribbble.svg"
-                  width={40}
-                  height={40}
-                  alt="dribbble logo"
-                />
-              </a>
-            </div>
-          </StyledLinks>
-        </MotionUp>
+        {loaded &&
+          (!isMobile ? (
+            <>
+              <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
+                {content1}
+              </MotionUp>
+              <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
+                {content2}
+              </MotionUp>
+            </>
+          ) : (
+            <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
+              <Slider>
+                {content1}
+                {content2}
+              </Slider>
+            </MotionUp>
+          ))}
       </StyledContent>
     </>
   );

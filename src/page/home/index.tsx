@@ -37,19 +37,19 @@ export default function HomePage() {
           <HomeHello isInView={currentSlide === 0} />
         </div>
         <div className="keen-slider__slide">
-          <HomeIntroduction isInView={currentSlide === 1} />
+          <HomeIntroduction loaded={loaded} isInView={currentSlide === 1} />
         </div>
         <div className="keen-slider__slide">
-          <HomeSkills isInView={currentSlide === 2} />
+          <HomeSkills loaded={loaded} isInView={currentSlide === 2} />
         </div>
         <div className="keen-slider__slide">
-          <HomeExperience isInView={currentSlide === 3} />
+          <HomeExperience loaded={loaded} isInView={currentSlide === 3} />
         </div>
         <div className="keen-slider__slide">
-          <HomeLinks isInView={currentSlide === 4} />
+          <HomeLinks loaded={loaded} isInView={currentSlide === 4} />
         </div>
         <div className="keen-slider__slide">
-          <HomeOther isInView={currentSlide === 5} />
+          <HomeOther loaded={loaded} isInView={currentSlide === 5} />
         </div>
       </StyledSlider>
 

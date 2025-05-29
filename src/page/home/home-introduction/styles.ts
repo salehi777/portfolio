@@ -2,15 +2,21 @@ import { styled } from '@mui/material/styles';
 
 export const StyledContent = styled('div')(({ theme }) => ({
   width: 'calc(100vw - 350px)',
+  height: '100%',
   padding: '160px 140px 100px 100px',
+  display: 'flex',
+  flexDirection: 'column',
   position: 'relative',
 
   '[data-lined]': {
+    display: 'flex',
+    flexDirection: 'column',
+
     div: {
       display: 'flex',
       alignItems: 'center',
       fontSize: 20,
-      margin: '8px 58px 8px 0',
+      margin: '0 58px 16px 0',
 
       '&:before': {
         content: '""',
@@ -21,10 +27,19 @@ export const StyledContent = styled('div')(({ theme }) => ({
         background: theme.palette.text.primary,
       },
     },
+
+    [theme.breakpoints.down('sm')]: {
+      div: {
+        margin: '0 0 16px 0',
+      },
+    },
   },
 
   '[data-contacts]': {
     fontSize: 20,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
 
     a: {
       display: 'flex',
@@ -52,6 +67,11 @@ export const StyledContent = styled('div')(({ theme }) => ({
   },
   [theme.breakpoints.down('sm')]: {
     padding: '100px 30px 100px 30px',
+    justifyContent: 'center',
+
+    '[data-contacts]': {
+      height: '100%',
+    },
   },
 }));
 

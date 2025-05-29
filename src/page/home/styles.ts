@@ -62,6 +62,10 @@ export const StyledDots = styled('div')(({ theme }) => ({
       },
     },
   },
+
+  [theme.breakpoints.down('sm')]: {
+    display: 'none',
+  },
 }));
 
 const rotate = (angle) => keyframes`
