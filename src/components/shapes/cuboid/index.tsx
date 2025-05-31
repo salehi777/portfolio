@@ -1,4 +1,4 @@
-import { BoxProps } from '@mui/material';
+import type { BoxProps } from '@mui/material';
 import { StyledCuboid } from './styles';
 
 export interface CuboidProps extends BoxProps {

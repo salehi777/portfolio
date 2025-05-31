@@ -1,4 +1,4 @@
-import { BoxProps, Typography } from '@mui/material';
+import {  Typography, type BoxProps } from '@mui/material';
 import { StyledSmallTitle } from './styles';
 
 interface SmallTitleProps extends Omit<BoxProps, 'title'> {

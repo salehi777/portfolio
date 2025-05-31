@@ -7,7 +7,6 @@ import { cuboids, spheres } from './data';
 import Sphere from '@/components/shapes/sphere';
 import MotionUp from '@/components/motion-up';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import Slider from '@/components/slider';
 
 export default function HomeOther({ loaded, isInView }) {
@@ -108,7 +107,7 @@ const Content2 = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image
+        <img
           src="/icons/github.svg"
           width={40}
           height={40}
@@ -123,7 +122,7 @@ const Content2 = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image
+        <img
           src="/icons/dribbble.svg"
           width={40}
           height={40}
@@ -135,7 +134,7 @@ const Content2 = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image
+        <img
           src="/icons/dribbble.svg"
           width={40}
           height={40}

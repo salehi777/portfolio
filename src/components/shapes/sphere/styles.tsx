@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { SphereProps } from '.';
+import type { SphereProps } from '.';
 
 export const StyledSphere = styled(
   ({ radius, color, ...props }: SphereProps) => <Box {...props} />

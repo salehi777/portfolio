@@ -1,17 +1,16 @@
 'use client';
 
+import { Outlet } from 'react-router';
 import Header from './header';
 import { StyledLayout } from './styles';
 
-export default function GeneralLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function GeneralLayout() {
   return (
     <StyledLayout>
       <Header />
-      <main>{children}</main>
+      <main>
+        <Outlet/>
+      </main>
     </StyledLayout>
   );
 }

@@ -3,7 +3,6 @@ import { StyledContent, StyledProject } from './styles';
 import { Typography } from '@mui/material';
 import { projects } from './data';
 import MotionUp from '@/components/motion-up';
-import Image from 'next/image';
 import Slider from '@/components/slider';
 
 export default function HomeProjects({ loaded, isInView }) {

@@ -2,7 +2,6 @@
 
 import MuiGlobalStyles from './global-styles';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import 'keen-slider/keen-slider.min.css';
 
 const theme = createTheme({
@@ -40,7 +39,7 @@ const theme = createTheme({
     h5: {
       fontWeight: 500,
       fontSize: 20,
-      lineHeight:'inherit'
+      lineHeight: 'inherit',
     },
     h6: {
       fontWeight: 500,
@@ -84,12 +83,10 @@ export default function MuiThemeProvider({
   children: React.ReactNode;
 }) {
   return (
-    <AppRouterCacheProvider>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <MuiGlobalStyles />
-        {children}
-      </ThemeProvider>
-    </AppRouterCacheProvider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <MuiGlobalStyles />
+      {children}
+    </ThemeProvider>
   );
 }

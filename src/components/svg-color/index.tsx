@@ -1,4 +1,3 @@
-import { BoxProps } from '@mui/material';
 import { StyledSvgColor } from './styles';
 
 export default function SvgColor({ src, component, ...props }: any) {

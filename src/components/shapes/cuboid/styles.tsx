@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { CuboidProps } from '.';
+import type { CuboidProps } from '.';
 
 export const StyledCuboid = styled(
   ({ width, height, length, color, ...props }: CuboidProps) => (
