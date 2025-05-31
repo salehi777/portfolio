@@ -25,13 +25,7 @@ export default function HomeProjects({ loaded, isInView }) {
               <StyledProject key={title}>
                 <a href={link} target="_blank" rel="noopener noreferrer">
                   <span style={{ backgroundImage: `url(${image})` }} />
-                  <div>
-                    {note && (
-                      <div>
-                        <Typography>{note}</Typography>
-                      </div>
-                    )}
-                  </div>
+                  <div>{note && <div>{note}</div>}</div>
                 </a>
               </StyledProject>
             ))}

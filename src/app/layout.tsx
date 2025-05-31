@@ -1,9 +1,9 @@
-import RegisterPWA from "@/components/register-pwa";
-import MuiThemeProvider from "@/theme-provider";
+import RegisterPWA from '@/components/register-pwa';
+import MuiThemeProvider from '@/theme-provider';
 import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: 'Portfolio',
   description: 'Portfolio',
   appleWebApp: {
     capable: true,
@@ -51,6 +51,7 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@33.003/misc/UI/Vazirmatn-UI-font-face.css"
           rel="stylesheet"
           type="text/css"
+          crossOrigin="anonymous"
         />
       </head>
       <body dir="rtl">

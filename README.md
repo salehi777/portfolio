@@ -1,8 +1,8 @@
 # Portfolio
 
-This repository is source code for my Portfolio. It's created to be representation of my skills, projects and accomplishments.
+This repository is source code for my portfolio site. It's created to be representation of my skills, projects and accomplishments.
 
-### [🌐 View Site](https://portfolio-rho-brown-18.vercel.app/)
+### [🌐 View Site](https://mohammad-salehi.vercel.app/)
 
 ---
 
@@ -28,5 +28,5 @@ This repository is source code for my Portfolio. It's created to be representati
 
 ### ✉️ Contact
 
-- **Mobile**:+98 913 727 6118
+- **Mobile**: +98 913 727 6118
 - **Email**: msalehy77@gmail.com

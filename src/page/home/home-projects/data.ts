@@ -12,8 +12,8 @@ export const projects = [
     note: 'نمونه کار، فقط طراحی',
   },
   // {
-  //   title: "CV",
-  //   link: "https://portfolio-rho-brown-18.vercel.app/",
+  //   title: "Portfolio",
+  //   link: "https://mohammad-salehi.vercel.app/",
   //   image: "/images/sample4.png",
   //   note: "نمونه کار(همین سایت)",
   // },

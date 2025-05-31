@@ -42,6 +42,7 @@ export const StyledProject = styled('div')(({ theme }) => ({
       padding: '24px 16px 8px',
       background: '#e9e9e9',
       flex: 1,
+      color: '#0f0f0f'
     },
   },
 }));
