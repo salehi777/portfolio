@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-export default function RegisterPWA() {
+export default function RegisterSW() {
   useEffect(() => {
     // Check if the environment is production AND service workers are supported
     if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
