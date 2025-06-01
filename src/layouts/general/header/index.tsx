@@ -1,5 +1,7 @@
 import { useThemeStore } from '@/stores/themeStore'
-import { StyledHeader } from './styles'
+import { StyledLogo, StyledThemeButton } from './styles'
+import { AnimatePresence, motion } from 'motion/react'
+import SvgColor from '@/components/svg-color'
 
 export default function Header() {
   const mode = useThemeStore((state) => state.mode)
@@ -16,21 +18,22 @@ export default function Header() {
   }
 
   return (
-    <StyledHeader>
-      <img src="/images/logo.png" width={60} height={60} alt="رزومه" />
+    <>
+      <StyledLogo>
+        <img src="/images/logo.png" width={60} height={60} alt="رزومه" />
+      </StyledLogo>
 
-      <button
-        onClick={handleModeChange}
-        style={{
-          position: 'fixed',
-          top: 16,
-          left: 16,
-          zIndex: 3000,
-          viewTransitionName: 'fixed-header',
-        }}
-      >
-        تغییر تم
-      </button>
-    </StyledHeader>
+      <StyledThemeButton onClick={handleModeChange}>
+        <AnimatePresence mode="popLayout" initial={false}>
+          <motion.span
+            key={mode}
+            animate={{ rotate: [-180, 0], opacity: [0, 1] }}
+            exit={{ rotate: [0, 180], opacity: [1, 0] }}
+          >
+            <SvgColor src={`/icons/${mode === 'light' ? 'sun' : 'moon'}.svg`} />
+          </motion.span>
+        </AnimatePresence>
+      </StyledThemeButton>
+    </>
   )
 }

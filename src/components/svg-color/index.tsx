@@ -1,4 +1,4 @@
-import { StyledSvgColor } from './styles';
+import { StyledSvgColor } from './styles'
 
 export default function SvgColor({ src, component, ...props }: any) {
   return (
@@ -11,5 +11,5 @@ export default function SvgColor({ src, component, ...props }: any) {
       }}
       {...props}
     />
-  );
+  )
 }

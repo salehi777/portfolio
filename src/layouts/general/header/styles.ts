@@ -1,11 +1,19 @@
 import { styled } from '@mui/material/styles'
 
-export const StyledHeader = styled('header')(({ theme }) => ({
+export const StyledLogo = styled('header')(({ theme }) => ({
   position: 'fixed',
-  width: '100%',
+  top: 40,
+  right: 40,
   zIndex: theme.zIndex.appBar,
-  height: 120,
-  display: 'flex',
-  alignItems: 'center',
-  padding: '0 60px',
+}))
+
+export const StyledThemeButton = styled('header')(({ theme }) => ({
+  position: 'fixed',
+  top: 16,
+  left: 16,
+  zIndex: theme.zIndex.fab,
+  cursor: 'pointer',
+  '>span': {
+    display: 'block',
+  },
 }))

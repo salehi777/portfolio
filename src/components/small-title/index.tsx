@@ -1,8 +1,8 @@
-import {  Typography, type BoxProps } from '@mui/material';
-import { StyledSmallTitle } from './styles';
+import { Typography, type BoxProps } from '@mui/material'
+import { StyledSmallTitle } from './styles'
 
 interface SmallTitleProps extends Omit<BoxProps, 'title'> {
-  title: React.ReactNode;
+  title: React.ReactNode
 }
 
 export default function SmallTitle({ title, ...props }: SmallTitleProps) {
@@ -13,5 +13,5 @@ export default function SmallTitle({ title, ...props }: SmallTitleProps) {
         {title}
       </Typography>
     </StyledSmallTitle>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import type { Transition } from 'motion';
-import { motion } from 'motion/react';
+import type { Transition } from 'motion'
+import { motion } from 'motion/react'
 
 interface MotionUpProps {
-  children: React.ReactNode;
-  isActive: boolean;
-  t?: Transition;
+  children: React.ReactNode
+  isActive: boolean
+  t?: Transition
 }
 
 export default function MotionUp({ isActive, t, ...props }: MotionUpProps) {
@@ -15,5 +15,5 @@ export default function MotionUp({ isActive, t, ...props }: MotionUpProps) {
       transition={{ duration: 1, ...t }}
       {...props}
     />
-  );
+  )
 }

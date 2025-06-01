@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 export const StyledDots = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -18,4 +18,4 @@ export const StyledDots = styled('div')(({ theme }) => ({
       background: theme.palette.primary.main,
     },
   },
-}));
+}))

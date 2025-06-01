@@ -16,7 +16,7 @@ export default function SpreadableTheme({
             animation: 'none',
           },
           '::view-transition-new(switch)': {
-            animation: `${spread} 2s linear`,
+            animation: `${spread} .4s linear`,
           },
         }}
       />
@@ -36,9 +36,9 @@ export default function SpreadableTheme({
 
 const spread = keyframes`
   from {
-      clip-path: circle(0% at 50% 50%);
+      clip-path: circle(0% at 28px 28px);
   }
   to {
-      clip-path: circle(100% at 50% 50%);
+      clip-path: circle(150% at 28px 28px);
   }
 `

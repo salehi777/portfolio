@@ -1,5 +1,5 @@
-import { Box } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Box } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
 export const StyledSvgColor = styled(Box)(({ theme }) => ({
   width: 24,
@@ -7,4 +7,4 @@ export const StyledSvgColor = styled(Box)(({ theme }) => ({
   flexShrink: 0,
   display: 'inline-flex',
   backgroundColor: 'currentColor',
-}));
+}))
