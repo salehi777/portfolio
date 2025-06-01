@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 export const StyledHeader = styled('header')(({ theme }) => ({
   position: 'fixed',
@@ -8,4 +8,4 @@ export const StyledHeader = styled('header')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   padding: '0 60px',
-}));
+}))

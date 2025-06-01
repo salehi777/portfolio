@@ -1,14 +1,12 @@
-'use client';
+import { StyledDots, StyledSlider } from './styles'
+import useSlider from './useSlider'
 
-import { StyledDots, StyledSlider } from './styles';
-import useSlider from './useSlider';
-
-import HomeHello from './home-hello';
-import HomeIntroduction from './home-introduction';
-import HomeExperience from './home-experience';
-import HomeSkills from './home-skills';
-import HomeProjects from './home-projects';
-import HomeOther from './home-other';
+import HomeHello from './home-hello'
+import HomeIntroduction from './home-introduction'
+import HomeExperience from './home-experience'
+import HomeSkills from './home-skills'
+import HomeProjects from './home-projects'
+import HomeOther from './home-other'
 
 const titles = [
   'سلام',
@@ -18,10 +16,10 @@ const titles = [
   'لینک',
   'دیگر',
   //
-];
+]
 
 export default function HomePage() {
-  const { sliderRef, instanceRef, currentSlide, loaded } = useSlider();
+  const { sliderRef, instanceRef, currentSlide, loaded } = useSlider()
 
   return (
     <div>
@@ -68,5 +66,5 @@ export default function HomePage() {
         </StyledDots>
       )}
     </div>
-  );
+  )
 }

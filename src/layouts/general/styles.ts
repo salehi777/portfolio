@@ -1,3 +1,3 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
-export const StyledLayout = styled('div')(({ theme }) => ({}));
+export const StyledLayout = styled('div')(({ theme }) => ({}))

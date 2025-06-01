@@ -1,6 +1,4 @@
-'use client';
-
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 export default function RegisterSW() {
   useEffect(() => {
@@ -10,8 +8,8 @@ export default function RegisterSW() {
         .register('/sw.js', { scope: '/' }) // Register your service worker
         .then((registration) => {})
         .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
+          console.error('Service Worker registration failed:', error)
+        })
     } else if (process.env.NODE_ENV === 'development') {
       // Optional: Log a message in development mode to confirm it's being skipped
 
@@ -20,12 +18,12 @@ export default function RegisterSW() {
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then((registrations) => {
           for (const registration of registrations) {
-            registration.unregister();
+            registration.unregister()
           }
-        });
+        })
       }
     }
-  }, []);
+  }, [])
 
-  return null;
+  return null
 }

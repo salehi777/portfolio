@@ -1,4 +1,4 @@
-import { GlobalStyles } from '@mui/material';
+import { GlobalStyles } from '@mui/material'
 
 export default function MuiGlobalStyles() {
   return (
@@ -10,5 +10,5 @@ export default function MuiGlobalStyles() {
         },
       }}
     />
-  );
+  )
 }

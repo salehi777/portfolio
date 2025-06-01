@@ -24,6 +24,7 @@ This repository is source code for my portfolio site. It's created to be represe
 - [ ] Theme
 - [ ] View Transition(https://minhvo.is-a.dev/react-theme-switch-animation/)
 - [ ] Language
+- [ ] Offline
 
 ---
 

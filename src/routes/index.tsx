@@ -1,7 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router';
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import { lazy, Suspense } from 'react'
 
-import GeneralLayout from '@/layouts/general';
-import HomePage from '@/pages/home';
+import GeneralLayout from '@/layouts/general'
+
+const HomePage = lazy(() => import('@/pages/home'))
+const TestPage = lazy(() => import('@/pages/test'))
 
 const router = createBrowserRouter([
   {
@@ -11,10 +14,18 @@ const router = createBrowserRouter([
         path: '/',
         element: <HomePage />,
       },
+      {
+        path: '/test',
+        element: <TestPage />,
+      },
     ],
   },
-]);
+])
 
 export default function Routes() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense>
+      <RouterProvider router={router} />
+    </Suspense>
+  )
 }
