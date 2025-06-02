@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v1.0.4'; // Increment for each change to service worker logic
+const CACHE_VERSION = 'v1.0.5'; // Increment for each change to service worker logic
 const CACHE_NAME = `portfolio-cache-${CACHE_VERSION}`;
 
 // Assets to precache (focus on essential app shell and icons)
@@ -122,13 +122,13 @@ self.addEventListener('fetch', (event) => {
             error
           );
           return caches.match(event.request).then((cachedResponse) => {
-            if (cachedResponse) {
-              return cachedResponse;
-            } else {
-              // If not in cache either, serve the precached offline page
-              return caches.match('/offline.html');
-            }
-          });
+            // Network failed (likely offline). Show the offline page immediately
+          console.warn(
+            'Service Worker: Navigation failed, showing offline page:',
+            error
+          );
+          return caches.match('/offline.html');
+        })
         })
     );
     return;

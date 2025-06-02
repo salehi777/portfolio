@@ -15,14 +15,16 @@ This repository is source code for my portfolio site. It's created to be represe
 [Code](https://codepen.io/sergiopedercini/pen/jmKdbj)
 &nbsp;&nbsp;&nbsp;&nbsp;
 [Code](https://dev.to/joeattardi/let-s-make-a-css-cube-1fed)
+&nbsp;&nbsp;&nbsp;&nbsp;
+[Code](https://minhvo.is-a.dev/react-theme-switch-animation/)
 
 ---
 
 ### ✅ To-Do
 
 - [x] README
-- [ ] Theme
-- [ ] View Transition(https://minhvo.is-a.dev/react-theme-switch-animation/)
+- [x] Theme
+- [x] View Transition
 - [ ] Language
 - [ ] Offline
 

@@ -5,6 +5,11 @@ export const StyledLogo = styled('header')(({ theme }) => ({
   top: 40,
   right: 40,
   zIndex: theme.zIndex.appBar,
+
+  [theme.breakpoints.down('md')]: {
+    top: 16,
+    right: 24,
+  },
 }))
 
 export const StyledThemeButton = styled('header')(({ theme }) => ({
