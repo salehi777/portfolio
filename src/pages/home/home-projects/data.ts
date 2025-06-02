@@ -23,4 +23,4 @@ export const projects = [
     image: '/images/sample2.png',
     note: '',
   },
-];
+]

@@ -22,7 +22,7 @@ export const StyledCuboid = styled(
     transform: `translateY(${-height / 2}px) translateX(${
       width / 2
     }px) translateZ(${length / 2}px)`,
-    boxShadow: 'inset 0 0 0 1000px rgb(0 0 0 / 20%)',
+    boxShadow: theme.customShadows.overlay(20),
   },
   '[data-left]': {
     width: length,
@@ -30,7 +30,7 @@ export const StyledCuboid = styled(
     transform: `translateY(${-height / 2}px) translateX(${
       length / 2 - width / 2
     }px) rotateY(-90deg)`,
-    boxShadow: 'inset 0 0 0 1000px rgb(0 0 0 / 10%)',
+    boxShadow: theme.customShadows.overlay(10),
   },
   '[data-top]': {
     width,
@@ -38,5 +38,6 @@ export const StyledCuboid = styled(
     transform: `translateY(${-length / 2 - height / 2}px) translateX(${
       width / 2
     }px) rotateX(90deg)`,
+    boxShadow: theme.customShadows.overlay(),
   },
 }))

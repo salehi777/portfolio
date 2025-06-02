@@ -25,4 +25,4 @@ export const jobs = [
     note: 'کارآموزی',
     link: 'https://cert.iut.ac.ir/fa',
   },
-];
+]

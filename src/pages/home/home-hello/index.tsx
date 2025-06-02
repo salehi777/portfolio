@@ -1,12 +1,12 @@
-import SmallTitle from '@/components/small-title';
-import { StyledContent, StyledShapes } from './styles';
-import { Typography } from '@mui/material';
-import SvgColor from '@/components/svg-color';
-import Cuboid from '@/components/shapes/cuboid';
-import { cuboids, spheres } from './data';
-import Sphere from '@/components/shapes/sphere';
-import MotionUp from '@/components/motion-up';
-import { motion } from 'motion/react';
+import SmallTitle from '@/components/small-title'
+import { StyledContent, StyledShapes } from './styles'
+import { Typography } from '@mui/material'
+import SvgColor from '@/components/svg-color'
+import Cuboid from '@/components/shapes/cuboid'
+import { cuboids, spheres } from './data'
+import Sphere from '@/components/shapes/sphere'
+import MotionUp from '@/components/motion-up'
+import { motion } from 'motion/react'
 
 export default function HomeHello({ isInView }) {
   return (
@@ -76,5 +76,5 @@ export default function HomeHello({ isInView }) {
         </MotionUp>
       </StyledContent>
     </>
-  );
+  )
 }

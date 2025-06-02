@@ -1,16 +1,16 @@
-import SmallTitle from '@/components/small-title';
-import { StyledContent, StyledShapes } from './styles';
-import { Typography } from '@mui/material';
-import SvgColor from '@/components/svg-color';
-import Cuboid from '@/components/shapes/cuboid';
-import { cuboids } from './data';
-import MotionUp from '@/components/motion-up';
-import { motion } from 'motion/react';
-import Slider from '@/components/slider';
-import { useMediaQuery } from '@mui/material';
+import SmallTitle from '@/components/small-title'
+import { StyledContent, StyledShapes } from './styles'
+import { Typography } from '@mui/material'
+import SvgColor from '@/components/svg-color'
+import Cuboid from '@/components/shapes/cuboid'
+import { cuboids } from './data'
+import MotionUp from '@/components/motion-up'
+import { motion } from 'motion/react'
+import Slider from '@/components/slider'
+import { useMediaQuery } from '@mui/material'
 
 export default function HomeIntroduction({ loaded, isInView }) {
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
   return (
     <>
@@ -64,7 +64,7 @@ export default function HomeIntroduction({ loaded, isInView }) {
           ))}
       </StyledContent>
     </>
-  );
+  )
 }
 
 const Content1 = () => (
@@ -79,7 +79,7 @@ const Content1 = () => (
       <div key={text}>{text}</div>
     ))}
   </div>
-);
+)
 
 const Content2 = () => (
   <Typography
@@ -96,7 +96,7 @@ const Content2 = () => (
     روی JavaScript و React کار میکردم.&nbsp;به صورت حضوری و بیشتر به صورت
     دورکاری سابقه کار دارم.
   </Typography>
-);
+)
 
 const Content3 = () => (
   <div data-contacts>
@@ -109,4 +109,4 @@ const Content3 = () => (
       <div>msalehy77@gmail.com</div>
     </a>
   </div>
-);
+)

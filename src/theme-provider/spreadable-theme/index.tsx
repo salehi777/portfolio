@@ -23,8 +23,7 @@ export default function SpreadableTheme({
       <Box
         sx={{
           viewTransitionName: 'switch',
-          background: (theme) =>
-            theme.palette.mode === 'light' ? 'white' : 'black',
+          background: (theme) => theme.palette.background.default,
           minHeight: '100vh',
         }}
       >

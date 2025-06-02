@@ -1,16 +1,16 @@
-import SmallTitle from '@/components/small-title';
-import { StyledContent, StyledShapes } from './styles';
-import { Box, Divider, Typography, useMediaQuery } from '@mui/material';
-import SvgColor from '@/components/svg-color';
-import Cuboid from '@/components/shapes/cuboid';
-import { cuboids, spheres } from './data';
-import Sphere from '@/components/shapes/sphere';
-import MotionUp from '@/components/motion-up';
-import { motion } from 'motion/react';
-import Slider from '@/components/slider';
+import SmallTitle from '@/components/small-title'
+import { StyledContent, StyledShapes } from './styles'
+import { Box, Divider, Typography, useMediaQuery } from '@mui/material'
+import SvgColor from '@/components/svg-color'
+import Cuboid from '@/components/shapes/cuboid'
+import { cuboids, spheres } from './data'
+import Sphere from '@/components/shapes/sphere'
+import MotionUp from '@/components/motion-up'
+import { motion } from 'motion/react'
+import Slider from '@/components/slider'
 
 export default function HomeOther({ loaded, isInView }) {
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
   return (
     <>
@@ -74,7 +74,7 @@ export default function HomeOther({ loaded, isInView }) {
           ))}
       </StyledContent>
     </>
-  );
+  )
 }
 
 const Content1 = () =>
@@ -88,7 +88,7 @@ const Content1 = () =>
       <SvgColor src="/icons/info.svg" />
       <Typography variant="h5">{title}</Typography>
     </div>
-  ));
+  ))
 
 const Content2 = () => (
   <Box
@@ -107,12 +107,7 @@ const Content2 = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img
-          src="/icons/github.svg"
-          width={40}
-          height={40}
-          alt="github logo"
-        />
+        <img src="/icons/github.svg" width={40} height={40} alt="github logo" />
       </a>
     </div>
     <div data-link-item>
@@ -143,4 +138,4 @@ const Content2 = () => (
       </a>
     </div>
   </Box>
-);
+)

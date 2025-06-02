@@ -31,7 +31,7 @@ export const cuboids = [
     color: '#ffe0f2',
     animateInfo: { x: [-50, 0] },
   },
-];
+]
 
 export const skills = [
   {
@@ -110,6 +110,4 @@ export const skills = [
     title: 'Monorepo',
     percent: 20,
   },
-].sort((a, b) =>
-  a.percent < b.percent ? 1 : a.percent === b.percent ? 0 : -1
-);
+].sort((a, b) => (a.percent < b.percent ? 1 : a.percent === b.percent ? 0 : -1))

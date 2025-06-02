@@ -31,7 +31,7 @@ export const cuboids = [
     color: '#726eff',
     animateInfo: [{ y: [60, 0] }],
   },
-];
+]
 
 export const spheres = [
   {
@@ -50,4 +50,4 @@ export const spheres = [
     radius: 25,
     color: '#c5dfff',
   },
-];
+]

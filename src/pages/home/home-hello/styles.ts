@@ -1,5 +1,5 @@
-import { TAN } from '@/constants';
-import { styled } from '@mui/material/styles';
+import { TAN } from '@/constants'
+import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({
   width: 'calc(100vw - 750px)',
@@ -24,7 +24,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      boxShadow: '#b5b5b5 0px 3px 8px',
+      boxShadow: theme.customShadows.common,
     },
 
     '>span:last-of-type': {
@@ -59,7 +59,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
       marginTop: 60,
     },
   },
-}));
+}))
 
 export const StyledShapes = styled('div')(({ theme }) => ({
   position: 'absolute',
@@ -82,6 +82,7 @@ export const StyledShapes = styled('div')(({ theme }) => ({
       bottom: 0,
       left: 0,
       background: '#5b46cc',
+      boxShadow: theme.customShadows.overlay(),
     },
     '>div:last-of-type': {
       position: 'absolute',
@@ -90,6 +91,7 @@ export const StyledShapes = styled('div')(({ theme }) => ({
       bottom: 0,
       left: 0,
       background: '#b1b8f9',
+      boxShadow: theme.customShadows.overlay(),
       clipPath: 'polygon(0 0, 0% 100%, 100% 100%)',
       div: {
         position: 'absolute',
@@ -98,6 +100,7 @@ export const StyledShapes = styled('div')(({ theme }) => ({
         bottom: 0,
         right: 0,
         background: '#474bfe',
+        boxShadow: theme.customShadows.overlay(),
       },
     },
   },
@@ -189,4 +192,4 @@ export const StyledShapes = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     display: 'none',
   },
-}));
+}))

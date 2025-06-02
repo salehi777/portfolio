@@ -1,14 +1,14 @@
-import SmallTitle from '@/components/small-title';
-import { StyledContent, StyledShapes, StyledSkill } from './styles';
-import { Grid, useMediaQuery } from '@mui/material';
-import Cuboid from '@/components/shapes/cuboid';
-import { cuboids, skills } from './data';
-import MotionUp from '@/components/motion-up';
-import { motion } from 'motion/react';
-import Slider from '@/components/slider';
+import SmallTitle from '@/components/small-title'
+import { StyledContent, StyledShapes, StyledSkill } from './styles'
+import { Grid, useMediaQuery } from '@mui/material'
+import Cuboid from '@/components/shapes/cuboid'
+import { cuboids, skills } from './data'
+import MotionUp from '@/components/motion-up'
+import { motion } from 'motion/react'
+import Slider from '@/components/slider'
 
 export default function HomeSkills({ loaded, isInView }) {
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'))
 
   return (
     <>
@@ -77,7 +77,7 @@ export default function HomeSkills({ loaded, isInView }) {
         </MotionUp>
       </StyledContent>
     </>
-  );
+  )
 }
 
 const Skill = ({ title, percent, isInView }) => {
@@ -108,5 +108,5 @@ const Skill = ({ title, percent, isInView }) => {
         </motion.span>
       </StyledSkill>
     </div>
-  );
-};
+  )
+}

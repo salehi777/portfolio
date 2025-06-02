@@ -1,8 +1,8 @@
-import { keyframes, styled } from '@mui/material/styles';
+import { keyframes, styled } from '@mui/material/styles'
 
 export const StyledSlider = styled('div')(({ theme }) => ({
   height: '100vh',
-}));
+}))
 
 export const StyledDots = styled('div')(({ theme }) => ({
   position: 'fixed',
@@ -67,7 +67,7 @@ export const StyledDots = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     display: 'none',
   },
-}));
+}))
 
 const rotate = (angle) => keyframes`
   from {
@@ -76,4 +76,4 @@ const rotate = (angle) => keyframes`
   to {
       transform: rotate(${angle}deg);
   }
-`;
+`

@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({
   height: '100%',
@@ -15,7 +15,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     padding: '120px 40px 100px 40px',
   },
-}));
+}))
 
 export const StyledProject = styled('div')(({ theme }) => ({
   height: '100%',
@@ -42,7 +42,7 @@ export const StyledProject = styled('div')(({ theme }) => ({
       padding: '24px 16px 8px',
       background: '#e9e9e9',
       flex: 1,
-      color: '#0f0f0f'
+      color: '#0f0f0f',
     },
   },
-}));
+}))

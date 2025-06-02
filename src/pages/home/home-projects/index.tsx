@@ -1,9 +1,9 @@
-import SmallTitle from '@/components/small-title';
-import { StyledContent, StyledProject } from './styles';
-import { Typography } from '@mui/material';
-import { projects } from './data';
-import MotionUp from '@/components/motion-up';
-import Slider from '@/components/slider';
+import SmallTitle from '@/components/small-title'
+import { StyledContent, StyledProject } from './styles'
+import { Typography } from '@mui/material'
+import { projects } from './data'
+import MotionUp from '@/components/motion-up'
+import Slider from '@/components/slider'
 
 export default function HomeProjects({ loaded, isInView }) {
   return (
@@ -32,5 +32,5 @@ export default function HomeProjects({ loaded, isInView }) {
         )}
       </MotionUp>
     </StyledContent>
-  );
+  )
 }

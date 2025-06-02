@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({
   padding: '140px 120px 100px 120px',
@@ -14,10 +14,10 @@ export const StyledContent = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     padding: '120px 25px 100px 25px',
   },
-}));
+}))
 
 export const StyledJob = styled('div')(({ theme }) => ({
-  boxShadow: '#b5b5b5 0px 3px 8px',
+  boxShadow: theme.customShadows.common,
   padding: '16px 24px 4px',
   borderRadius: 16,
   height: '100%',
@@ -42,4 +42,4 @@ export const StyledJob = styled('div')(({ theme }) => ({
       color: theme.palette.grey[600],
     },
   },
-}));
+}))

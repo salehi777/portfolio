@@ -23,4 +23,4 @@ export const skills = [
     star: 1,
     items: ['Extension', 'PWA', 'Framer Motion'],
   },
-];
+]

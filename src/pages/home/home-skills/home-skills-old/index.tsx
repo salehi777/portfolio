@@ -1,7 +1,7 @@
-import { StyledContent, StyledRow } from './styles';
-import SvgColor from '@/components/svg-color';
-import { skills } from './data';
-import { motion } from 'motion/react';
+import { StyledContent, StyledRow } from './styles'
+import SvgColor from '@/components/svg-color'
+import { skills } from './data'
+import { motion } from 'motion/react'
 
 export default function HomeSkills({ isInView }) {
   return (
@@ -52,5 +52,5 @@ export default function HomeSkills({ isInView }) {
         ))}
       </StyledContent>
     </>
-  );
+  )
 }

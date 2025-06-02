@@ -23,4 +23,4 @@ export const cuboids = [
     color: '#efefef',
     animateInfo: [{ z: [-60, 0] }],
   },
-];
+]

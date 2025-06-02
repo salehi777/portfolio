@@ -1,5 +1,5 @@
-import { TAN } from '@/constants';
-import { styled } from '@mui/material/styles';
+import { TAN } from '@/constants'
+import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({
   padding: '140px 80px 100px 80px',
@@ -13,7 +13,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     padding: '150px 30px 100px 30px',
   },
-}));
+}))
 
 export const StyledSkill = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -70,7 +70,7 @@ export const StyledSkill = styled('div')(({ theme }) => ({
       transformOrigin: `center ${110 / 2 + 15 / 2}px`,
     },
   },
-}));
+}))
 
 export const StyledShapes = styled('div')(({ theme }) => ({
   position: 'absolute',
@@ -94,17 +94,8 @@ export const StyledShapes = styled('div')(({ theme }) => ({
       bottom: 0,
       left: 0,
       background: '#5b46cc',
-
-      '&:before': {
-        content: '""',
-        position: 'absolute',
-        height: '90%',
-        width: '90%',
-        top: -1,
-        right: -1,
-        background: 'white',
-        clipPath: 'polygon(0 0, 100% 100%, 100% 0)',
-      },
+      clipPath: 'polygon(10% 0%, 100% 90%, 100% 100%, 0 100%, 0 0)',
+      boxShadow: theme.customShadows.overlay(),
     },
   },
 
@@ -118,7 +109,7 @@ export const StyledShapes = styled('div')(({ theme }) => ({
       left: 147,
     },
     '[data-id="c_2"]': {
-      top: -260,
+      top: -258,
       left: 375,
     },
     '[data-id="c_3"]': {
@@ -143,4 +134,4 @@ export const StyledShapes = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     display: 'none',
   },
-}));
+}))

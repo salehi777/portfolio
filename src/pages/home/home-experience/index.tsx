@@ -1,14 +1,14 @@
-import SmallTitle from '@/components/small-title';
-import { StyledContent, StyledJob } from './styles';
-import { Grid, Typography } from '@mui/material';
-import { jobs } from './data';
-import SvgColor from '@/components/svg-color';
-import MotionUp from '@/components/motion-up';
-import { useMediaQuery } from '@mui/material';
-import Slider from '@/components/slider';
+import SmallTitle from '@/components/small-title'
+import { StyledContent, StyledJob } from './styles'
+import { Grid, Typography } from '@mui/material'
+import { jobs } from './data'
+import SvgColor from '@/components/svg-color'
+import MotionUp from '@/components/motion-up'
+import { useMediaQuery } from '@mui/material'
+import Slider from '@/components/slider'
 
 export default function HomeExperience({ loaded, isInView }) {
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
   return (
     <StyledContent>
@@ -40,7 +40,7 @@ export default function HomeExperience({ loaded, isInView }) {
           ))}
       </MotionUp>
     </StyledContent>
-  );
+  )
 }
 
 const Job = ({ company, start_date, end_date, note, link }: any) => {
@@ -66,5 +66,5 @@ const Job = ({ company, start_date, end_date, note, link }: any) => {
         <Typography>{note}</Typography>
       </div>
     </StyledJob>
-  );
-};
+  )
+}

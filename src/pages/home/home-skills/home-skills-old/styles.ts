@@ -1,9 +1,9 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({
   padding: '140px 140px 100px 100px',
   position: 'relative',
-}));
+}))
 
 export const StyledRow = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -39,4 +39,4 @@ export const StyledRow = styled('div')(({ theme }) => ({
       },
     },
   },
-}));
+}))

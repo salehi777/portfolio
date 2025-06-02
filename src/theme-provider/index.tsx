@@ -5,6 +5,21 @@ import { useMemo } from 'react'
 import SpreadableTheme from './spreadable-theme'
 import { useThemeStore } from '@/stores/themeStore'
 
+declare module '@mui/material/styles' {
+  interface Theme {
+    customShadows: {
+      common: string
+      overlay: (init?: number) => string
+    }
+  }
+  interface ThemeOptions {
+    customShadows: {
+      common: string
+      overlay: (init?: number) => string
+    }
+  }
+}
+
 export default function MuiThemeProvider({
   children,
 }: {
@@ -80,6 +95,20 @@ export default function MuiThemeProvider({
               },
             },
           },
+        },
+        customShadows: {
+          common:
+            mode === 'light'
+              ? '#b5b5b5 0px 3px 8px'
+              : '#434343 0px 3px 15px -3px',
+          overlay: (init) =>
+            mode === 'light'
+              ? init
+                ? `inset 0 0 0 1000px rgb(0 0 0 / ${init}%)`
+                : 'none'
+              : init
+              ? `inset 0 0 0 1000px rgb(0 0 0 / ${init + 10}%)`
+              : `inset 0 0 0 1000px rgb(0 0 0 / 10%)`,
         },
       }),
     [mode]

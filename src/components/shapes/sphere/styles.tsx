@@ -12,5 +12,7 @@ export const StyledSphere = styled(
   background: color,
   boxShadow: `inset -${radius / 20}px -${radius / 15}px ${radius / 10}px ${
     radius / 50
-  }px rgba(0,0,0,.2)`,
+  }px rgba(0,0,0,.2)${
+    theme.palette.mode === 'dark' ? ',' + theme.customShadows.overlay() : ''
+  }`,
 }))

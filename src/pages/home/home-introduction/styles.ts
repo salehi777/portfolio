@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({
   width: 'calc(100vw - 350px)',
@@ -73,7 +73,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
       height: '100%',
     },
   },
-}));
+}))
 
 export const StyledShapes = styled('div')(({ theme }) => ({
   position: 'absolute',
@@ -109,4 +109,4 @@ export const StyledShapes = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     display: 'none',
   },
-}));
+}))
