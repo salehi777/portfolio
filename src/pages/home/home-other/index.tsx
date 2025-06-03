@@ -8,9 +8,11 @@ import Sphere from '@/components/shapes/sphere'
 import MotionUp from '@/components/motion-up'
 import { motion } from 'motion/react'
 import Slider from '@/components/slider'
+import { useTranslation } from 'react-i18next'
 
 export default function HomeOther({ loaded, isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+  const { t } = useTranslation()
 
   return (
     <>
@@ -51,14 +53,14 @@ export default function HomeOther({ loaded, isInView }) {
 
       <StyledContent>
         <MotionUp isActive={isInView}>
-          <SmallTitle title="دیگر" mb={{ xs: 2, lg: 4 }} />
+          <SmallTitle title={t('home.other.title')} mb={{ xs: 2, lg: 4 }} />
         </MotionUp>
 
         {loaded &&
           (!isMobile ? (
             <>
               <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-                {Content1()}
+                {Content1(t)}
               </MotionUp>
               <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
                 <Content2 />
@@ -67,7 +69,7 @@ export default function HomeOther({ loaded, isInView }) {
           ) : (
             <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
               <Slider>
-                {Content1()}
+                {Content1(t)}
                 <Content2 />
               </Slider>
             </MotionUp>
@@ -77,12 +79,12 @@ export default function HomeOther({ loaded, isInView }) {
   )
 }
 
-const Content1 = () =>
+const Content1 = (t) =>
   [
-    'در سمت بک اند کمی با Express.JS و کمی بیشتر با DJango کار کردم',
-    'با ReactNative آشنایی دارم',
-    'ساختار داده‌ها، الگوریتم و دیزاین پترن‌ها را در حد دروس دانشگاه یاد گرفته بودم(البته تقریبا ۷ سالی گذشته)',
-    'با ابزارهای کمکی AI آشنایی دارم',
+    t('home.other.list.0'),
+    t('home.other.list.1'),
+    t('home.other.list.2'),
+    t('home.other.list.3'),
   ].map((title) => (
     <div key={title} data-list-item>
       <SvgColor src="/icons/info.svg" />
@@ -90,52 +92,60 @@ const Content1 = () =>
     </div>
   ))
 
-const Content2 = () => (
-  <Box
-    sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      height: '100%',
-    }}
-  >
-    <Divider sx={{ mt: 1, mb: 4, display: { xs: 'none', sm: 'block' } }} />
-    <div data-link-item>
-      <Typography variant="h6">کد این سایت:</Typography>
-      <a
-        href="https://github.com/salehi777/portfolio"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/icons/github.svg" width={40} height={40} alt="github logo" />
-      </a>
-    </div>
-    <div data-link-item>
-      <Typography variant="h6">ایده‌های طراحی:</Typography>
-      <a
-        href="https://dribbble.com/shots/14013010-Folio-Designer-Portfolio-Kit-Animation"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/icons/dribbble.svg"
-          width={40}
-          height={40}
-          alt="dribbble logo"
-        />
-      </a>
-      <a
-        href="https://dribbble.com/shots/422424-Skills-Dark"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/icons/dribbble.svg"
-          width={40}
-          height={40}
-          alt="dribbble logo"
-        />
-      </a>
-    </div>
-  </Box>
-)
+const Content2 = () => {
+  const { t } = useTranslation()
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        height: '100%',
+      }}
+    >
+      <Divider sx={{ mt: 1, mb: 4, display: { xs: 'none', sm: 'block' } }} />
+      <div data-link-item>
+        <Typography variant="h6">{t('home.other.code')}:</Typography>
+        <a
+          href="https://github.com/salehi777/portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/icons/github.svg"
+            width={40}
+            height={40}
+            alt="github logo"
+          />
+        </a>
+      </div>
+      <div data-link-item>
+        <Typography variant="h6">{t('home.other.design')}:</Typography>
+        <a
+          href="https://dribbble.com/shots/14013010-Folio-Designer-Portfolio-Kit-Animation"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/icons/dribbble.svg"
+            width={40}
+            height={40}
+            alt="dribbble logo"
+          />
+        </a>
+        <a
+          href="https://dribbble.com/shots/422424-Skills-Dark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/icons/dribbble.svg"
+            width={40}
+            height={40}
+            alt="dribbble logo"
+          />
+        </a>
+      </div>
+    </Box>
+  )
+}

@@ -8,7 +8,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   position: 'relative',
 
-  '[data-lined]': {
+  '[data-list]': {
     display: 'flex',
     flexDirection: 'column',
 

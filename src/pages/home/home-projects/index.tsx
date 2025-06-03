@@ -4,12 +4,15 @@ import { Typography } from '@mui/material'
 import { projects } from './data'
 import MotionUp from '@/components/motion-up'
 import Slider from '@/components/slider'
+import { useTranslation } from 'react-i18next'
 
 export default function HomeProjects({ loaded, isInView }) {
+  const { t } = useTranslation()
+
   return (
     <StyledContent>
       <MotionUp isActive={isInView}>
-        <SmallTitle title="نمونه کار" mb={{ xs: 2, md: 4 }} />
+        <SmallTitle title={t('home.projects.title')} mb={{ xs: 2, md: 4 }} />
       </MotionUp>
 
       <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
@@ -20,11 +23,15 @@ export default function HomeProjects({ loaded, isInView }) {
               { breakpoint: 'lg', perView: 3 },
             ]}
           >
-            {projects.map(({ title, link, image, note }) => (
-              <StyledProject key={title}>
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                  <span style={{ backgroundImage: `url(${image})` }} />
-                  <div>{note && <div>{note}</div>}</div>
+            {Object.entries(projects).map(([project, info]) => (
+              <StyledProject key={project}>
+                <a href={info.link} target="_blank" rel="noopener noreferrer">
+                  <span style={{ backgroundImage: `url(${info.image})` }} />
+                  <div>
+                    <div>
+                      {t('home.projects.projects.' + project + '.note')}
+                    </div>
+                  </div>
                 </a>
               </StyledProject>
             ))}

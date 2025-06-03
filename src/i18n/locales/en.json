@@ -1,0 +1,80 @@
+{
+  "home": {
+    "titles": [
+      "Hello",
+      "Intro",
+      "Skills",
+      "Exp",
+      "Links",
+      "Other"
+    ],
+    "hello": {
+      "title": "Hello",
+      "description": "Mohammad Salehi, I've been professionally pursuing web programming for nearly 6 years.",
+      "scroll": "Scroll down",
+      "drag": "Drag the page up"
+    },
+    "introduction": {
+      "title": "Introduction",
+      "full_name": "Mohammad Salehi",
+      "job": "React Developer",
+      "birth_date": "Born 1997",
+      "location": "Residing in Isfahan/Najafabad",
+      "education": "Bachelor's in Computer Science",
+      "description": "I started learning programming about 9 years ago, and for the past 6 years, I've focused intensively on JavaScript and React. I have experience working both in-person and, more frequently, remotely."
+    },
+    "skills": {
+      "title": "Skills"
+    },
+    "experience": {
+      "title": "Work Experience",
+      "jobs": {
+        "rayan": {
+          "start_date": "February 2023",
+          "end_date": "Currently employed",
+          "note": "Long-term, very part-time, and freelance collaboration"
+        },
+        "ainfluencer": {
+          "start_date": "April 2022",
+          "end_date": "November 2022",
+          "note": "Support for existing code and implementation of new features"
+        },
+        "thirdly": {
+          "start_date": "December 2020",
+          "end_date": "February 2022",
+          "note": "Building new projects and collaborating on a large project"
+        },
+        "apa": {
+          "start_date": "October 2019",
+          "end_date": "August 2020",
+          "note": "Internship"
+        }
+      }
+    },
+    "projects": {
+      "title": "Work Samples",
+      "projects": {
+        "house_auction": {
+          "note": "+Dashboard, teamwork"
+        },
+        "rise_finance": {
+          "note": "Sample work, design only"
+        },
+        "enjaz": {
+          "note": ""
+        }
+      }
+    },
+    "other": {
+      "title": "Other",
+      "list": [
+        "I've worked a little with Express.JS and a bit more with Django on the backend.",
+        "I am familiar with ReactNative.",
+        "I learned data structures, algorithms, and design patterns to the extent of university courses (though it's been almost 7 years).",
+        "I am familiar with AI helper tools."
+      ],
+      "code": "This site's code",
+      "design": "Design ideas"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import Routes from './routes'
+import '@/i18n'
 import MuiThemeProvider from './theme-provider'
 import 'keen-slider/keen-slider.min.css'
 import { Analytics } from '@vercel/analytics/react'

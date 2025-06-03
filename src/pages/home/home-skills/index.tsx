@@ -6,9 +6,11 @@ import { cuboids, skills } from './data'
 import MotionUp from '@/components/motion-up'
 import { motion } from 'motion/react'
 import Slider from '@/components/slider'
+import { useTranslation } from 'react-i18next'
 
 export default function HomeSkills({ loaded, isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'))
+  const { t } = useTranslation()
 
   return (
     <>
@@ -39,7 +41,7 @@ export default function HomeSkills({ loaded, isInView }) {
 
       <StyledContent>
         <MotionUp isActive={isInView}>
-          <SmallTitle title="مهارت‌ها" mb={{ xs: 14, sm: 18, md: 3, lg: 6 }} />
+          <SmallTitle title={t('home.skills.title')} mb={{ xs: 14, sm: 18, md: 3, lg: 6 }} />
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.1 }}>

@@ -8,9 +8,11 @@ import MotionUp from '@/components/motion-up'
 import { motion } from 'motion/react'
 import Slider from '@/components/slider'
 import { useMediaQuery } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 export default function HomeIntroduction({ loaded, isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+  const { t } = useTranslation()
 
   return (
     <>
@@ -37,7 +39,7 @@ export default function HomeIntroduction({ loaded, isInView }) {
 
       <StyledContent>
         <MotionUp isActive={isInView}>
-          <SmallTitle title="معرفی" mb={'20px'} />
+          <SmallTitle title={t('home.introduction.title')} mb={'20px'} />
         </MotionUp>
 
         {loaded &&
@@ -67,36 +69,40 @@ export default function HomeIntroduction({ loaded, isInView }) {
   )
 }
 
-const Content1 = () => (
-  <div data-lined>
-    {[
-      'محمد صالحی',
-      'توسعه‌دهنده React',
-      'متولد ۱۳۷۵',
-      'ساکن نجف‌آباد',
-      'لیسانس کامپیوتر',
-    ].map((text) => (
-      <div key={text}>{text}</div>
-    ))}
-  </div>
-)
+const Content1 = () => {
+  const { t } = useTranslation()
+  return (
+    <div data-list>
+      {[
+        t('home.introduction.full_name'),
+        t('home.introduction.job'),
+        t('home.introduction.birth_date'),
+        t('home.introduction.location'),
+        t('home.introduction.education'),
+      ].map((text) => (
+        <div key={text}>{text}</div>
+      ))}
+    </div>
+  )
+}
 
-const Content2 = () => (
-  <Typography
-    variant="h5"
-    sx={{
-      mt: { sm: 2.5, md: 4 },
-      mb: { sm: 4, md: 5 },
-      display: 'flex',
-      alignItems: 'center',
-      height: { xs: '100%', sm: 'unset' },
-    }}
-  >
-    حدود ۹ ساله یادگیری برنامه‌نویسی رو شروع کردم و از ۶ سال پیش به صورت متمرکز
-    روی JavaScript و React کار میکردم.&nbsp;به صورت حضوری و بیشتر به صورت
-    دورکاری سابقه کار دارم.
-  </Typography>
-)
+const Content2 = () => {
+  const { t } = useTranslation()
+  return (
+    <Typography
+      variant="h5"
+      sx={{
+        mt: { sm: 2.5, md: 4 },
+        mb: { sm: 4, md: 5 },
+        display: 'flex',
+        alignItems: 'center',
+        height: { xs: '100%', sm: 'unset' },
+      }}
+    >
+      {t('home.introduction.description')}
+    </Typography>
+  )
+}
 
 const Content3 = () => (
   <div data-contacts>

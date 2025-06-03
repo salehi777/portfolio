@@ -1,5 +1,6 @@
 import { StyledDots, StyledSlider } from './styles'
 import useSlider from './useSlider'
+import { useTranslation } from 'react-i18next'
 
 import HomeHello from './home-hello'
 import HomeIntroduction from './home-introduction'
@@ -8,17 +9,8 @@ import HomeSkills from './home-skills'
 import HomeProjects from './home-projects'
 import HomeOther from './home-other'
 
-const titles = [
-  'سلام',
-  'معرفی',
-  'مهارت',
-  'سابقه',
-  'لینک',
-  'دیگر',
-  //
-]
-
 export default function HomePage() {
+  const { t } = useTranslation()
   const { sliderRef, instanceRef, currentSlide, loaded } = useSlider()
 
   return (
@@ -53,7 +45,14 @@ export default function HomePage() {
 
       {loaded && instanceRef.current && (
         <StyledDots>
-          {titles.map((title, idx) => (
+          {[
+            t('home.titles.0'),
+            t('home.titles.1'),
+            t('home.titles.2'),
+            t('home.titles.3'),
+            t('home.titles.4'),
+            t('home.titles.5'),
+          ].map((title, idx) => (
             <div
               key={idx}
               onClick={() => instanceRef.current?.moveToIdx(idx)}

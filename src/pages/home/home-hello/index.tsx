@@ -7,8 +7,11 @@ import { cuboids, spheres } from './data'
 import Sphere from '@/components/shapes/sphere'
 import MotionUp from '@/components/motion-up'
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 
 export default function HomeHello({ isInView }) {
+  const { t } = useTranslation()
+
   return (
     <>
       <StyledShapes>
@@ -55,13 +58,12 @@ export default function HomeHello({ isInView }) {
 
       <StyledContent>
         <MotionUp isActive={isInView}>
-          <SmallTitle title="سلام" />
+          <SmallTitle title={t('home.hello.title')} />
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
           <Typography variant="h4" mt={2}>
-            محمد صالحی، نزدیک به ۶ ساله برنامه‌نویسی وب رو به صورت حرفه‌ای دنبال
-            میکنم.
+            {t('home.hello.description')}
           </Typography>
         </MotionUp>
 
@@ -70,8 +72,8 @@ export default function HomeHello({ isInView }) {
             <div>
               <SvgColor src="/icons/arrows-down.svg" />
             </div>
-            <span>اسکرول کنید</span>
-            <span>صفحه را به بالا بکشید</span>
+            <span>{t('home.hello.scroll')}</span>
+            <span>{t('home.hello.drag')}</span>
           </div>
         </MotionUp>
       </StyledContent>
