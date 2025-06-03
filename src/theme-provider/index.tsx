@@ -26,14 +26,15 @@ export default function MuiThemeProvider({
   children: React.ReactNode
 }) {
   const mode = useThemeStore((state) => state.mode)
+  const direction = useThemeStore((state) => state.direction)
   const theme = useMemo(
     () =>
       createTheme({
-        direction: 'rtl',
+        direction,
         palette: {
           mode,
           primary: {
-            main: '#4a4dff',
+            main: '#6669f9',
           },
           secondary: {
             main: '#ffc4ba',
@@ -111,7 +112,7 @@ export default function MuiThemeProvider({
               : `inset 0 0 0 1000px rgb(0 0 0 / 10%)`,
         },
       }),
-    [mode]
+    [mode, direction]
   )
 
   return (

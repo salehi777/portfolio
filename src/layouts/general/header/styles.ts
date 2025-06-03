@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles'
+import { alpha, styled } from '@mui/material/styles'
 
 export const StyledLogo = styled('div')(({ theme }) => ({
   position: 'fixed',
@@ -41,7 +41,7 @@ export const StyledLangButton = styled('div')(({ theme }) => ({
     transformOrigin: '6px 15px',
     height: 36,
     transition: theme.transitions.create('color'),
-    color: '#b0b0b0',
+    color: alpha(theme.palette.text.primary, 0.5),
     whiteSpace: 'nowrap',
     padding: 6,
     userSelect: 'none',
@@ -65,13 +65,13 @@ export const StyledLangButton = styled('div')(({ theme }) => ({
       height: 5,
       borderRadius: '100%',
       transition: theme.transitions.create('background'),
-      background: '#b0b0b0',
+      background: alpha(theme.palette.text.primary, 0.5),
     },
 
     '&[data-active=true]': {
-      color: theme.palette.primary.main,
+      color: theme.palette.text.primary,
       '&:before': {
-        background: theme.palette.primary.main,
+        background: theme.palette.text.primary,
       },
     },
   },

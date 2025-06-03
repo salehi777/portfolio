@@ -9,21 +9,30 @@ import { ClickAwayListener } from '@mui/material'
 export default function Header() {
   // theme
   const mode = useThemeStore((state) => state.mode)
-  const toggleTheme = useThemeStore((state) => state.toggleTheme)
+  const toggleMode = useThemeStore((state) => state.toggleMode)
 
-  const handleModeChange = () => {
+  const onModeChange = () => {
     if (!document.startViewTransition) {
-      toggleTheme()
+      toggleMode()
       return
     }
     document.startViewTransition(() => {
-      toggleTheme()
+      toggleMode()
     })
   }
 
   // lang
   const { i18n } = useTranslation()
   const [showLang, setShowLang] = useState(false)
+  const setDirection = useThemeStore((state) => state.setDirection)
+
+  const onLangChange = (code: string, dir: string) => {
+    i18n.changeLanguage(code)
+    setShowLang(false)
+    document.documentElement.lang = code
+    document.documentElement.dir = dir
+    setDirection(dir)
+  }
 
   return (
     <>
@@ -31,7 +40,7 @@ export default function Header() {
         <img src="/images/logo.png" width={60} height={60} alt="رزومه" />
       </StyledLogo>
 
-      <StyledThemeButton onClick={handleModeChange}>
+      <StyledThemeButton onClick={onModeChange}>
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
             key={mode}
@@ -49,15 +58,12 @@ export default function Header() {
             <SvgColor src="/icons/globe.svg" />
           </div>
           {[
-            { code: 'fa', title: 'Fa' },
-            { code: 'en', title: 'En' },
-          ].map(({ code, title }, i) => (
+            { code: 'fa', title: 'Fa', dir: 'rtl' },
+            { code: 'en', title: 'En', dir: 'ltr' },
+          ].map(({ code, title, dir }, i) => (
             <motion.span
               key={code}
-              onClick={() => {
-                i18n.changeLanguage(code)
-                setShowLang(false)
-              }}
+              onClick={() => onLangChange(code, dir)}
               transformTemplate={({ x }) =>
                 `rotate(${i * 50 - 25}deg) translateX(${x}) translateY(-6px)`
               }

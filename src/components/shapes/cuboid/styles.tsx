@@ -19,25 +19,19 @@ export const StyledCuboid = styled(
   '[data-front]': {
     width,
     height,
-    transform: `translateY(${-height / 2}px) translateX(${
-      width / 2
-    }px) translateZ(${length / 2}px)`,
+    transform: `translate(${width / 2}px, ${-height / 2}px) translateZ(${length / 2}px)`,
     boxShadow: theme.customShadows.overlay(20),
   },
   '[data-left]': {
     width: length,
     height,
-    transform: `translateY(${-height / 2}px) translateX(${
-      length / 2 - width / 2
-    }px) rotateY(-90deg)`,
+    transform: `translate(${length / 2 - width / 2}px, ${-height / 2}px) rotateY(-90deg)`,
     boxShadow: theme.customShadows.overlay(10),
   },
   '[data-top]': {
     width,
     height: length,
-    transform: `translateY(${-length / 2 - height / 2}px) translateX(${
-      width / 2
-    }px) rotateX(90deg)`,
+    transform: `translate(${width / 2}px, ${-length / 2 - height / 2}px) rotateX(90deg)`,
     boxShadow: theme.customShadows.overlay(),
   },
 }))

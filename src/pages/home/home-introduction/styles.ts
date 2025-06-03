@@ -87,15 +87,15 @@ export const StyledShapes = styled('div')(({ theme }) => ({
     left: 0,
     top: 0, // in home-hello it's bottom:0 because shapes designed from bottom
     '[data-id="c_1"]': {
-      top: 303,
+      top: 343,
       left: 0,
     },
     '[data-id="c_2"]': {
-      top: 638,
+      top: 678,
       left: 340,
     },
     '[data-id="c_3"]': {
-      top: 341,
+      top: 381,
       left: 341,
     },
   },
