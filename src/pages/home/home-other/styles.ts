@@ -13,7 +13,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
     alignItems: 'center',
     marginBottom: 24,
 
-    '.svg-color': { marginLeft: 12 },
+    '.svg-color': { marginInlineEnd: 12 },
 
     [theme.breakpoints.down('sm')]: {
       marginBottom: 0,
@@ -28,7 +28,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
     marginBottom: 12,
 
     a: {
-      marginRight: 16,
+      marginInlineStart: 16,
       '.svg-color': { width: 56, height: 56 },
     },
   },
@@ -51,40 +51,40 @@ export const StyledShapes = styled('div')(({ theme }) => ({
   width: '100%',
   height: '100%',
   top: 0,
-  right: 0,
+  insetInlineStart: 0,
 
   '[data-shapes]': {
     position: 'absolute',
-    left: 0,
+    insetInlineEnd: 0,
     bottom: 0,
 
     '[data-id="c_1"]': {
       top: -464,
-      left: 341,
+      insetInlineEnd: 341,
     },
     '[data-id="c_2"]': {
       top: -632,
-      left: 220,
+      insetInlineEnd: 220,
     },
     '[data-id="c_3"]': {
       top: -398,
-      left: 98,
+      insetInlineEnd: 98,
     },
     '[data-id="c_4"]': {
       top: -255,
-      left: 220,
+      insetInlineEnd: 220,
     },
     '[data-id="s_1"]': {
       top: -459,
-      left: 200,
+      insetInlineEnd: 200,
     },
     '[data-id="s_2"]': {
       top: -621,
-      left: 326,
+      insetInlineEnd: 326,
     },
     '[data-id="s_3"]': {
       top: -540,
-      left: 86,
+      insetInlineEnd: 86,
     },
   },
 

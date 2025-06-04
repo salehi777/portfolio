@@ -6,7 +6,7 @@ export default function TestPage() {
 
   return (
     <StyledTest>
-      <div>{t('common.testt')}</div>
+      <div>{t('home.titles.0')}</div>
     </StyledTest>
   )
 }

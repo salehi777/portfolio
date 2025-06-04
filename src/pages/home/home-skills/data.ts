@@ -5,7 +5,7 @@ export const cuboids = [
     height: 80,
     length: 160,
     color: '#d3d0ff',
-    animateInfo: { x: [-50, 0] },
+    variants: { enter: { x: [-50, 0] }, exit: { x: -50 } },
   },
   {
     id: 'c_2',
@@ -13,7 +13,7 @@ export const cuboids = [
     height: 80,
     length: 80,
     color: '#d3d0ff',
-    animateInfo: { x: [-100, 0] },
+    variants: { enter: { x: [-100, 0] }, exit: { x: -100 } },
   },
   {
     id: 'c_3',
@@ -21,7 +21,7 @@ export const cuboids = [
     height: 80,
     length: 80,
     color: '#d3d0ff',
-    animateInfo: { x: [-50, 0] },
+    variants: { enter: { x: [-50, 0] }, exit: { x: -50 } },
   },
   {
     id: 'c_4',
@@ -29,7 +29,7 @@ export const cuboids = [
     height: 80,
     length: 80,
     color: '#ffe0f2',
-    animateInfo: { x: [-50, 0] },
+    variants: { enter: { x: [-50, 0] }, exit: { x: -50 } },
   },
 ]
 

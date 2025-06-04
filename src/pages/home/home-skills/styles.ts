@@ -77,14 +77,14 @@ export const StyledShapes = styled('div')(({ theme }) => ({
   width: '100%',
   height: '100%',
   top: 0,
-  right: 0,
+  insetInlineStart: 0,
 
   '[data-shapes-1]': {
     position: 'absolute',
-    left: 0,
+    insetInlineStart: 0,
     bottom: 0,
     top: 0,
-    right: 0,
+    insetInlineEnd: 0,
     transformOrigin: 'left bottom',
 
     '>div:first-of-type': {
@@ -92,33 +92,38 @@ export const StyledShapes = styled('div')(({ theme }) => ({
       height: 750 / TAN,
       width: 750,
       bottom: 0,
-      left: 0,
+      insetInlineEnd: 0,
       background: '#5b46cc',
-      clipPath: 'polygon(10% 0%, 100% 90%, 100% 100%, 0 100%, 0 0)',
       boxShadow: theme.customShadows.overlay(),
+      clipPath:
+        theme.direction === 'rtl'
+          ? 'polygon(10% 0%, 100% 90%, 100% 100%, 0 100%, 0 0)'
+          : 'polygon(90% 0, 100% 0, 100% 100%, 0 100%, 0 90%)',
+
+
     },
   },
 
   '[data-shapes-2]': {
     position: 'absolute',
-    left: 0,
+    insetInlineEnd: 0,
     bottom: 0,
 
     '[data-id="c_1"]': {
       top: -259,
-      left: 147,
+      insetInlineEnd: 147,
     },
     '[data-id="c_2"]': {
       top: -258,
-      left: 375,
+      insetInlineEnd: 375,
     },
     '[data-id="c_3"]': {
       top: -107,
-      left: 486,
+      insetInlineEnd: 486,
     },
     '[data-id="c_4"]': {
       top: -98,
-      left: 113,
+      insetInlineEnd: 113,
     },
   },
 

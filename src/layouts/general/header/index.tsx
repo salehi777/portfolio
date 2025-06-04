@@ -3,8 +3,9 @@ import { StyledLangButton, StyledLogo, StyledThemeButton } from './styles'
 import { AnimatePresence, motion } from 'motion/react'
 import SvgColor from '@/components/svg-color'
 import { useTranslation } from 'react-i18next'
-import { useState } from 'react'
-import { ClickAwayListener } from '@mui/material'
+import { useEffect, useState } from 'react'
+import { ClickAwayListener, type Direction } from '@mui/material'
+import { languages } from '@/i18n'
 
 export default function Header() {
   // theme
@@ -24,15 +25,20 @@ export default function Header() {
   // lang
   const { i18n } = useTranslation()
   const [showLang, setShowLang] = useState(false)
+  const direction = useThemeStore((state) => state.direction)
   const setDirection = useThemeStore((state) => state.setDirection)
 
   const onLangChange = (code: string, dir: string) => {
     i18n.changeLanguage(code)
     setShowLang(false)
-    document.documentElement.lang = code
-    document.documentElement.dir = dir
-    setDirection(dir)
   }
+
+  useEffect(() => {
+    const dir = languages.find(({ code }) => code === i18n.language)?.dir
+    setDirection(dir)
+    document.documentElement.lang = i18n.language
+    document.documentElement.dir = dir
+  }, [i18n.language])
 
   return (
     <>
@@ -54,31 +60,35 @@ export default function Header() {
 
       <ClickAwayListener onClickAway={() => setShowLang(false)}>
         <StyledLangButton>
-          <div onClick={() => setShowLang(!showLang)}>
+          <span onClick={() => setShowLang(!showLang)}>
             <SvgColor src="/icons/globe.svg" />
-          </div>
-          {[
-            { code: 'fa', title: 'Fa', dir: 'rtl' },
-            { code: 'en', title: 'En', dir: 'ltr' },
-          ].map(({ code, title, dir }, i) => (
-            <motion.span
-              key={code}
-              onClick={() => onLangChange(code, dir)}
-              transformTemplate={({ x }) =>
-                `rotate(${i * 50 - 25}deg) translateX(${x}) translateY(-6px)`
-              }
-              style={{ x: 12, opacity: 0, display: 'none' }}
-              transition={{ type: 'spring', delay: i * 0.1, duration: 0.4 }}
-              animate={
-                showLang
-                  ? { x: 36, opacity: 1, display: 'block' }
-                  : { x: 12, opacity: 0, display: 'none' }
-              }
-              data-active={i18n.language === code}
-            >
-              {title}
-            </motion.span>
-          ))}
+          </span>
+          <motion.div
+            style={{ y: '-50%' }}
+            variants={{
+              show: {
+                x: direction === 'ltr' ? -40 : 40,
+                opacity: 1,
+                display: 'block',
+              },
+              hide: {
+                x: direction === 'ltr' ? -24 : 24,
+                opacity: 0,
+                display: 'none',
+              },
+            }}
+            animate={showLang ? 'show' : 'hide'}
+          >
+            {languages.map(({ code, title, dir }, i) => (
+              <span
+                key={code}
+                onClick={() => onLangChange(code, dir)}
+                data-active={i18n.language === code}
+              >
+                {title}
+              </span>
+            ))}
+          </motion.div>
         </StyledLangButton>
       </ClickAwayListener>
     </>

@@ -16,13 +16,14 @@ export const StyledContent = styled('div')(({ theme }) => ({
       display: 'flex',
       alignItems: 'center',
       fontSize: 20,
-      margin: '0 58px 16px 0',
+      marginBottom: 16,
+      marginInlineStart: 58,
 
       '&:before': {
         content: '""',
         height: 2,
         width: 22,
-        marginLeft: 14,
+        marginInlineEnd: 14,
         display: 'block',
         background: theme.palette.text.primary,
       },
@@ -30,7 +31,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
 
     [theme.breakpoints.down('sm')]: {
       div: {
-        margin: '0 0 16px 0',
+        marginInlineStart: 0,
       },
     },
   },
@@ -45,10 +46,9 @@ export const StyledContent = styled('div')(({ theme }) => ({
       display: 'flex',
       alignItems: 'center',
 
-      '.svg-color': { width: 30, height: 30 },
+      '.svg-color': { width: 30, height: 30, marginInlineEnd: 8 },
 
       div: {
-        marginRight: 8,
         direction: 'ltr',
       },
 
@@ -80,23 +80,23 @@ export const StyledShapes = styled('div')(({ theme }) => ({
   width: '100%',
   height: '100%',
   top: 0,
-  right: 0,
+  insetInlineStart: 0,
 
   '[data-shapes]': {
     position: 'absolute',
-    left: 0,
+    insetInlineEnd: 0,
     top: 0, // in home-hello it's bottom:0 because shapes designed from bottom
     '[data-id="c_1"]': {
       top: 343,
-      left: 0,
+      insetInlineEnd: 0,
     },
     '[data-id="c_2"]': {
       top: 678,
-      left: 340,
+      insetInlineEnd: 340,
     },
     '[data-id="c_3"]': {
       top: 381,
-      left: 341,
+      insetInlineEnd: 341,
     },
   },
 

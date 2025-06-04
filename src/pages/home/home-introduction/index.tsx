@@ -18,20 +18,14 @@ export default function HomeIntroduction({ loaded, isInView }) {
     <>
       <StyledShapes>
         <div data-shapes>
-          {cuboids.map(({ id, animateInfo, ...cuboid }) => (
+          {cuboids.map(({ id, variants, ...cuboid }) => (
             <Cuboid
               key={id}
               data-id={id}
-              {...cuboid}
-              {...(animateInfo
-                ? {
-                    component: motion.div,
-                    transformTemplate: (_, generated) =>
-                      `rotateX(-26deg) rotateY(45deg) ${generated}`,
-                    transition: { duration: 1 },
-                    animate: isInView ? animateInfo : {},
-                  }
+              {...(variants
+                ? { variants, animate: isInView ? 'enter' : 'exit' }
                 : {})}
+              {...cuboid}
             />
           ))}
         </div>

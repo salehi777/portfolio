@@ -27,7 +27,7 @@ export default function Slider({ perViews, children }: SliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider({
-    rtl: true,
+    rtl: theme.direction === 'rtl',
     breakpoints,
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel)

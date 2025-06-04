@@ -1,10 +1,12 @@
-import { Box, GlobalStyles, keyframes } from '@mui/material'
+import { Box, GlobalStyles, keyframes, useTheme } from '@mui/material'
 
 export default function SpreadableTheme({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const theme = useTheme()
+
   return (
     <>
       <GlobalStyles
@@ -16,7 +18,9 @@ export default function SpreadableTheme({
             animation: 'none',
           },
           '::view-transition-new(switch)': {
-            animation: `${spread} .4s linear`,
+            animation: `${
+              theme.direction === 'ltr' ? spreadLTR : spreadRTL
+            } .4s linear`,
           },
         }}
       />
@@ -33,11 +37,20 @@ export default function SpreadableTheme({
   )
 }
 
-const spread = keyframes`
+const spreadLTR = keyframes`
   from {
-      clip-path: circle(0% at 28px 28px);
+      clip-path: circle(0% at 99% 1%);
   }
   to {
-      clip-path: circle(150% at 28px 28px);
+      clip-path: circle(150% at 99% 1%);
+  }
+`
+
+const spreadRTL = keyframes`
+  from {
+      clip-path: circle(0% at 1% 1%);
+  }
+  to {
+      clip-path: circle(150% at 1% 1%);
   }
 `

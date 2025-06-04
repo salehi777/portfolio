@@ -8,7 +8,7 @@ export const StyledSmallTitle = styled(Box)(({ theme }) => ({
   '>span': {
     height: 2,
     width: 40,
-    marginLeft: 14,
+    marginInlineEnd: 14,
     display: 'block',
     background: theme.palette.primary.main,
   },

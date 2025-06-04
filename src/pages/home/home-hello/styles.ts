@@ -20,7 +20,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
       width: 55,
       height: 55,
       borderRadius: '100%',
-      marginLeft: 14,
+      marginInlineEnd: 14,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -66,11 +66,11 @@ export const StyledShapes = styled('div')(({ theme }) => ({
   width: '100%',
   height: '100%',
   top: 0,
-  right: 0,
+  insetInlineStart: 0,
 
   '[data-shapes-1]': {
     position: 'absolute',
-    left: 0,
+    insetInlineEnd: 0,
     bottom: 0,
     top: 0,
     transformOrigin: 'left bottom',
@@ -80,7 +80,7 @@ export const StyledShapes = styled('div')(({ theme }) => ({
       height: '100%',
       width: 500,
       bottom: 0,
-      left: 0,
+      insetInlineEnd: 0,
       background: '#5b46cc',
       boxShadow: theme.customShadows.overlay(),
     },
@@ -89,16 +89,18 @@ export const StyledShapes = styled('div')(({ theme }) => ({
       height: 750 / TAN,
       width: 750,
       bottom: 0,
-      left: 0,
+      insetInlineEnd: 0,
       background: '#b1b8f9',
       boxShadow: theme.customShadows.overlay(),
-      clipPath: 'polygon(0 0, 0% 100%, 100% 100%)',
+      clipPath: `polygon(${
+        theme.direction === 'rtl' ? 0 : 100
+      }% 0, 0% 100%, 100% 100%)`,
       div: {
         position: 'absolute',
         height: '50%',
         width: '33.33%',
         bottom: 0,
-        right: 0,
+        insetInlineStart: 0,
         background: '#474bfe',
         boxShadow: theme.customShadows.overlay(),
       },
@@ -107,64 +109,64 @@ export const StyledShapes = styled('div')(({ theme }) => ({
 
   '[data-shapes-2]': {
     position: 'absolute',
-    left: 0,
+    insetInlineEnd: 0,
     bottom: 0,
 
     '[data-id="c_1"]': {
       top: -309,
-      left: 375,
+      insetInlineEnd: 375,
     },
     '[data-id="c_2"]': {
       top: -395,
-      left: 218,
+      insetInlineEnd: 218,
     },
     '[data-id="c_3"]': {
       top: -395,
-      left: 533,
+      insetInlineEnd: 533,
     },
     '[data-id="c_4"]': {
       top: -385,
-      left: 444,
+      insetInlineEnd: 444,
     },
     '[data-id="c_5"]': {
       top: -591,
-      left: 387,
+      insetInlineEnd: 387,
     },
     '[data-id="c_6"]': {
       top: -566,
-      left: 443,
+      insetInlineEnd: 443,
     },
     '[data-id="c_7"]': {
       top: -566,
-      left: 330,
+      insetInlineEnd: 330,
     },
     '[data-id="c_8"]': {
       top: -613,
-      left: 387,
+      insetInlineEnd: 387,
     },
     '[data-id="c_9"]': {
       top: -178,
-      left: 621,
+      insetInlineEnd: 621,
     },
     '[data-id="c_10"]': {
       top: -255,
-      left: 704,
+      insetInlineEnd: 704,
     },
     '[data-id="c_11"]': {
       top: -520,
-      left: 602,
+      insetInlineEnd: 602,
     },
     '[data-id="s_1"]': {
       top: -375,
-      left: 357,
+      insetInlineEnd: 357,
     },
     '[data-id="s_2"]': {
       top: -371,
-      left: 482,
+      insetInlineEnd: 482,
     },
     '[data-id="s_3"]': {
       top: -210,
-      left: 158,
+      insetInlineEnd: 158,
     },
   },
 
@@ -174,7 +176,7 @@ export const StyledShapes = styled('div')(({ theme }) => ({
     },
     '[data-shapes-2]': {
       transform: 'scale(1.1)',
-      left: 50,
+      insetInlineEnd: 50,
       bottom: 12,
     },
   },

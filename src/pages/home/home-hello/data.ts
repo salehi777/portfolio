@@ -40,7 +40,7 @@ export const cuboids = [
     height: 80,
     length: 80,
     color: '#d3d0ff',
-    animateInfo: { z: [0, 30] },
+    variants: { enter: { z: 30 }, exit: { z: 0 } },
   },
   {
     id: 'c_7',
@@ -48,7 +48,7 @@ export const cuboids = [
     height: 80,
     length: 80,
     color: '#d3d0ff',
-    animateInfo: { x: [0, -30] },
+    variants: { enter: { x: 30 }, exit: { x: 0 } },
   },
   {
     id: 'c_8',
@@ -56,7 +56,7 @@ export const cuboids = [
     height: 80,
     length: 80,
     color: '#ffe0f2',
-    animateInfo: { y: [0, -90] },
+    variants: { enter: { y: -90 }, exit: { y: 0 } },
   },
   {
     id: 'c_9',
@@ -64,7 +64,7 @@ export const cuboids = [
     height: 50,
     length: 50,
     color: '#ffe0f2',
-    animateInfo: { z: [100, 0] },
+    variants: { enter: { z: [100, 0] }, exit: { z: 100 } },
   },
   {
     id: 'c_10',
@@ -87,7 +87,7 @@ export const spheres = [
     id: 's_1',
     radius: 55,
     color: '#ff9c19',
-    animateInfo: { y: [0, -115] },
+    variants: { enter: { y: -115 }, exit: { y: 0 } },
   },
   {
     id: 's_2',
@@ -98,6 +98,6 @@ export const spheres = [
     id: 's_3',
     radius: 35,
     color: '#ffffff',
-    animateInfo: { y: [50, 0] },
+    variants: { enter: { y: [50, 0] }, exit: { y: 50 } },
   },
 ]

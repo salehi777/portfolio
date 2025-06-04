@@ -6,30 +6,25 @@ export const StyledSlider = styled('div')(({ theme }) => ({
 
 export const StyledDots = styled('div')(({ theme }) => ({
   position: 'fixed',
-  bottom: 8,
-  right: 8,
+  bottom: 16,
+  insetInlineStart: 16,
 
   '>div': {
     position: 'absolute',
-    top: -100,
-    transformOrigin: '0 100px',
+    top: -108,
+    insetInlineStart: -8,
+    transformOrigin: 'center 108px',
     cursor: 'pointer',
 
-    '&:nth-of-type(2)': {
-      animation: `${rotate(-18)} 1s ease forwards`,
-    },
-    '&:nth-of-type(3)': {
-      animation: `${rotate(-36)} 1s ease forwards`,
-    },
-    '&:nth-of-type(4)': {
-      animation: `${rotate(-54)} 1s ease forwards`,
-    },
-    '&:nth-of-type(5)': {
-      animation: `${rotate(-72)} 1s ease forwards`,
-    },
-    '&:nth-of-type(6)': {
-      animation: `${rotate(-90)} 1s ease forwards`,
-    },
+    ...Object.fromEntries(
+      [0, 1, 2, 3, 4, 5].map((i) => {
+        const coefficient = theme.direction === 'ltr' ? 1 : -1
+        return [
+          `&:nth-of-type(${i + 1})`,
+          { animation: `${rotate(i * 18 * coefficient)} 1s ease forwards` },
+        ]
+      })
+    ),
 
     span: {
       width: 16,
@@ -45,10 +40,10 @@ export const StyledDots = styled('div')(({ theme }) => ({
       transition: theme.transitions.create('color'),
       color: '#b0b0b0',
       whiteSpace: 'nowrap',
-      transform: 'rotate(90deg)',
-      transformOrigin: '100% 0%',
+      transform: theme.direction === 'ltr' ? 'rotate(-90deg)' : 'rotate(90deg)',
+      transformOrigin: theme.direction === 'ltr' ? 'left top' : 'right top',
       top: 0,
-      right: 'calc(50% - 12px)',
+      insetInlineStart: 'calc(50% - 12px)',
       padding: '0px 12px',
       userSelect: 'none',
       outline: 'none',

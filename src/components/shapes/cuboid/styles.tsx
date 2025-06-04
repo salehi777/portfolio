@@ -9,7 +9,9 @@ export const StyledCuboid = styled(
 )(({ theme, width, height, length, color }) => ({
   position: 'absolute',
   transformStyle: 'preserve-3d',
-  transform: 'rotateX(-26deg) rotateY(45deg)',
+  transform: `rotateX(-26deg) rotateY(${
+    theme.direction === 'ltr' ? -45 : 45
+  }deg)`,
 
   '>div': {
     position: 'absolute',
@@ -19,19 +21,33 @@ export const StyledCuboid = styled(
   '[data-front]': {
     width,
     height,
-    transform: `translate(${width / 2}px, ${-height / 2}px) translateZ(${length / 2}px)`,
+    top: -height / 2,
+    insetInlineStart: -width / 2,
+    transform: `translateZ(${length / 2}px)`,
     boxShadow: theme.customShadows.overlay(20),
   },
   '[data-left]': {
     width: length,
     height,
-    transform: `translate(${length / 2 - width / 2}px, ${-height / 2}px) rotateY(-90deg)`,
+    top: -height / 2,
+    insetInlineStart: -length / 2,
+    transform: `translate(${-width / 2}px, 0px) rotateY(-90deg)`,
+    boxShadow: theme.customShadows.overlay(10),
+  },
+  '[data-right]': {
+    width: length,
+    height,
+    top: -height / 2,
+    insetInlineStart: -length / 2,
+    transform: `translate(${width / 2}px, 0px) rotateY(90deg)`,
     boxShadow: theme.customShadows.overlay(10),
   },
   '[data-top]': {
     width,
     height: length,
-    transform: `translate(${width / 2}px, ${-length / 2 - height / 2}px) rotateX(90deg)`,
+    top: -length / 2,
+    insetInlineStart: -width / 2,
+    transform: `translate(0px, ${-height / 2}px) rotateX(90deg)`,
     boxShadow: theme.customShadows.overlay(),
   },
 }))
