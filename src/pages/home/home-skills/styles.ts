@@ -2,16 +2,16 @@ import { TAN } from '@/constants'
 import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({
-  padding: '140px 80px 100px 80px',
+  padding: '140px 80px 100px',
   display: 'flex',
   flexDirection: 'column',
   position: 'relative',
 
   [theme.breakpoints.down('lg')]: {
-    padding: '110px 60px 100px 60px',
+    padding: '110px 60px 100px',
   },
   [theme.breakpoints.down('md')]: {
-    padding: '150px 30px 100px 30px',
+    padding: '150px 30px 100px',
   },
 }))
 

@@ -68,7 +68,15 @@ export const skills = [
   },
   {
     title: 'Redux/Zustand',
-    percent: 70,
+    percent: 75,
+  },
+  {
+    title: 'Agile',
+    percent: 65,
+  },
+  {
+    title: 'Framer Motion',
+    percent: 65,
   },
   {
     title: 'TypeScript',
@@ -76,10 +84,6 @@ export const skills = [
   },
   {
     title: 'Antd',
-    percent: 60,
-  },
-  {
-    title: 'Agile',
     percent: 60,
   },
   {
@@ -93,10 +97,6 @@ export const skills = [
   {
     title: 'Electron',
     percent: 30,
-  },
-  {
-    title: 'Framer Motion',
-    percent: 40,
   },
   {
     title: 'Extension',

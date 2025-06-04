@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 export const StyledContent = styled('div')(({ theme }) => ({
   width: 'calc(100vw - 450px)',
   height: '100%',
-  padding: '140px 100px 100px 100px',
+  padding: '140px 100px 100px',
   display: 'flex',
   flexDirection: 'column',
   position: 'relative',
@@ -35,13 +35,13 @@ export const StyledContent = styled('div')(({ theme }) => ({
 
   [theme.breakpoints.down('lg')]: {
     width: 'calc(100vw - 350px)',
-    padding: '140px 60px 100px 60px',
+    padding: '140px 60px 100px',
   },
   [theme.breakpoints.down('md')]: {
     width: '100%',
   },
   [theme.breakpoints.down('sm')]: {
-    padding: '140px 30px 100px 30px',
+    padding: '140px 30px 100px',
     justifyContent: 'center',
   },
 }))

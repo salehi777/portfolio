@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles'
 export const StyledContent = styled('div')(({ theme }) => ({
   width: 'calc(100vw - 750px)',
   height: '100%',
-  padding: '120px 140px 100px 100px',
+  padding: '120px 140px 100px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -47,14 +47,14 @@ export const StyledContent = styled('div')(({ theme }) => ({
 
   [theme.breakpoints.down('xl')]: {
     width: 'calc(100vw - 600px)',
-    padding: '120px 65px 100px 70px',
+    padding: '120px 65px 100px',
   },
   [theme.breakpoints.down('lg')]: {
     width: 'calc(100vw - 430px)',
   },
   [theme.breakpoints.down('md')]: {
     width: '100%',
-    padding: '120px 50px 100px 50px',
+    padding: '120px 50px 100px',
     '[data-scroll]': {
       marginTop: 60,
     },

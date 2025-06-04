@@ -25,7 +25,7 @@ This repository is source code for my portfolio site. It's created to be represe
 - [x] README
 - [x] Theme
 - [x] View Transition
-- [ ] Language
+- [x] Language
 - [ ] Offline
 
 ---

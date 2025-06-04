@@ -1,18 +1,18 @@
 import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({
-  padding: '140px 120px 100px 120px',
+  padding: '140px 120px 100px',
   maxWidth: 1400,
   margin: '0 auto',
 
   [theme.breakpoints.down('lg')]: {
-    padding: '140px 90px 100px 90px',
+    padding: '140px 90px 100px',
   },
   [theme.breakpoints.down('md')]: {
-    padding: '120px 50px 100px 50px',
+    padding: '120px 50px 100px',
   },
   [theme.breakpoints.down('sm')]: {
-    padding: '120px 25px 100px 25px',
+    padding: '120px 25px 100px',
   },
 }))
 

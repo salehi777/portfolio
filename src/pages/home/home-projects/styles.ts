@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({
   height: '100%',
-  padding: '120px 120px 100px 120px',
+  padding: '120px 120px 100px ',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -10,10 +10,10 @@ export const StyledContent = styled('div')(({ theme }) => ({
   margin: '0 auto',
 
   [theme.breakpoints.down('lg')]: {
-    padding: '120px 90px 100px 90px',
+    padding: '120px 90px 100px ',
   },
   [theme.breakpoints.down('sm')]: {
-    padding: '120px 40px 100px 40px',
+    padding: '120px 30px 100px',
   },
 }))
 
