@@ -43,7 +43,13 @@ export default function Header() {
   return (
     <>
       <StyledLogo>
-        <img src="/images/logo.png" width={60} height={60} alt="رزومه" />
+        <img
+          src="/images/logo.png"
+          width={60}
+          height={60}
+          alt="رزومه"
+          loading="lazy"
+        />
       </StyledLogo>
 
       <StyledThemeButton onClick={onModeChange}>

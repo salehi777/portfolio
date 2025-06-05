@@ -9,10 +9,14 @@ import MotionUp from '@/components/motion-up'
 import { motion } from 'motion/react'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
+import useHasRendered from '../useHasRendered'
 
 export default function HomeOther({ loaded, isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
   const { t } = useTranslation()
+  const { hasRendered } = useHasRendered(isInView)
+
+  if (!hasRendered) return null
 
   return (
     <>
@@ -103,6 +107,7 @@ const Content2 = () => {
         >
           <img
             src="/icons/github.svg"
+            loading="lazy"
             width={40}
             height={40}
             alt="github logo"
@@ -118,6 +123,7 @@ const Content2 = () => {
         >
           <img
             src="/icons/dribbble.svg"
+            loading="lazy"
             width={40}
             height={40}
             alt="dribbble logo"
@@ -130,6 +136,7 @@ const Content2 = () => {
         >
           <img
             src="/icons/dribbble.svg"
+            loading="lazy"
             width={40}
             height={40}
             alt="dribbble logo"

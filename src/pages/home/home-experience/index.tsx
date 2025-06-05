@@ -7,15 +7,22 @@ import MotionUp from '@/components/motion-up'
 import { useMediaQuery } from '@mui/material'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
+import useHasRendered from '../useHasRendered'
 
 export default function HomeExperience({ loaded, isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
   const { t } = useTranslation()
+  const { hasRendered } = useHasRendered(isInView)
+
+  if (!hasRendered) return null
 
   return (
     <StyledContent>
       <MotionUp isActive={isInView}>
-        <SmallTitle title={t('home.experience.title')} mb={{ xs: 1, sm: 2.5, md: 5 }} />
+        <SmallTitle
+          title={t('home.experience.title')}
+          mb={{ xs: 1, sm: 2.5, md: 5 }}
+        />
       </MotionUp>
 
       <MotionUp isActive={isInView} t={{ delay: 0.1 }}>

@@ -36,6 +36,8 @@ export const StyledProject = styled('div')(({ theme }) => ({
       height: 300,
       width: '100%',
       display: 'block',
+      imageRendering: 'auto',
+      transition: 'opacity 0.3s ease-in-out',
     },
 
     '>div': {

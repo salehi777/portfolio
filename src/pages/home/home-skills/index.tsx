@@ -7,10 +7,14 @@ import MotionUp from '@/components/motion-up'
 import { motion } from 'motion/react'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
+import useHasRendered from '../useHasRendered'
 
 export default function HomeSkills({ loaded, isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'))
   const { t } = useTranslation()
+  const { hasRendered } = useHasRendered(isInView)
+
+  if (!hasRendered) return null
 
   return (
     <>

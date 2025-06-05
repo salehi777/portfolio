@@ -5,9 +5,13 @@ import { projects } from './data'
 import MotionUp from '@/components/motion-up'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
+import useHasRendered from '../useHasRendered'
 
 export default function HomeProjects({ loaded, isInView }) {
   const { t } = useTranslation()
+  const { hasRendered } = useHasRendered(isInView)
+
+  if (!hasRendered) return null
 
   return (
     <StyledContent>

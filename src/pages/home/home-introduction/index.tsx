@@ -9,10 +9,14 @@ import { motion } from 'motion/react'
 import Slider from '@/components/slider'
 import { useMediaQuery } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import useHasRendered from '../useHasRendered'
 
 export default function HomeIntroduction({ loaded, isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
   const { t } = useTranslation()
+  const { hasRendered } = useHasRendered(isInView)
+
+  if (!hasRendered) return null
 
   return (
     <>

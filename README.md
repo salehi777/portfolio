@@ -23,10 +23,21 @@ This repository is source code for my portfolio site. It's created to be represe
 ### ✅ To-Do
 
 - [x] README
-- [x] Theme
-- [x] View Transition
-- [x] Language
-- [ ] Offline
+- [x] Theme Switcher
+- [x] View Transition for Theme Switching
+- [x] Multi Language and Direction support
+- [ ] Offline page design
+- [ ] Lazy loading for images
+- [ ] Fix Umami
+- [ ] Blog Section
+  - Share your thoughts on web development, tech trends, or project insights
+- [ ] Contact Section
+  - Add a contact form
+  - Include social media links
+  - Add a "Get in Touch" CTA(Call to Action) button
+
+
+
 
 ---
 
