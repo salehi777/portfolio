@@ -60,6 +60,11 @@ export default function Header() {
             exit={{ rotate: [0, 180], opacity: [1, 0] }}
           >
             <SvgColor src={`/icons/${mode === 'light' ? 'sun' : 'moon'}.svg`} />
+            {/* to make sure other icon loaded */}
+            <SvgColor
+              src={`/icons/${mode !== 'light' ? 'sun' : 'moon'}.svg`}
+              sx={{ width: 0, height: 0 }}
+            />
           </motion.span>
         </AnimatePresence>
       </StyledThemeButton>
@@ -70,6 +75,7 @@ export default function Header() {
             <SvgColor src="/icons/globe.svg" />
           </span>
           <motion.div
+            initial={false}
             style={{ y: '-50%' }}
             variants={{
               show: {

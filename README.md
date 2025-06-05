@@ -27,8 +27,9 @@ This repository is source code for my portfolio site. It's created to be represe
 - [x] View Transition for Theme Switching
 - [x] Multi Language and Direction support
 - [ ] Offline page design
-- [ ] Lazy loading for images
+- [x] Lazy loading for images
 - [ ] Fix Umami
+- [ ] SEO
 - [ ] Blog Section
   - Share your thoughts on web development, tech trends, or project insights
 - [ ] Contact Section
