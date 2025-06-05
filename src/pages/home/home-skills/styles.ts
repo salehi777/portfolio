@@ -79,59 +79,31 @@ export const StyledShapes = styled('div')(({ theme }) => ({
   top: 0,
   insetInlineStart: 0,
 
-  '[data-shapes-1]': {
-    position: 'absolute',
-    insetInlineStart: 0,
-    bottom: 0,
-    top: 0,
-    insetInlineEnd: 0,
-    transformOrigin: 'left bottom',
-
-    '>div:first-of-type': {
-      position: 'absolute',
-      height: 750 / TAN,
-      width: 750,
-      bottom: 0,
-      insetInlineEnd: 0,
-      background: '#5b46cc',
-      boxShadow: theme.customShadows.overlay(),
-      clipPath:
-        theme.direction === 'rtl'
-          ? 'polygon(10% 0%, 100% 90%, 100% 100%, 0 100%, 0 0)'
-          : 'polygon(90% 0, 100% 0, 100% 100%, 0 100%, 0 90%)',
-
-
-    },
-  },
-
-  '[data-shapes-2]': {
+  '[data-shapes]': {
     position: 'absolute',
     insetInlineEnd: 0,
     bottom: 0,
 
     '[data-id="c_1"]': {
-      top: -259,
-      insetInlineEnd: 147,
+      top: -219,
+      insetInlineEnd: 97,
     },
     '[data-id="c_2"]': {
-      top: -258,
-      insetInlineEnd: 375,
+      top: -198,
+      insetInlineEnd: 325,
     },
     '[data-id="c_3"]': {
-      top: -107,
-      insetInlineEnd: 486,
+      top: -57,
+      insetInlineEnd: 436,
     },
     '[data-id="c_4"]': {
-      top: -98,
-      insetInlineEnd: 113,
+      top: -58,
+      insetInlineEnd: 133,
     },
   },
 
   [theme.breakpoints.down('lg')]: {
-    '[data-shapes-1]': {
-      transform: 'scale(.85)',
-    },
-    '[data-shapes-2]': {
+    '[data-shapes]': {
       transform: 'scale(.85)',
     },
   },

@@ -15,11 +15,7 @@ export default function HomeSkills({ loaded, isInView }) {
   return (
     <>
       <StyledShapes>
-        <div data-shapes-1>
-          <div />
-        </div>
-
-        <div data-shapes-2>
+        <div data-shapes>
           {cuboids.map(({ id, variants, ...cuboid }) => (
             <Cuboid
               key={id}
@@ -35,7 +31,10 @@ export default function HomeSkills({ loaded, isInView }) {
 
       <StyledContent>
         <MotionUp isActive={isInView}>
-          <SmallTitle title={t('home.skills.title')} mb={{ xs: 14, sm: 18, md: 3, lg: 6 }} />
+          <SmallTitle
+            title={t('home.skills.title')}
+            mb={{ xs: 14, sm: 18, md: 3, lg: 6 }}
+          />
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.1 }}>

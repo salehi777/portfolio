@@ -182,13 +182,13 @@ export const StyledShapes = styled('div')(({ theme }) => ({
   },
   [theme.breakpoints.down('lg')]: {
     '[data-shapes-1]': {
-      transform: 'scale(.8)',
+      transform: 'scale(.85)',
       '>div:first-of-type': {
         height: '125%',
       },
     },
     '[data-shapes-2]': {
-      transform: 'scale(.8)',
+      transform: 'scale(.85)',
     },
   },
   [theme.breakpoints.down('md')]: {

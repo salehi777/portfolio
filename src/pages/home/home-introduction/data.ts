@@ -13,7 +13,7 @@ export const cuboids = [
     height: 60,
     length: 60,
     color: '#efefef',
-    variants: { enter: { x: [-100, 0] }, exit: { x: -100 } },
+    variants: { enter: { x: [100, 0] }, exit: { x: 100 } },
   },
   {
     id: 'c_3',
