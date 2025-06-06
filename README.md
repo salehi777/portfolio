@@ -26,19 +26,21 @@ This repository is source code for my portfolio site. It's created to be represe
 - [x] Theme Switcher
 - [x] View Transition for Theme Switching
 - [x] Multi Language and Direction support
-- [ ] Offline page design
 - [x] Lazy loading for images
-- [ ] Fix Umami
-- [ ] SEO
-- [ ] Blog Section
-  - Share your thoughts on web development, tech trends, or project insights
+- [x] Fix Umami
+- [ ] Offline page design
 - [ ] Contact Section
   - Add a contact form
   - Include social media links
   - Add a "Get in Touch" CTA(Call to Action) button
-
-
-
+- [ ] SEO
+  - Setting up server-side rendering
+  - Implementing meta tags and structured data
+  - Creating a sitemap
+  - Optimizing performance
+  - Setting up analytics
+- [ ] Blog Section
+  - Share your thoughts on web development, tech trends, or project insights
 
 ---
 

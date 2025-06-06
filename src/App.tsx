@@ -1,10 +1,10 @@
-import Routes from './routes'
 import '@/i18n'
 import MuiThemeProvider from './theme-provider'
 import 'keen-slider/keen-slider.min.css'
 import { Analytics } from '@vercel/analytics/react'
 import RegisterSW from './components/register-sw'
 import { SpeedInsights } from '@vercel/speed-insights/react'
+import ReactRoutes from './react-routes'
 
 export default function App() {
   return (
@@ -17,7 +17,7 @@ export default function App() {
       )}
       <RegisterSW />
       <MuiThemeProvider>
-        <Routes />
+        <ReactRoutes />
       </MuiThemeProvider>
     </>
   )
