@@ -5,7 +5,7 @@ export const StyledTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
   '.MuiTooltip-tooltip': {
-    background: 'white',
+    background: theme.palette.background.paper,
     color: 'inherit',
     padding: '12px',
 
@@ -22,6 +22,6 @@ export const StyledTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 
   '.MuiTooltip-arrow': {
-    color: 'white',
+    color: theme.palette.background.paper,
   },
 }))

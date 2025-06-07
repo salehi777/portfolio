@@ -73,7 +73,8 @@ export default function ContactMeForm({ closeModal }) {
                   <Box
                     sx={{
                       position: 'relative',
-                      bgcolor: 'white',
+                      bgcolor: (theme) => theme.palette.background.paper,
+                      backgroundImage: 'var(--Paper-overlay)',
                       borderRadius: '8px',
                       zIndex: (theme) =>
                         tooltipStatus === 'show'
