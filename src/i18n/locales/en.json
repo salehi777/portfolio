@@ -14,7 +14,8 @@
       "birth_date": "Born 1997",
       "location": "Residing in Isfahan/Najafabad",
       "education": "Bachelor's in Computer Science",
-      "description": "I started learning programming about 9 years ago, and for the past 6 years, I've focused intensively on JavaScript and React. I have experience working both in-person and, more frequently, remotely."
+      "description": "I started learning programming about 9 years ago, and for the past 6 years, I've focused intensively on JavaScript and React. I have experience working both in-person and, more frequently, remotely.",
+      "telegram": "Telegram"
     },
     "skills": {
       "title": "Skills"
@@ -76,7 +77,7 @@
       "placeholder": "Mobile, Email..."
     },
     "message": {
-      "label": "Message",
+      "label": "Your message",
       "placeholder": ""
     },
     "submit": "Submit",

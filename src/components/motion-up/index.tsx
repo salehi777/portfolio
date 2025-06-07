@@ -12,7 +12,7 @@ export default function MotionUp({ isActive, t, ...props }: MotionUpProps) {
     <motion.div
       initial={{ y: 100 }}
       animate={isActive ? { y: [100, 0] } : {}}
-      transition={{ duration: 1, ...t }}
+      transition={{ duration: 0.6, ...t }}
       {...props}
     />
   )

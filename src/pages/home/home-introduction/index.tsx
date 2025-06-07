@@ -102,15 +102,30 @@ const Content2 = () => {
   )
 }
 
-const Content3 = () => (
-  <div data-contacts>
-    <a href="tel:09137276118">
-      <SvgColor src="/icons/phone.svg" />
-      <div>0913 727 6118</div>
-    </a>
-    <a href="mailto:msalehy77@gmail.com">
-      <SvgColor src="/icons/mail.svg" />
-      <div>msalehy77@gmail.com</div>
-    </a>
-  </div>
-)
+const Content3 = () => {
+  const { t } = useTranslation()
+  return (
+    <div data-contacts>
+      <a href="tel:09137276118" target="_blank" rel="noopener noreferrer">
+        <SvgColor src="/icons/phone.svg" />
+        <div>0913 727 6118</div>
+      </a>
+      <a
+        href="mailto:msalehy77@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <SvgColor src="/icons/mail.svg" />
+        <div>msalehy77@gmail.com</div>
+      </a>
+      <a
+        href="https://t.me/mohammadsalehi777"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <SvgColor src="/icons/send.svg" />
+        <div>{t('home.introduction.telegram')}</div>
+      </a>
+    </div>
+  )
+}

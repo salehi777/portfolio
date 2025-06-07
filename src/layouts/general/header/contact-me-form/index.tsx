@@ -16,7 +16,7 @@ export default function ContactMeForm({ closeModal }) {
   >('not_shown')
 
   const { loading, send } = useRequest(
-    alovaInstance.Post('/contact-via-telegram', { info: '', message: '' }),
+    (data) => alovaInstance.Post('/contact-via-telegram', data),
     { immediate: false }
   )
 
@@ -36,10 +36,20 @@ export default function ContactMeForm({ closeModal }) {
 
   return (
     <>
-      <Box sx={{ p: '24px 16px' }}>
+      <Box sx={{ p: '40px 32px 24px' }}>
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
             <Grid container spacing={3} justifyContent={'flex-end'}>
+              <Grid size={12}>
+                <Input
+                  name="message"
+                  placeholder={t('contact_me.message.label')}
+                  rules={{ required: true }}
+                  multiline
+                  minRows={4}
+                  maxRows={8}
+                />
+              </Grid>
               <Grid size={12}>
                 <StyledTooltip
                   disableFocusListener
@@ -79,21 +89,13 @@ export default function ContactMeForm({ closeModal }) {
                   </Box>
                 </StyledTooltip>
               </Grid>
-              <Grid size={12}>
-                <Input
-                  name="message"
-                  label={t('contact_me.message.label')}
-                  rules={{ required: true }}
-                  multiline
-                  minRows={4}
-                />
-              </Grid>
               <Grid>
                 <Button
                   type="submit"
                   variant="contained"
                   size="large"
                   loading={loading}
+                  sx={{ mt: 1 }}
                 >
                   {t('contact_me.submit')}
                 </Button>

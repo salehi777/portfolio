@@ -42,7 +42,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'center',
 
-    a: {
+    '>a': {
       display: 'flex',
       alignItems: 'center',
 
@@ -52,8 +52,8 @@ export const StyledContent = styled('div')(({ theme }) => ({
         direction: 'ltr',
       },
 
-      '&:first-of-type': {
-        marginBottom: 12,
+      '&:last-of-type': {
+        marginTop: 12,
       },
     },
   },

@@ -4,8 +4,11 @@ import { AnimatePresence, motion } from 'motion/react'
 import SvgColor from '@/components/svg-color'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
-import { ClickAwayListener, type Direction } from '@mui/material'
+import { ClickAwayListener, Fab, type Direction } from '@mui/material'
 import { languages } from '@/i18n'
+import { useModal } from '@/hooks/useModal'
+import Modal from '@/components/modal'
+import ContactMeForm from './contact-me-form'
 
 export default function Header() {
   // theme
@@ -39,6 +42,9 @@ export default function Header() {
     document.documentElement.lang = i18n.language
     document.documentElement.dir = dir
   }, [i18n.language])
+
+  // contact
+  const { isOpen, openModal, closeModal } = useModal()
 
   return (
     <>
@@ -103,6 +109,17 @@ export default function Header() {
           </motion.div>
         </StyledLangButton>
       </ClickAwayListener>
+
+      <Fab
+        sx={{ position: 'fixed', bottom: 16, insetInlineEnd: 16 }}
+        onClick={openModal}
+      >
+        <SvgColor src="/icons/message-square.svg" />
+      </Fab>
+
+      <Modal onClose={closeModal} open={isOpen} maxWidth={'xs'}>
+        <ContactMeForm closeModal={closeModal} />
+      </Modal>
     </>
   )
 }
