@@ -6,26 +6,29 @@ import { useForm, FormProvider } from 'react-hook-form'
 import { StyledTooltip } from './styles'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
+import { useRequest } from 'alova/client'
 
 export default function ContactMeForm({ closeModal }) {
   const { t } = useTranslation()
   const methods = useForm()
-  const [infoStatus, setInfoStatus] = useState<'not_shown' | 'show' | 'shown'>(
-    'not_shown'
+  const [tooltipStatus, setTooltipStatus] = useState<
+    'not_shown' | 'show' | 'shown'
+  >('not_shown')
+
+  const { loading, send } = useRequest(
+    alovaInstance.Post('/contact-via-telegram', { info: '', message: '' }),
+    { immediate: false }
   )
 
   const onSubmit = async ({ info, message }) => {
-    if (!info && infoStatus === 'not_shown') {
-      setInfoStatus('show')
+    if (!info && tooltipStatus === 'not_shown') {
+      setTooltipStatus('show')
       methods.setFocus('info')
       return
     }
 
     try {
-      await alovaInstance.Post('/contact-via-telegram', {
-        contact_info: info,
-        message: encodeURIComponent(message),
-      })
+      await send({ info, message: encodeURIComponent(message) })
       toast.success(t('contact_me.success_message'))
       closeModal?.()
     } catch (error) {}
@@ -33,7 +36,7 @@ export default function ContactMeForm({ closeModal }) {
 
   return (
     <>
-      <Box sx={{ p: 2 }}>
+      <Box sx={{ p: '24px 16px' }}>
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)} noValidate>
             <Grid container spacing={3} justifyContent={'flex-end'}>
@@ -43,14 +46,14 @@ export default function ContactMeForm({ closeModal }) {
                   disableHoverListener
                   disableTouchListener
                   arrow
-                  open={infoStatus === 'show'}
+                  open={tooltipStatus === 'show'}
                   title={
                     <div>
                       <div>{t('contact_me.tooltip.text')}</div>
                       <Button
                         variant="contained"
                         size="small"
-                        onClick={() => setInfoStatus('shown')}
+                        onClick={() => setTooltipStatus('shown')}
                       >
                         {t('contact_me.tooltip.ok')}
                       </Button>
@@ -63,7 +66,7 @@ export default function ContactMeForm({ closeModal }) {
                       bgcolor: 'white',
                       borderRadius: '8px',
                       zIndex: (theme) =>
-                        infoStatus === 'show'
+                        tooltipStatus === 'show'
                           ? theme.zIndex.tooltip
                           : undefined,
                     }}
@@ -86,7 +89,12 @@ export default function ContactMeForm({ closeModal }) {
                 />
               </Grid>
               <Grid>
-                <Button type="submit" variant="contained" size="large">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  size="large"
+                  loading={loading}
+                >
                   {t('contact_me.submit')}
                 </Button>
               </Grid>
@@ -96,8 +104,8 @@ export default function ContactMeForm({ closeModal }) {
       </Box>
 
       <Backdrop
-        open={infoStatus === 'show'}
-        onClick={() => setInfoStatus('shown')}
+        open={tooltipStatus === 'show'}
+        onClick={() => setTooltipStatus('shown')}
       />
     </>
   )

@@ -1,9 +1,11 @@
 import { createAlova } from 'alova'
 import adapterFetch from 'alova/fetch'
+import ReactHook from 'alova/react'
 import toast from 'react-hot-toast'
 
 const alovaInstance = createAlova({
   baseURL: 'https://portfolio-back-sage.vercel.app',
+  statesHook: ReactHook,
   requestAdapter: adapterFetch(),
   responded: {
     onSuccess: async (response) => {
