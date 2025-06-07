@@ -1,13 +1,6 @@
 {
   "home": {
-    "titles": [
-      "Hello",
-      "Intro",
-      "Skills",
-      "Exp",
-      "Links",
-      "Other"
-    ],
+    "titles": ["Hello", "Intro", "Skills", "Exp", "Links", "Other"],
     "hello": {
       "title": "Hello",
       "description": "Mohammad Salehi, I've been professionally pursuing web programming for nearly 6 years.",
@@ -76,5 +69,21 @@
       "code": "This site's code",
       "design": "Design ideas"
     }
+  },
+  "contact_me": {
+    "info": {
+      "label": "Contact Info (Optional)",
+      "placeholder": "Mobile, Email..."
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": ""
+    },
+    "submit": "Submit",
+    "tooltip": {
+      "text": "The message will be sent anonymously to my Telegram, if you want me to contact back provide a contact info",
+      "ok": "OK"
+    },
+    "success_message": "Message sent successfully"
   }
 }

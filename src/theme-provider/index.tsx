@@ -97,6 +97,7 @@ export default function MuiThemeProvider({
             },
           },
         },
+        shape: { borderRadius: 8 },
         customShadows: {
           common:
             mode === 'light'

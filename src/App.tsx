@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import RegisterSW from './components/register-sw'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import ReactRoutes from './react-routes'
+import { Toaster } from 'react-hot-toast'
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <MuiThemeProvider>
         <ReactRoutes />
       </MuiThemeProvider>
+      <Toaster />
     </>
   )
 }

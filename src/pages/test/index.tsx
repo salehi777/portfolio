@@ -1,12 +1,21 @@
-import { useTranslation } from 'react-i18next'
 import { StyledTest } from './styles'
+import { Box, Button } from '@mui/material'
+import { useModal } from '@/hooks/useModal'
+import Modal from '@/components/modal'
+import ContactMeForm from '@/components/contact-me-form'
 
 export default function TestPage() {
-  const { t } = useTranslation()
+  const { isOpen, data, openModal, closeModal } = useModal()
 
   return (
     <StyledTest>
-      <div>{t('home.titles.0')}</div>
+      <Box p={20}>
+        <Button onClick={() => openModal()}>open modal</Button>
+      </Box>
+
+      <Modal onClose={() => closeModal()} open={isOpen} maxWidth={'xs'}>
+        <ContactMeForm closeModal={closeModal}/>
+      </Modal>
     </StyledTest>
   )
 }
