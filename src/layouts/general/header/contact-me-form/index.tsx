@@ -28,7 +28,7 @@ export default function ContactMeForm({ closeModal }) {
     }
 
     try {
-      await send({ info, message: encodeURIComponent(message) })
+      await send({ info, message })
       toast.success(t('contact_me.success_message'))
       closeModal?.()
     } catch (error) {}

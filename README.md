@@ -29,10 +29,7 @@ This repository is source code for my portfolio site. It's created to be represe
 - [x] Lazy loading for images
 - [x] Fix Umami
 - [ ] Offline page design
-- [ ] Contact Section
-  - Add a contact form
-  - Include social media links
-  - Add a "Get in Touch" CTA(Call to Action) button
+- [x] "Get in Touch" CTA(Call to Action) button
 - [ ] SEO
   - Setting up server-side rendering
   - Implementing meta tags and structured data
