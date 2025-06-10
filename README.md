@@ -30,12 +30,6 @@ This repository is source code for my portfolio site. It's created to be represe
 - [x] Fix Umami
 - [ ] Offline page design
 - [x] "Get in Touch" CTA(Call to Action) button
-- [ ] SEO
-  - Setting up server-side rendering
-  - Implementing meta tags and structured data
-  - Creating a sitemap
-  - Optimizing performance
-  - Setting up analytics
 - [ ] Blog Section
   - Share your thoughts on web development, tech trends, or project insights
 
