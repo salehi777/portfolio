@@ -5,13 +5,9 @@ import { projects } from './data'
 import MotionUp from '@/components/motion-up'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
-import useHasRendered from '../useHasRendered'
 
-export default function HomeProjects({ loaded, isInView }) {
+export default function HomeProjects({ isInView }) {
   const { t } = useTranslation()
-  const { hasRendered } = useHasRendered(isInView)
-
-  if (!hasRendered) return null
 
   return (
     <StyledContent>
@@ -20,27 +16,23 @@ export default function HomeProjects({ loaded, isInView }) {
       </MotionUp>
 
       <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-        {loaded && (
-          <Slider
-            perViews={[
-              { breakpoint: 'xs', perView: 1 },
-              { breakpoint: 'lg', perView: 3 },
-            ]}
-          >
-            {Object.entries(projects).map(([project, info]) => (
-              <StyledProject key={project}>
-                <a href={info.link} target="_blank" rel="noopener noreferrer">
-                  <span style={{ backgroundImage: `url(${info.image})` }} />
-                  <div>
-                    <div>
-                      {t('home.projects.projects.' + project + '.note')}
-                    </div>
-                  </div>
-                </a>
-              </StyledProject>
-            ))}
-          </Slider>
-        )}
+        <Slider
+          perViews={[
+            { breakpoint: 'xs', perView: 1 },
+            { breakpoint: 'lg', perView: 3 },
+          ]}
+        >
+          {Object.entries(projects).map(([project, info]) => (
+            <StyledProject key={project}>
+              <a href={info.link} target="_blank" rel="noopener noreferrer">
+                <span style={{ backgroundImage: `url(${info.image})` }} />
+                <div>
+                  <div>{t('home.projects.projects.' + project + '.note')}</div>
+                </div>
+              </a>
+            </StyledProject>
+          ))}
+        </Slider>
       </MotionUp>
     </StyledContent>
   )

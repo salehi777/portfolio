@@ -9,14 +9,10 @@ import MotionUp from '@/components/motion-up'
 import { motion } from 'motion/react'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
-import useHasRendered from '../useHasRendered'
 
-export default function HomeOther({ loaded, isInView }) {
+export default function HomeOther({ isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
   const { t } = useTranslation()
-  const { hasRendered } = useHasRendered(isInView)
-
-  if (!hasRendered) return null
 
   return (
     <>
@@ -50,24 +46,23 @@ export default function HomeOther({ loaded, isInView }) {
           <SmallTitle title={t('home.other.title')} mb={{ xs: 2, lg: 4 }} />
         </MotionUp>
 
-        {loaded &&
-          (!isMobile ? (
-            <>
-              <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-                {Content1(t)}
-              </MotionUp>
-              <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
-                <Content2 />
-              </MotionUp>
-            </>
-          ) : (
+        {!isMobile ? (
+          <>
             <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-              <Slider>
-                {Content1(t)}
-                <Content2 />
-              </Slider>
+              {Content1(t)}
             </MotionUp>
-          ))}
+            <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
+              <Content2 />
+            </MotionUp>
+          </>
+        ) : (
+          <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
+            <Slider>
+              {Content1(t)}
+              <Content2 />
+            </Slider>
+          </MotionUp>
+        )}
       </StyledContent>
     </>
   )

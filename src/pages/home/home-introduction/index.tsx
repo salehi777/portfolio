@@ -9,14 +9,10 @@ import { motion } from 'motion/react'
 import Slider from '@/components/slider'
 import { useMediaQuery } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import useHasRendered from '../useHasRendered'
 
-export default function HomeIntroduction({ loaded, isInView }) {
+export default function HomeIntroduction({ isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
   const { t } = useTranslation()
-  const { hasRendered } = useHasRendered(isInView)
-
-  if (!hasRendered) return null
 
   return (
     <>
@@ -40,28 +36,27 @@ export default function HomeIntroduction({ loaded, isInView }) {
           <SmallTitle title={t('home.introduction.title')} mb={'20px'} />
         </MotionUp>
 
-        {loaded &&
-          (!isMobile ? (
-            <>
-              <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-                <Content1 />
-              </MotionUp>
-              <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
-                <Content2 />
-              </MotionUp>
-              <MotionUp isActive={isInView} t={{ delay: 0.3 }}>
-                <Content3 />
-              </MotionUp>
-            </>
-          ) : (
+        {!isMobile ? (
+          <>
             <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-              <Slider>
-                <Content1 />
-                <Content2 />
-                <Content3 />
-              </Slider>
+              <Content1 />
             </MotionUp>
-          ))}
+            <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
+              <Content2 />
+            </MotionUp>
+            <MotionUp isActive={isInView} t={{ delay: 0.3 }}>
+              <Content3 />
+            </MotionUp>
+          </>
+        ) : (
+          <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
+            <Slider>
+              <Content1 />
+              <Content2 />
+              <Content3 />
+            </Slider>
+          </MotionUp>
+        )}
       </StyledContent>
     </>
   )

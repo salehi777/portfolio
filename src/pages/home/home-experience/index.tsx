@@ -7,14 +7,10 @@ import MotionUp from '@/components/motion-up'
 import { useMediaQuery } from '@mui/material'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
-import useHasRendered from '../useHasRendered'
 
-export default function HomeExperience({ loaded, isInView }) {
+export default function HomeExperience({ isInView }) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
   const { t } = useTranslation()
-  const { hasRendered } = useHasRendered(isInView)
-
-  if (!hasRendered) return null
 
   return (
     <StyledContent>
@@ -26,24 +22,23 @@ export default function HomeExperience({ loaded, isInView }) {
       </MotionUp>
 
       <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-        {loaded &&
-          (!isMobile ? (
-            <Grid container spacing={{ sm: 2, md: 3.5 }}>
-              {Object.entries(jobs).map(([company, info]) => (
-                <Grid key={company} size={6}>
-                  <Job company={company} info={info} />
-                </Grid>
-              ))}
-            </Grid>
-          ) : (
-            <Slider>
-              {Object.entries(jobs).map(([company, info]) => (
-                <div key={company} style={{ padding: '16px', height: '100%' }}>
-                  <Job company={company} info={info} />
-                </div>
-              ))}
-            </Slider>
-          ))}
+        {!isMobile ? (
+          <Grid container spacing={{ sm: 2, md: 3.5 }}>
+            {Object.entries(jobs).map(([company, info]) => (
+              <Grid key={company} size={6}>
+                <Job company={company} info={info} />
+              </Grid>
+            ))}
+          </Grid>
+        ) : (
+          <Slider>
+            {Object.entries(jobs).map(([company, info]) => (
+              <div key={company} style={{ padding: '16px', height: '100%' }}>
+                <Job company={company} info={info} />
+              </div>
+            ))}
+          </Slider>
+        )}
       </MotionUp>
     </StyledContent>
   )

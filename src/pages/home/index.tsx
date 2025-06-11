@@ -1,6 +1,7 @@
 import { StyledDots, StyledSlider } from './styles'
 import useSlider from './useSlider'
 import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react'
 
 import HomeHello from './home-hello'
 import HomeIntroduction from './home-introduction'
@@ -12,6 +13,11 @@ import HomeOther from './home-other'
 export default function HomePage() {
   const { t } = useTranslation()
   const { sliderRef, instanceRef, currentSlide, loaded } = useSlider()
+
+  const [loaded2, setLoaded2] = useState(false)
+  useEffect(() => {
+    if (loaded) setTimeout(() => setLoaded2(true), 1000)
+  }, [loaded])
 
   return (
     <div>
@@ -27,19 +33,19 @@ export default function HomePage() {
           <HomeHello isInView={currentSlide === 0} />
         </div>
         <div className="keen-slider__slide">
-          <HomeIntroduction loaded={loaded} isInView={currentSlide === 1} />
+          {loaded2 && <HomeIntroduction isInView={currentSlide === 1} />}
         </div>
         <div className="keen-slider__slide">
-          <HomeSkills loaded={loaded} isInView={currentSlide === 2} />
+          {loaded2 && <HomeSkills isInView={currentSlide === 2} />}
         </div>
         <div className="keen-slider__slide">
-          <HomeExperience loaded={loaded} isInView={currentSlide === 3} />
+          {loaded2 && <HomeExperience isInView={currentSlide === 3} />}
         </div>
         <div className="keen-slider__slide">
-          <HomeProjects loaded={loaded} isInView={currentSlide === 4} />
+          {loaded2 && <HomeProjects isInView={currentSlide === 4} />}
         </div>
         <div className="keen-slider__slide">
-          <HomeOther loaded={loaded} isInView={currentSlide === 5} />
+          {loaded2 && <HomeOther isInView={currentSlide === 5} />}
         </div>
       </StyledSlider>
 

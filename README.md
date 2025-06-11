@@ -32,6 +32,11 @@ This repository is source code for my portfolio site. It's created to be represe
 - [x] "Get in Touch" CTA(Call to Action) button
 - [ ] Blog Section
   - Share your thoughts on web development, tech trends, or project insights
+- [-] SEO
+  - [ ] Setting up server-side rendering
+  - [ ] Implementing meta tags and structured data
+  - [ ] Creating a sitemap
+  - [x] Setting up analytics
 
 ---
 
