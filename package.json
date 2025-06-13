@@ -4,9 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview",
+    "dev": "node server",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "preview": "cross-env NODE_ENV=production node server",
     "ts": "tsc -b"
   },
   "dependencies": {
@@ -17,6 +19,8 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "alova": "^3.2.13",
+    "compression": "^1.8.0",
+    "express": "^5.0.1",
     "i18next": "^25.2.1",
     "i18next-browser-languagedetector": "^8.1.0",
     "keen-slider": "^6.8.6",
@@ -27,13 +31,16 @@
     "react-hot-toast": "^2.5.2",
     "react-i18next": "^15.5.2",
     "react-router": "^7.6.1",
+    "sirv": "^3.0.1",
     "zustand": "^5.0.5"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@types/node": "^22.15.29",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
+    "cross-env": "^7.0.3",
     "globals": "^16.0.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"

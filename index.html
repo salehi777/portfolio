@@ -76,17 +76,22 @@
 
     <!-- umami analytics -->
     <script>
-      if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
-        const script = document.createElement('script');
-        script.defer = true;
-        script.src = 'https://umami-omega-eight.vercel.app/script.js';
-        script.dataset.websiteId = 'c90038ea-7e45-454a-8c92-aed144936976';
-        document.head.appendChild(script);
+      if (
+        !window.location.hostname.includes('localhost') &&
+        !window.location.hostname.includes('127.0.0.1')
+      ) {
+        const script = document.createElement('script')
+        script.defer = true
+        script.src = 'https://umami-omega-eight.vercel.app/script.js'
+        script.dataset.websiteId = 'c90038ea-7e45-454a-8c92-aed144936976'
+        document.head.appendChild(script)
       }
     </script>
+
+    <!--app-head-->
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root"><!--app-html--></div>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>
