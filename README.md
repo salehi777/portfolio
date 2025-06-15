@@ -60,7 +60,7 @@ src/
 │       └── home-other/
 ├── App.tsx
 ├── entry-client.tsx
-├── entry-server.tsx
+└── entry-server.tsx
 index.html
 server.js
 ```
