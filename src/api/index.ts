@@ -4,7 +4,7 @@ import ReactHook from 'alova/react'
 import toast from 'react-hot-toast'
 
 const alovaInstance = createAlova({
-  baseURL: 'https://portfolio-back-sage.vercel.app',
+  baseURL: import.meta.env.VITE_BACKEND_URL,
   statesHook: ReactHook,
   requestAdapter: adapterFetch(),
   responded: {

@@ -1,5 +1,9 @@
 # Portfolio
 
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+![Vercel](https://img.shields.io/badge/hosted%20on-Vercel-black)
+[![View Site](https://img.shields.io/badge/-Live%20Demo-blue)](https://mohammad-salehi.vercel.app/)
+
 A modern, responsive portfolio website built with React and TypeScript, showcasing my skills, projects, and professional journey.
 
 ## 🌐 Live Demo
@@ -18,12 +22,12 @@ A modern, responsive portfolio website built with React and TypeScript, showcasi
 
 ## 🛠️ Tech Stack
 
-- **Framework**: React 19
-- **Language**: TypeScript
-- **Build Tool**: Vite
-- **Styling**: MUI Styled
-- **Deployment**: Vercel
-- **Analytics**: Umami, Vercel Analytics, Vercel Speed Insights
+- **Framework:** React 19
+- **Language:** TypeScript
+- **Build Tool:** Vite
+- **Styling:** MUI Styled
+- **Deployment:** Vercel
+- **Analytics:** Umami, Vercel Analytics, Vercel Speed Insights
 
 ## 📦 Installation
 
