@@ -110,4 +110,8 @@ export const skills = [
     title: 'Monorepo',
     percent: 20,
   },
+  {
+    title: 'Telegram Bot',
+    percent: 30,
+  },
 ].sort((a, b) => (a.percent < b.percent ? 1 : a.percent === b.percent ? 0 : -1))
