@@ -1,9 +1,9 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
-  "description": "My personal portfolio website built with React and TypeScript",
+  "description": "Personal portfolio website built with React and TypeScript",
   "license": "MIT",
   "engines": {
     "node": ">=20.0.0"
@@ -14,7 +14,8 @@
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
     "preview": "cross-env NODE_ENV=production node server",
-    "ts": "tsc -b"
+    "ts": "tsc -b",
+    "asset-generator": "pwa-asset-generator public/images/logo.png public/pwa-assets -c -f -i index.html -m public/manifest.webmanifest -v /pwa-assets"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -47,6 +48,7 @@
     "@vitejs/plugin-react": "^4.4.1",
     "cross-env": "^7.0.3",
     "globals": "^16.0.0",
+    "pwa-asset-generator": "^8.1.2",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
   }
