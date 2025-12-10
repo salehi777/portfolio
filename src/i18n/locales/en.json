@@ -1,6 +1,6 @@
 {
   "home": {
-    "titles": ["Hello", "Intro", "Skills", "Exp", "Links", "Other"],
+    "titles": ["Hello", "Intro", "Skills", "Exp", "Samples", "Other"],
     "hello": {
       "title": "Hello",
       "description": "Mohammad Salehi, I've been professionally pursuing web programming for nearly 6 years.",

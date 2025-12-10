@@ -101,9 +101,9 @@ const Content3 = () => {
   const { t } = useTranslation()
   return (
     <div data-contacts>
-      <a href="tel:09137276118" target="_blank" rel="noopener noreferrer">
+      <a href="tel:0+989137276118" target="_blank" rel="noopener noreferrer">
         <SvgColor src="/icons/phone.svg" />
-        <div>0913 727 6118</div>
+        <div>+98 913 727 6118</div>
       </a>
       <a
         href="mailto:msalehy77@gmail.com"
