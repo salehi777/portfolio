@@ -31,7 +31,9 @@ export default function ContactMeForm({ closeModal }) {
       await send({ info, message })
       toast.success(t('contact_me.success_message'))
       closeModal?.()
-    } catch (error) {}
+    } catch (error) {
+      toast.error(error.message)
+    }
   }
 
   return (
