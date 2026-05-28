@@ -1,6 +1,6 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
-export const StyledLoading = styled('div')(({ theme, size }: any) => ({
+export const StyledLoading = styled('div')(({ theme }) => ({
   position: 'relative',
 
   '>div': {
@@ -40,4 +40,4 @@ export const StyledLoading = styled('div')(({ theme, size }: any) => ({
     '54%': { right: '0%' },
     '100%': { right: '0%' },
   },
-}));
+}))

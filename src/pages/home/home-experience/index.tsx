@@ -8,7 +8,11 @@ import { useMediaQuery } from '@mui/material'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
 
-export default function HomeExperience({ isInView }) {
+interface HomeExperienceProps {
+  isInView: boolean
+}
+
+export default function HomeExperience({ isInView }: HomeExperienceProps) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
   const { t } = useTranslation()
 

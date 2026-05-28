@@ -1,6 +1,6 @@
 import { keyframes, styled } from '@mui/material/styles'
 
-export const StyledSlider = styled('div')(({ theme }) => ({
+export const StyledSlider = styled('div')(({}) => ({
   height: '100vh',
 }))
 
@@ -23,7 +23,7 @@ export const StyledDots = styled('div')(({ theme }) => ({
           `&:nth-of-type(${i + 1})`,
           { animation: `${rotate(i * 18 * coefficient)} 1s ease forwards` },
         ]
-      })
+      }),
     ),
 
     span: {
@@ -64,7 +64,7 @@ export const StyledDots = styled('div')(({ theme }) => ({
   },
 }))
 
-const rotate = (angle) => keyframes`
+const rotate = (angle: number) => keyframes`
   from {
       transform: rotate(0deg);
   }

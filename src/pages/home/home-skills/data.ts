@@ -75,12 +75,12 @@ export const skills = [
     percent: 65,
   },
   {
-    title: 'Framer Motion',
-    percent: 65,
+    title: '[Framer] Motion',
+    percent: 75,
   },
   {
     title: 'TypeScript',
-    percent: 60,
+    percent: 75,
   },
   {
     title: 'Antd',
@@ -96,7 +96,7 @@ export const skills = [
   },
   {
     title: 'Electron',
-    percent: 30,
+    percent: 75,
   },
   {
     title: 'Extension',

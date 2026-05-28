@@ -1,4 +1,3 @@
-import { TAN } from '@/constants'
 import { styled } from '@mui/material/styles'
 
 export const StyledContent = styled('div')(({ theme }) => ({

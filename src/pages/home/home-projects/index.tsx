@@ -1,12 +1,15 @@
 import SmallTitle from '@/components/small-title'
 import { StyledContent, StyledProject } from './styles'
-import { Typography } from '@mui/material'
 import { projects } from './data'
 import MotionUp from '@/components/motion-up'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
 
-export default function HomeProjects({ isInView }) {
+interface HomeProjectsProps {
+  isInView: boolean
+}
+
+export default function HomeProjects({ isInView }: HomeProjectsProps) {
   const { t } = useTranslation()
 
   return (

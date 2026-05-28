@@ -18,7 +18,7 @@ export default function InstallButton() {
     return () => {
       window.removeEventListener(
         'beforeinstallprompt',
-        handleBeforeInstallPrompt
+        handleBeforeInstallPrompt,
       )
     }
   }, [])
@@ -26,7 +26,7 @@ export default function InstallButton() {
   const handleInstallClick = async () => {
     if (deferredPrompt) {
       ;(deferredPrompt as any).prompt()
-      const { outcome } = await (deferredPrompt as any).userChoice
+      await (deferredPrompt as any).userChoice
       setDeferredPrompt(null)
       setIsInstallable(false)
     }

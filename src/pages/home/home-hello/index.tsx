@@ -6,10 +6,13 @@ import Cuboid from '@/components/shapes/cuboid'
 import { cuboids, spheres } from './data'
 import Sphere from '@/components/shapes/sphere'
 import MotionUp from '@/components/motion-up'
-import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
 
-export default function HomeHello({ isInView }) {
+interface HomeHelloProps {
+  isInView: boolean
+}
+
+export default function HomeHello({ isInView }: HomeHelloProps) {
   const { t } = useTranslation()
 
   return (

@@ -109,11 +109,11 @@ export default function MuiThemeProvider({
                 ? `inset 0 0 0 1000px rgb(0 0 0 / ${init}%)`
                 : 'none'
               : init
-              ? `inset 0 0 0 1000px rgb(0 0 0 / ${init + 10}%)`
-              : `inset 0 0 0 1000px rgb(0 0 0 / 10%)`,
+                ? `inset 0 0 0 1000px rgb(0 0 0 / ${init + 10}%)`
+                : `inset 0 0 0 1000px rgb(0 0 0 / 10%)`,
         },
       }),
-    [mode, direction]
+    [mode, direction],
   )
 
   return (

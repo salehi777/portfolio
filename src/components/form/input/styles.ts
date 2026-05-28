@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles'
 
-export const StyledInput = styled('div')(({ theme, size }: any) => ({
+export const StyledInput = styled('div')(() => ({
   display: 'flex',
   flexDirection: 'column',
 

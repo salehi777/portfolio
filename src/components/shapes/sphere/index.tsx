@@ -1,11 +1,10 @@
-import { useTheme, type BoxProps } from '@mui/material'
+import { type BoxProps } from '@mui/material'
 import { StyledSphere } from './styles'
 import { motion, type MotionProps } from 'motion/react'
 import { useMemo } from 'react'
 
 export interface SphereProps
-  extends Omit<MotionProps, keyof BoxProps>,
-    BoxProps {
+  extends Omit<MotionProps, keyof BoxProps>, BoxProps {
   radius: number
   color: string
 }
@@ -20,7 +19,7 @@ export default function Sphere({ variants, ...props }: SphereProps) {
             transition: { duration: 1 },
           }
         : {},
-    [variants]
+    [variants],
   )
 
   return <StyledSphere {...motionProps} {...props} />

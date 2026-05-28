@@ -8,7 +8,11 @@ import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
 import { useRequest } from 'alova/client'
 
-export default function ContactMeForm({ closeModal }) {
+interface ContactMeFormProps {
+  closeModal?: () => void
+}
+
+export default function ContactMeForm({ closeModal }: ContactMeFormProps) {
   const { t } = useTranslation()
   const methods = useForm()
   const [tooltipStatus, setTooltipStatus] = useState<
@@ -16,11 +20,12 @@ export default function ContactMeForm({ closeModal }) {
   >('not_shown')
 
   const { loading, send } = useRequest(
-    (data) => alovaInstance.Post('/contact-via-telegram', data),
-    { immediate: false }
+    (data: any) => alovaInstance.Post('/contact-via-telegram', data),
+    { immediate: false },
   )
 
-  const onSubmit = async ({ info, message }) => {
+  const onSubmit = async (data: any) => {
+    const { info, message } = data
     if (!info && tooltipStatus === 'not_shown') {
       setTooltipStatus('show')
       methods.setFocus('info')
@@ -32,7 +37,7 @@ export default function ContactMeForm({ closeModal }) {
       toast.success(t('contact_me.success_message'))
       closeModal?.()
     } catch (error) {
-      toast.error(error.message)
+      toast.error((error as any).message)
     }
   }
 

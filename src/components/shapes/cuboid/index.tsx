@@ -4,8 +4,7 @@ import { motion, type MotionProps } from 'motion/react'
 import { useMemo } from 'react'
 
 export interface CuboidProps
-  extends Omit<MotionProps, keyof BoxProps>,
-    BoxProps {
+  extends Omit<MotionProps, keyof BoxProps>, BoxProps {
   width: number
   height: number
   length: number
@@ -21,12 +20,12 @@ export default function Cuboid({ variants, ...props }: CuboidProps) {
         ? {
             variants,
             component: motion.div,
-            transformTemplate: ({ x }, generated) => {
+            transformTemplate: ({ x }: { x: string }, generated: any) => {
               let newGenerated = generated
               if (x && theme.direction === 'rtl') {
                 newGenerated = replaceTranslateXValue(
                   generated,
-                  -x.slice(0, -2)
+                  -x.slice(0, -2),
                 )
               }
               return `rotateX(-26deg) rotateY(${
@@ -36,7 +35,7 @@ export default function Cuboid({ variants, ...props }: CuboidProps) {
             transition: { duration: 1 },
           }
         : {},
-    [theme.direction, variants]
+    [theme.direction, variants],
   )
 
   return (
@@ -49,7 +48,7 @@ export default function Cuboid({ variants, ...props }: CuboidProps) {
   )
 }
 
-function replaceTranslateXValue(transformString, customNumber) {
+function replaceTranslateXValue(transformString: string, customNumber: number) {
   const regex = /(translateX\()(\-?\d+\.?\d*)(px\))/g
   return transformString.replace(regex, `$1${customNumber}$3`)
 }

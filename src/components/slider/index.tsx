@@ -15,7 +15,7 @@ export default function Slider({ perViews, children }: SliderProps) {
   const theme = useTheme()
 
   const breakpoints = useMemo(() => {
-    const temp = {}
+    const temp: any = {}
     perViews?.forEach(({ breakpoint, perView }) => {
       temp[theme.breakpoints.up(breakpoint).substring(7)] = {
         slides: { perView },

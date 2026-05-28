@@ -3,14 +3,14 @@ import { useEffect } from 'react'
 export default function RegisterSW() {
   useEffect(() => {
     // Check if the environment is production AND service workers are supported
-    if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+    if (import.meta.env.PROD && 'serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/sw.js', { scope: '/' }) // Register your service worker
-        .then((registration) => {})
+        .then(() => {})
         .catch((error) => {
           console.error('Service Worker registration failed:', error)
         })
-    } else if (process.env.NODE_ENV === 'development') {
+    } else if (import.meta.env.DEV) {
       // Optional: Log a message in development mode to confirm it's being skipped
 
       // Optional: In development, you might want to unregister existing SWs

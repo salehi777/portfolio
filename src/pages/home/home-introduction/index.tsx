@@ -5,12 +5,15 @@ import SvgColor from '@/components/svg-color'
 import Cuboid from '@/components/shapes/cuboid'
 import { cuboids } from './data'
 import MotionUp from '@/components/motion-up'
-import { motion } from 'motion/react'
 import Slider from '@/components/slider'
 import { useMediaQuery } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-export default function HomeIntroduction({ isInView }) {
+interface HomeIntroductionProps {
+  isInView: boolean
+}
+
+export default function HomeIntroduction({ isInView }: HomeIntroductionProps) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'))
   const { t } = useTranslation()
 

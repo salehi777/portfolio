@@ -17,7 +17,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
   },
 }))
 
-export const StyledProject = styled('div')(({ theme }) => ({
+export const StyledProject = styled('div')(({}) => ({
   height: '100%',
   padding: 10,
 

@@ -10,7 +10,7 @@ import { Toaster } from 'react-hot-toast'
 export default function App() {
   return (
     <>
-      {process.env.NODE_ENV !== 'development' && (
+      {import.meta.env.DEV && (
         <>
           <Analytics debug={false} />
           <SpeedInsights />

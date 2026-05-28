@@ -3,7 +3,11 @@ import SvgColor from '@/components/svg-color'
 import { skills } from './data'
 import { motion } from 'motion/react'
 
-export default function HomeSkills({ isInView }) {
+interface HomeSkillsProps {
+  isInView: boolean
+}
+
+export default function HomeSkills({ isInView }: HomeSkillsProps) {
   return (
     <>
       <StyledContent>
@@ -29,7 +33,7 @@ export default function HomeSkills({ isInView }) {
                 <motion.div
                   key={i}
                   initial={{ x: '-100%', rotate: 0 }}
-                  transformTemplate={({ y, x, rotate }) =>
+                  transformTemplate={({ x, rotate }) =>
                     `rotate(${rotate}) translateX(${x})`
                   }
                   animate={

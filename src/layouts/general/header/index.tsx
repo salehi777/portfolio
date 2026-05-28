@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import SvgColor from '@/components/svg-color'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
-import { ClickAwayListener, Fab, type Direction } from '@mui/material'
+import { ClickAwayListener, Fab } from '@mui/material'
 import { languages } from '@/i18n'
 import { useModal } from '@/hooks/useModal'
 import Modal from '@/components/modal'
@@ -31,13 +31,13 @@ export default function Header() {
   const direction = useThemeStore((state) => state.direction)
   const setDirection = useThemeStore((state) => state.setDirection)
 
-  const onLangChange = (code: string, dir: string) => {
+  const onLangChange = (code: string) => {
     i18n.changeLanguage(code)
     setShowLang(false)
   }
 
   useEffect(() => {
-    const dir = languages.find(({ code }) => code === i18n.language)?.dir
+    const dir = languages.find(({ code }) => code === i18n.language)?.dir!
     setDirection(dir)
     document.documentElement.lang = i18n.language
     document.documentElement.dir = dir
@@ -97,10 +97,10 @@ export default function Header() {
             }}
             animate={showLang ? 'show' : 'hide'}
           >
-            {languages.map(({ code, title, dir }, i) => (
+            {languages.map(({ code, title }) => (
               <span
                 key={code}
-                onClick={() => onLangChange(code, dir)}
+                onClick={() => onLangChange(code)}
                 data-active={i18n.language === code}
               >
                 {title}

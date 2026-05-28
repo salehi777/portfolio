@@ -8,7 +8,11 @@ import { motion } from 'motion/react'
 import Slider from '@/components/slider'
 import { useTranslation } from 'react-i18next'
 
-export default function HomeSkills({ isInView }) {
+interface HomeSkillsProps {
+  isInView: boolean
+}
+
+export default function HomeSkills({ isInView }: HomeSkillsProps) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'))
   const { t } = useTranslation()
 
@@ -66,7 +70,13 @@ export default function HomeSkills({ isInView }) {
   )
 }
 
-const Skill = ({ title, percent, isInView }) => {
+interface SkillProps {
+  title: string
+  percent: number
+  isInView: boolean
+}
+
+const Skill = ({ title, percent, isInView }: SkillProps) => {
   return (
     <div style={{ padding: '5px', display: 'flex', justifyContent: 'center' }}>
       <StyledSkill>

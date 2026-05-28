@@ -1,12 +1,12 @@
 import { useKeenSlider } from 'keen-slider/react'
 import { useState } from 'react'
 
-const WheelControls = (slider) => {
-  let touchTimeout
-  let position
-  let wheelActive
+const WheelControls = (slider: any) => {
+  let touchTimeout: number
+  let position: { x: number; y: number }
+  let wheelActive: boolean
 
-  function dispatch(e, name) {
+  function dispatch(e: any, name: string) {
     position.x -= e.deltaX
     position.y -= e.deltaY
     slider.container.dispatchEvent(
@@ -15,11 +15,11 @@ const WheelControls = (slider) => {
           x: position.x,
           y: position.y,
         },
-      })
+      }),
     )
   }
 
-  function wheelStart(e) {
+  function wheelStart(e: any) {
     position = {
       x: e.pageX,
       y: e.pageY,
@@ -27,15 +27,15 @@ const WheelControls = (slider) => {
     dispatch(e, 'ksDragStart')
   }
 
-  function wheel(e) {
+  function wheel(e: any) {
     dispatch(e, 'ksDrag')
   }
 
-  function wheelEnd(e) {
+  function wheelEnd(e: any) {
     dispatch(e, 'ksDragEnd')
   }
 
-  function eventWheel(e) {
+  function eventWheel(e: any) {
     e.preventDefault()
     if (!wheelActive) {
       wheelStart(e)
@@ -73,7 +73,7 @@ export default function useSlider() {
         setLoaded(true)
       },
     },
-    [WheelControls]
+    [WheelControls],
   )
 
   return {

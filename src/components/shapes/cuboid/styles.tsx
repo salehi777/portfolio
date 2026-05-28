@@ -1,11 +1,8 @@
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import type { CuboidProps } from '.'
 
 export const StyledCuboid = styled(
-  ({ width, height, length, color, ...props }: CuboidProps) => (
-    <Box {...props} />
-  )
+  ({ width, height, length, color, ...props }: any) => <Box {...props} />,
 )(({ theme, width, height, length, color }) => ({
   position: 'absolute',
   transformStyle: 'preserve-3d',
