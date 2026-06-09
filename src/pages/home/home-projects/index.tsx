@@ -1,8 +1,8 @@
-import SmallTitle from '@/components/small-title'
+import SmallTitle from '@/components/ui/small-title'
 import { StyledContent, StyledProject } from './styles'
 import { projects } from './data'
-import MotionUp from '@/components/motion-up'
-import Slider from '@/components/slider'
+import MotionUp from '@/components/ui/motion-up'
+import Slider from '@/components/ui/slider'
 import { useTranslation } from 'react-i18next'
 
 interface HomeProjectsProps {
@@ -15,7 +15,10 @@ export default function HomeProjects({ isInView }: HomeProjectsProps) {
   return (
     <StyledContent>
       <MotionUp isActive={isInView}>
-        <SmallTitle title={t('home.projects.title')} mb={{ xs: 2, md: 4 }} />
+        <SmallTitle
+          title={t('home.projects.title')}
+          sx={{ mb: { xs: 2, md: 4 } }}
+        />
       </MotionUp>
 
       <MotionUp isActive={isInView} t={{ delay: 0.1 }}>

@@ -1,12 +1,12 @@
-import SmallTitle from '@/components/small-title'
+import SmallTitle from '@/components/ui/small-title'
 import { StyledContent, StyledShapes } from './styles'
 import { Box, Divider, Typography, useMediaQuery } from '@mui/material'
-import SvgColor from '@/components/svg-color'
-import Cuboid from '@/components/shapes/cuboid'
+import SvgBox from '@/components/ui/svg-box'
+import Cuboid from '@/components/ui/shapes/cuboid'
 import { cuboids, spheres } from './data'
-import Sphere from '@/components/shapes/sphere'
-import MotionUp from '@/components/motion-up'
-import Slider from '@/components/slider'
+import Sphere from '@/components/ui/shapes/sphere'
+import MotionUp from '@/components/ui/motion-up'
+import Slider from '@/components/ui/slider'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 
@@ -47,7 +47,10 @@ export default function HomeOther({ isInView }: HomeOtherProps) {
 
       <StyledContent>
         <MotionUp isActive={isInView}>
-          <SmallTitle title={t('home.other.title')} mb={{ xs: 2, lg: 4 }} />
+          <SmallTitle
+            title={t('home.other.title')}
+            sx={{ mb: { xs: 2, lg: 4 } }}
+          />
         </MotionUp>
 
         {!isMobile ? (
@@ -80,7 +83,7 @@ const Content1 = (t: TFunction) =>
     t('home.other.list.3'),
   ].map((title) => (
     <div key={title} data-list-item>
-      <SvgColor src="/icons/info.svg" />
+      <SvgBox src="/icons/info.svg" />
       <Typography variant="h5">{title}</Typography>
     </div>
   ))

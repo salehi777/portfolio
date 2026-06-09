@@ -32,7 +32,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
     },
     [theme.breakpoints.down('md')]: {
       '>div': {
-        '.svg-color': {
+        '.svg-box': {
           transform: 'rotate(180deg)',
         },
       },

@@ -1,11 +1,11 @@
-import SmallTitle from '@/components/small-title'
+import SmallTitle from '@/components/ui/small-title'
 import { StyledContent, StyledShapes, StyledSkill } from './styles'
 import { Grid, useMediaQuery } from '@mui/material'
-import Cuboid from '@/components/shapes/cuboid'
+import Cuboid from '@/components/ui/shapes/cuboid'
 import { cuboids, skills } from './data'
-import MotionUp from '@/components/motion-up'
+import MotionUp from '@/components/ui/motion-up'
 import { motion } from 'motion/react'
-import Slider from '@/components/slider'
+import Slider from '@/components/ui/slider'
 import { useTranslation } from 'react-i18next'
 
 interface HomeSkillsProps {
@@ -37,7 +37,7 @@ export default function HomeSkills({ isInView }: HomeSkillsProps) {
         <MotionUp isActive={isInView}>
           <SmallTitle
             title={t('home.skills.title')}
-            mb={{ xs: 14, sm: 18, md: 3, lg: 6 }}
+            sx={{ mb: { xs: 14, sm: 18, md: 3, lg: 6 } }}
           />
         </MotionUp>
 

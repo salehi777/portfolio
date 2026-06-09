@@ -35,7 +35,7 @@ export const StyledJob = styled('div')(({ theme }) => ({
       display: 'flex',
       marginRight: 4,
       color: theme.palette.info.main,
-      '.svg-color': { width: 16, height: 16 },
+      '.svg-box': { width: 16, height: 16 },
     },
 
     '&:nth-of-type(2)': {

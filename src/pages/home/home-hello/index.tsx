@@ -1,11 +1,11 @@
-import SmallTitle from '@/components/small-title'
+import SmallTitle from '@/components/ui/small-title'
 import { StyledContent, StyledShapes } from './styles'
 import { Typography } from '@mui/material'
-import SvgColor from '@/components/svg-color'
-import Cuboid from '@/components/shapes/cuboid'
+import SvgBox from '@/components/ui/svg-box'
+import Cuboid from '@/components/ui/shapes/cuboid'
 import { cuboids, spheres } from './data'
-import Sphere from '@/components/shapes/sphere'
-import MotionUp from '@/components/motion-up'
+import Sphere from '@/components/ui/shapes/sphere'
+import MotionUp from '@/components/ui/motion-up'
 import { useTranslation } from 'react-i18next'
 
 interface HomeHelloProps {
@@ -55,7 +55,7 @@ export default function HomeHello({ isInView }: HomeHelloProps) {
         </MotionUp>
 
         <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-          <Typography variant="h4" mt={2}>
+          <Typography variant="h4" sx={{ mt: 2 }}>
             {t('home.hello.description')}
           </Typography>
         </MotionUp>
@@ -63,7 +63,7 @@ export default function HomeHello({ isInView }: HomeHelloProps) {
         <MotionUp isActive={isInView} t={{ delay: 0.2 }}>
           <div data-scroll>
             <div>
-              <SvgColor src="/icons/arrows-down.svg" />
+              <SvgBox src="/icons/arrows-down.svg" />
             </div>
             <span>{t('home.hello.scroll')}</span>
             <span>{t('home.hello.drag')}</span>

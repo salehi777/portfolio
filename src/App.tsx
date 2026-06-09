@@ -1,11 +1,9 @@
-import '@/i18n'
-import MuiThemeProvider from './theme-provider'
-import 'keen-slider/keen-slider.min.css'
+import AppThemeProvider from './components/providers/theme-provider'
+import ToasterContainer from './components/providers/toaster-container'
+import AppRoutes from './routes'
 import { Analytics } from '@vercel/analytics/react'
-import RegisterSW from './components/register-sw'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import ReactRoutes from './react-routes'
-import { Toaster } from 'react-hot-toast'
+import 'keen-slider/keen-slider.min.css'
 
 export default function App() {
   return (
@@ -16,11 +14,10 @@ export default function App() {
           <SpeedInsights />
         </>
       )}
-      <RegisterSW />
-      <MuiThemeProvider>
-        <ReactRoutes />
-      </MuiThemeProvider>
-      <Toaster />
+      <AppThemeProvider>
+        <ToasterContainer />
+        <AppRoutes />
+      </AppThemeProvider>
     </>
   )
 }

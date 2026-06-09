@@ -1,11 +1,11 @@
-import SmallTitle from '@/components/small-title'
+import SmallTitle from '@/components/ui/small-title'
 import { StyledContent, StyledJob } from './styles'
 import { Grid, Typography } from '@mui/material'
 import { jobs } from './data'
-import SvgColor from '@/components/svg-color'
-import MotionUp from '@/components/motion-up'
+import SvgBox from '@/components/ui/svg-box'
+import MotionUp from '@/components/ui/motion-up'
 import { useMediaQuery } from '@mui/material'
-import Slider from '@/components/slider'
+import Slider from '@/components/ui/slider'
 import { useTranslation } from 'react-i18next'
 
 interface HomeExperienceProps {
@@ -21,7 +21,7 @@ export default function HomeExperience({ isInView }: HomeExperienceProps) {
       <MotionUp isActive={isInView}>
         <SmallTitle
           title={t('home.experience.title')}
-          mb={{ xs: 1, sm: 2.5, md: 5 }}
+          sx={{ mb: { xs: 1, sm: 2.5, md: 5 } }}
         />
       </MotionUp>
 
@@ -53,23 +53,23 @@ const Job = ({ company, info }: any) => {
   return (
     <StyledJob>
       <div>
-        <SvgColor src="/icons/building.svg" />
+        <SvgBox src="/icons/building.svg" />
         <Typography variant="h6">{info.title}</Typography>
         {info.link && (
           <a href={info.link} target="_blank" rel="noopener noreferrer">
-            <SvgColor src="/icons/link.svg" />
+            <SvgBox src="/icons/link.svg" />
           </a>
         )}
       </div>
       <div>
-        <SvgColor src="/icons/calendar.svg" />
+        <SvgBox src="/icons/calendar.svg" />
         <Typography>
           {t('home.experience.jobs.' + company + '.start_date')} -{' '}
           {t('home.experience.jobs.' + company + '.end_date')}
         </Typography>
       </div>
       <div>
-        <SvgColor src="/icons/note.svg" />
+        <SvgBox src="/icons/note.svg" />
         <Typography>
           {t('home.experience.jobs.' + company + '.note')}
         </Typography>

@@ -1,11 +1,11 @@
-import SmallTitle from '@/components/small-title'
+import SmallTitle from '@/components/ui/small-title'
 import { StyledContent, StyledShapes } from './styles'
 import { Typography } from '@mui/material'
-import SvgColor from '@/components/svg-color'
-import Cuboid from '@/components/shapes/cuboid'
+import SvgBox from '@/components/ui/svg-box'
+import Cuboid from '@/components/ui/shapes/cuboid'
 import { cuboids } from './data'
-import MotionUp from '@/components/motion-up'
-import Slider from '@/components/slider'
+import MotionUp from '@/components/ui/motion-up'
+import Slider from '@/components/ui/slider'
 import { useMediaQuery } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
@@ -36,7 +36,10 @@ export default function HomeIntroduction({ isInView }: HomeIntroductionProps) {
 
       <StyledContent>
         <MotionUp isActive={isInView}>
-          <SmallTitle title={t('home.introduction.title')} mb={'20px'} />
+          <SmallTitle
+            title={t('home.introduction.title')}
+            sx={{ mb: '20px' }}
+          />
         </MotionUp>
 
         {!isMobile ? (
@@ -105,7 +108,7 @@ const Content3 = () => {
   return (
     <div data-contacts>
       <a href="tel:0+989137276118" target="_blank" rel="noopener noreferrer">
-        <SvgColor src="/icons/phone.svg" />
+        <SvgBox src="/icons/phone.svg" />
         <div>+98 913 727 6118</div>
       </a>
       <a
@@ -113,7 +116,7 @@ const Content3 = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <SvgColor src="/icons/mail.svg" />
+        <SvgBox src="/icons/mail.svg" />
         <div>msalehy77@gmail.com</div>
       </a>
       <a
@@ -121,7 +124,7 @@ const Content3 = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <SvgColor src="/icons/send.svg" />
+        <SvgBox src="/icons/send.svg" />
         <div>{t('home.introduction.telegram')}</div>
       </a>
     </div>

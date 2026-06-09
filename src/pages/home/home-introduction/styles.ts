@@ -46,7 +46,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
       display: 'flex',
       alignItems: 'center',
 
-      '.svg-color': { width: 30, height: 30, marginInlineEnd: 8 },
+      '.svg-box': { width: 30, height: 30, marginInlineEnd: 8 },
 
       div: {
         direction: 'ltr',

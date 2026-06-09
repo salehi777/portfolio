@@ -20,12 +20,10 @@ i18n
       fa: { translation: fa },
     },
     fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false,
-    },
+    interpolation: { escapeValue: false },
   })
 
 export const languages: { code: string; title: string; dir: Direction }[] = [
-  { code: 'fa', title: 'Fa', dir: 'rtl' },
   { code: 'en', title: 'En', dir: 'ltr' },
+  { code: 'fa', title: 'Fa', dir: 'rtl' },
 ]

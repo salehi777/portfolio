@@ -1,5 +1,5 @@
 import { StyledContent, StyledRow } from './styles'
-import SvgColor from '@/components/svg-color'
+import SvgBox from '@/components/ui/svg-box'
 import { skills } from './data'
 import { motion } from 'motion/react'
 
@@ -20,7 +20,7 @@ export default function HomeSkills({ isInView }: HomeSkillsProps) {
                   animate={isInView ? { rotate: [0, i * (360 / star)] } : {}}
                   transition={{ duration: 1 }}
                 >
-                  <SvgColor
+                  <SvgBox
                     src="/icons/star.svg"
                     sx={{ transform: `rotate(-${i * (360 / star)}deg)` }}
                   />

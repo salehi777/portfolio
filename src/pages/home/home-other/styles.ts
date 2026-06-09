@@ -13,7 +13,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
     alignItems: 'center',
     marginBottom: 24,
 
-    '.svg-color': { marginInlineEnd: 12 },
+    '.svg-box': { marginInlineEnd: 12 },
 
     [theme.breakpoints.down('sm')]: {
       marginBottom: 0,
@@ -29,7 +29,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
 
     a: {
       marginInlineStart: 16,
-      '.svg-color': { width: 56, height: 56 },
+      '.svg-box': { width: 56, height: 56 },
     },
   },
 
