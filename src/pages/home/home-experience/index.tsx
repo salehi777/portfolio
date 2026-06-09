@@ -5,7 +5,7 @@ import { jobs } from './data'
 import SvgBox from '@/components/ui/svg-box'
 import MotionUp from '@/components/ui/motion-up'
 import { useMediaQuery } from '@mui/material'
-import Slider from '@/components/ui/slider'
+import Carousel from '@/components/ui/carousel'
 import { useTranslation } from 'react-i18next'
 
 interface HomeExperienceProps {
@@ -35,13 +35,13 @@ export default function HomeExperience({ isInView }: HomeExperienceProps) {
             ))}
           </Grid>
         ) : (
-          <Slider>
+          <Carousel>
             {Object.entries(jobs).map(([company, info]) => (
               <div key={company} style={{ padding: '16px', height: '100%' }}>
                 <Job company={company} info={info} />
               </div>
             ))}
-          </Slider>
+          </Carousel>
         )}
       </MotionUp>
     </StyledContent>

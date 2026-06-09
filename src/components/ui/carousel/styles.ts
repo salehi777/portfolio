@@ -14,8 +14,6 @@ export const StyledDots = styled('div')(({ theme }) => ({
     background: '#b0b0b0',
     transition: theme.transitions.create('background'),
 
-    '&[data-active=true]': {
-      background: theme.palette.primary.main,
-    },
+    '&[data-active=true]': { background: theme.palette.primary.main },
   },
 }))

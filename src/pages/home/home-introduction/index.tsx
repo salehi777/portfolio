@@ -5,7 +5,7 @@ import SvgBox from '@/components/ui/svg-box'
 import Cuboid from '@/components/ui/shapes/cuboid'
 import { cuboids } from './data'
 import MotionUp from '@/components/ui/motion-up'
-import Slider from '@/components/ui/slider'
+import Carousel from '@/components/ui/carousel'
 import { useMediaQuery } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
@@ -56,11 +56,11 @@ export default function HomeIntroduction({ isInView }: HomeIntroductionProps) {
           </>
         ) : (
           <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-            <Slider>
+            <Carousel>
               <Content1 />
               <Content2 />
               <Content3 />
-            </Slider>
+            </Carousel>
           </MotionUp>
         )}
       </StyledContent>

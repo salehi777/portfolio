@@ -11,6 +11,7 @@ import Modal from '@/components/ui/modal'
 import ContactMeForm from './contact-me-form'
 import MotionIconRotate from '@/components/ui/motion-icon/motion-icon-rotate'
 import useLanguageChange from '@/hooks/useLanguageChange'
+import Image from '@/components/ui/image'
 
 const modeList = ['system', 'light', 'dark'] as const
 
@@ -33,13 +34,7 @@ export default function Header() {
   return (
     <>
       <StyledLogo>
-        <img
-          src="/images/logo.png"
-          width={60}
-          height={60}
-          alt="رزومه"
-          loading="lazy"
-        />
+        <Image src="/images/logo.png" width={60} height={60} alt="رزومه" />
       </StyledLogo>
       <StyledThemeButton onClick={changeMode}>
         <MotionIconRotate

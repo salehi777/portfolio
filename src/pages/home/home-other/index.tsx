@@ -6,9 +6,10 @@ import Cuboid from '@/components/ui/shapes/cuboid'
 import { cuboids, spheres } from './data'
 import Sphere from '@/components/ui/shapes/sphere'
 import MotionUp from '@/components/ui/motion-up'
-import Slider from '@/components/ui/slider'
+import Carousel from '@/components/ui/carousel'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
+import Image from '@/components/ui/image'
 
 interface HomeOtherProps {
   isInView: boolean
@@ -64,10 +65,10 @@ export default function HomeOther({ isInView }: HomeOtherProps) {
           </>
         ) : (
           <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-            <Slider>
+            <Carousel>
               {Content1(t)}
               <Content2 />
-            </Slider>
+            </Carousel>
           </MotionUp>
         )}
       </StyledContent>
@@ -107,9 +108,8 @@ const Content2 = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/icons/github.svg"
-            loading="lazy"
             width={40}
             height={40}
             alt="github logo"
@@ -123,9 +123,8 @@ const Content2 = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/icons/dribbble.svg"
-            loading="lazy"
             width={40}
             height={40}
             alt="dribbble logo"
@@ -136,9 +135,8 @@ const Content2 = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/icons/dribbble.svg"
-            loading="lazy"
             width={40}
             height={40}
             alt="dribbble logo"

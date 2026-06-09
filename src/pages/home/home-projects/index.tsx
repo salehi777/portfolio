@@ -2,7 +2,7 @@ import SmallTitle from '@/components/ui/small-title'
 import { StyledContent, StyledProject } from './styles'
 import { projects } from './data'
 import MotionUp from '@/components/ui/motion-up'
-import Slider from '@/components/ui/slider'
+import Carousel from '@/components/ui/carousel'
 import { useTranslation } from 'react-i18next'
 
 interface HomeProjectsProps {
@@ -22,7 +22,7 @@ export default function HomeProjects({ isInView }: HomeProjectsProps) {
       </MotionUp>
 
       <MotionUp isActive={isInView} t={{ delay: 0.1 }}>
-        <Slider
+        <Carousel
           perViews={[
             { breakpoint: 'xs', perView: 1 },
             { breakpoint: 'lg', perView: 3 },
@@ -38,7 +38,7 @@ export default function HomeProjects({ isInView }: HomeProjectsProps) {
               </a>
             </StyledProject>
           ))}
-        </Slider>
+        </Carousel>
       </MotionUp>
     </StyledContent>
   )

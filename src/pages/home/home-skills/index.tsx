@@ -5,7 +5,7 @@ import Cuboid from '@/components/ui/shapes/cuboid'
 import { cuboids, skills } from './data'
 import MotionUp from '@/components/ui/motion-up'
 import { motion } from 'motion/react'
-import Slider from '@/components/ui/slider'
+import Carousel from '@/components/ui/carousel'
 import { useTranslation } from 'react-i18next'
 
 interface HomeSkillsProps {
@@ -51,7 +51,7 @@ export default function HomeSkills({ isInView }: HomeSkillsProps) {
               ))}
             </Grid>
           ) : (
-            <Slider
+            <Carousel
               perViews={[
                 { breakpoint: 'xs', perView: 2 },
                 { breakpoint: 'sm', perView: 4 },
@@ -62,7 +62,7 @@ export default function HomeSkills({ isInView }: HomeSkillsProps) {
                   <Skill title={title} percent={percent} isInView={isInView} />
                 </div>
               ))}
-            </Slider>
+            </Carousel>
           )}
         </MotionUp>
       </StyledContent>

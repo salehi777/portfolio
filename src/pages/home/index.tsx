@@ -1,14 +1,15 @@
-import { StyledDots, StyledSlider } from './styles'
+import { StyledSlider } from './styles'
 import useSlider from './useSlider'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
-
 import HomeHello from './home-hello'
 import HomeIntroduction from './home-introduction'
 import HomeExperience from './home-experience'
 import HomeSkills from './home-skills'
 import HomeProjects from './home-projects'
 import HomeOther from './home-other'
+import ListCircle from '@/components/ui/list-circle'
+import { Box } from '@mui/material'
 
 export default function HomePage() {
   const { t } = useTranslation()
@@ -50,25 +51,26 @@ export default function HomePage() {
       </StyledSlider>
 
       {loaded && instanceRef.current && (
-        <StyledDots>
-          {[
-            t('home.titles.0'),
-            t('home.titles.1'),
-            t('home.titles.2'),
-            t('home.titles.3'),
-            t('home.titles.4'),
-            t('home.titles.5'),
-          ].map((title, idx) => (
-            <div
-              key={idx}
-              onClick={() => instanceRef.current?.moveToIdx(idx)}
-              data-active={currentSlide === idx}
-            >
-              <span />
-              <div>{title}</div>
-            </div>
-          ))}
-        </StyledDots>
+        <Box sx={{ position: 'fixed', bottom: 16, insetInlineStart: 16 }}>
+          <ListCircle
+            degree={[-90, 0]}
+            activeValue={currentSlide}
+            size={16}
+            translate={80}
+            list={[
+              t('home.titles.0'),
+              t('home.titles.1'),
+              t('home.titles.2'),
+              t('home.titles.3'),
+              t('home.titles.4'),
+              t('home.titles.5'),
+            ].map((label, i) => ({
+              label,
+              value: i,
+              onClick: () => instanceRef.current?.moveToIdx(i),
+            }))}
+          />
+        </Box>
       )}
     </div>
   )
