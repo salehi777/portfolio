@@ -27,21 +27,12 @@ export const StyledContent = styled('div')(({ theme }) => ({
       boxShadow: theme.customShadows.common,
     },
 
-    '>span:last-of-type': {
-      display: 'none',
-    },
+    '>span:last-of-type': { display: 'none' },
+
     [theme.breakpoints.down('md')]: {
-      '>div': {
-        '.svg-box': {
-          transform: 'rotate(180deg)',
-        },
-      },
-      '>span:first-of-type': {
-        display: 'none',
-      },
-      '>span:last-of-type': {
-        display: 'block',
-      },
+      '>div': { '.svg-box': { transform: 'rotate(180deg)' } },
+      '>span:first-of-type': { display: 'none' },
+      '>span:last-of-type': { display: 'block' },
     },
   },
 
@@ -49,15 +40,11 @@ export const StyledContent = styled('div')(({ theme }) => ({
     width: 'calc(100vw - 600px)',
     padding: '120px 65px 100px',
   },
-  [theme.breakpoints.down('lg')]: {
-    width: 'calc(100vw - 430px)',
-  },
+  [theme.breakpoints.down('lg')]: { width: 'calc(100vw - 430px)' },
   [theme.breakpoints.down('md')]: {
     width: '100%',
     padding: '120px 50px 100px',
-    '[data-scroll]': {
-      marginTop: 60,
-    },
+    '[data-scroll]': { marginTop: 60 },
   },
 }))
 

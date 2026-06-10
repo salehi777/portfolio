@@ -41,6 +41,7 @@ export const StyledContent = styled('div')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'flex-start',
 
     '>a': {
       display: 'flex',

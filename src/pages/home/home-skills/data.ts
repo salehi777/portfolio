@@ -59,6 +59,14 @@ export const skills = [
     percent: 80,
   },
   {
+    title: 'TypeScript',
+    percent: 80,
+  },
+  {
+    title: 'Electron',
+    percent: 80,
+  },
+  {
     title: 'Git',
     percent: 80,
   },
@@ -71,16 +79,12 @@ export const skills = [
     percent: 75,
   },
   {
-    title: 'Agile',
-    percent: 65,
-  },
-  {
     title: '[Framer] Motion',
     percent: 75,
   },
   {
-    title: 'TypeScript',
-    percent: 75,
+    title: 'Agile',
+    percent: 65,
   },
   {
     title: 'Antd',
@@ -92,11 +96,7 @@ export const skills = [
   },
   {
     title: 'Tailwind',
-    percent: 50,
-  },
-  {
-    title: 'Electron',
-    percent: 75,
+    percent: 40,
   },
   {
     title: 'Extension',
@@ -107,11 +107,11 @@ export const skills = [
     percent: 30,
   },
   {
-    title: 'Monorepo',
-    percent: 20,
-  },
-  {
     title: 'Telegram Bot',
     percent: 30,
+  },
+  {
+    title: 'Monorepo',
+    percent: 20,
   },
 ].sort((a, b) => (a.percent < b.percent ? 1 : a.percent === b.percent ? 0 : -1))

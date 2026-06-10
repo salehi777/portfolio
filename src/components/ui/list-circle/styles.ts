@@ -60,7 +60,9 @@ export const StyledList = styled('div')(({ theme }) => ({
     '>div': {
       right: 0,
       transformOrigin: '100% center',
-      '>div': { flexDirection: 'row-reverse' },
+      '>div': {
+        flexDirection: theme.direction === 'ltr' ? 'row-reverse' : undefined,
+      },
     },
   },
 }))

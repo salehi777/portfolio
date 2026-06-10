@@ -10,10 +10,12 @@ import HomeProjects from './home-projects'
 import HomeOther from './home-other'
 import ListCircle from '@/components/ui/list-circle'
 import { Box } from '@mui/material'
+import useSettingsStore from '@/stores/useSettingsStore'
 
 export default function HomePage() {
   const { t } = useTranslation()
   const { sliderRef, instanceRef, currentSlide, loaded } = useSlider()
+  const direction = useSettingsStore((s) => s.direction)
 
   const [loaded2, setLoaded2] = useState(false)
   useEffect(() => {
@@ -53,7 +55,8 @@ export default function HomePage() {
       {loaded && instanceRef.current && (
         <Box sx={{ position: 'fixed', bottom: 16, insetInlineStart: 16 }}>
           <ListCircle
-            degree={[-90, 0]}
+            degree={direction === 'ltr' ? [-90, 0] : [90, 180]}
+            clockwise={direction === 'ltr'}
             activeValue={currentSlide}
             size={16}
             translate={80}

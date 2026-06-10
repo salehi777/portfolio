@@ -22,7 +22,7 @@ const typography: TypographyVariantsOptions = {
   h1: { fontSize: 90, fontWeight: 600 },
   h2: { fontSize: 60, fontWeight: 600 },
   h3: { fontSize: 38, fontWeight: 600 },
-  h4: { fontSize: 24, fontWeight: 600 },
+  h4: { fontSize: getResponsiveFontSize([22, 24]), fontWeight: 600 },
   h5: {
     fontSize: getResponsiveFontSize([18, 20]),
     fontWeight: 500,
