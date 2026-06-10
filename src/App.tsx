@@ -8,9 +8,9 @@ import 'keen-slider/keen-slider.min.css'
 export default function App() {
   return (
     <>
-      {import.meta.env.DEV && (
+      {import.meta.env.PROD && (
         <>
-          <Analytics debug={false} />
+          <Analytics />
           <SpeedInsights />
         </>
       )}
